@@ -3,21 +3,72 @@
         .table1
         {
             background: rgb(0, 0, 0);
-            border: 0.2vw solid black;
+            border-bottom: 0.2vw solid  rgb(138, 36, 234);
             height: 5vw;
             margin: -0.44vw -0.44vw 0 -0.44vw;
             width: 100vw;
         }
         .Financia_box
         {
-            border: 0.2vw solid red;
             text-align: center;
-            width: 15vw;
+            width: 20vw;
         }
         .Financia
         {
-            font: normal normal 800 2vw Arial;
+            font: normal normal 800 2.5vw Arial;
+            letter-spacing: 0.2vw;
             text-decoration: none;
             color: rgb(138, 36, 234);
+        }
+        .notification_box
+        {
+            text-align: center;
+            width: 5vw;
+        }
+        .notification_button
+        {
+            height: 2.8vw;
+        }
+        .sign_box
+        {
+            text-align: center;
+            width: 5vw;
+        }
+        .signin_button
+        {
+            height: 2.8vw;
+        }
+        .settings_box
+        {
+            text-align: center;
+            width: 5vw;
+        }
+        .settings_button
+        {
+            height: 2.8vw;
+        }
+        .table2
+        {
+            background-color: black;
+            height: 3vw;
+            margin: 0 -0.44vw 0 -0.44vw;
+            width: 100vw;
+        }
+        .nav_link_box
+        {
+            text-align: center;
+        }
+        .nav_links
+        {
+            color: rgb(117, 111, 222);
+            font: normal normal 1.5vw Arial;
+            letter-spacing: 0.1vw;
+            text-decoration: none;
+        }
+        .arrow_down_icon
+        {
+            height: 1vw;
+            margin: 0 0 0 0.2vw;
+            vertical-align:middle;
         }
     }
