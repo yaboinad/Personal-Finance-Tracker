@@ -135,7 +135,13 @@
     
         .bn1:hover {
             transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-        }    
+        }
+
+        .hero-image img {
+            display: flex;
+            width: 450px;
+            border-radius: 15px;
+        }
     
 
    
