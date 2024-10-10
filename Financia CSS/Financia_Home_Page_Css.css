@@ -72,27 +72,42 @@
             vertical-align:middle;
         }
     }
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
 
         .hero {
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 20px;
+            margin: 80px;
+            font: normal normal Arial;
+            max-width: 1500px;
+            padding-top: 5rem;
         }
     
         .hero-content {
             max-width: 50%;
+            font: normal normal Arial;
         }
     
         .hero h1 {
-            font-size: 36px;
+            font-size: 50px;
+            letter-spacing: 2px;
             margin-bottom: 20px;
+            font: normal normal Arial;
+            line-height: 50px;
         }
     
         .hero p {
-            font-size: 36px;
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+            font-size: 30px;
+            letter-spacing: 2px;
             color: #000;
+            font: normal normal  Arial;
         }
     
         .learn-more {
@@ -100,7 +115,7 @@
             align-items: center;
             justify-content: center;
             padding: 0.7rem 2rem;
-            font-family: "Poppins", sans-serif;
+            font: normal normal Arial;
             font-weight: 700;
             font-size: 18px;
             text-align: center;
