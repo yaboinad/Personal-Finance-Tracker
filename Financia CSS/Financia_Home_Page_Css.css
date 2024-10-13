@@ -156,164 +156,98 @@
         }
         .table4
         {
-            border: 0.2vw solid black;
-            height: 20vw;
+            height: 27vw;
             margin: -5vw 0 0 8vw;
+            width: 43vw;
         }
         .table4_1
         {
             color:  rgb(138, 36, 234);
             font: normal 3vw Roboto2;
             letter-spacing: 0.2vw;
-            text-shadow: 0.15vw 0.15vw 0.25vw rgb(45, 2, 104);
+            text-shadow: 0.15vw 0.15vw 0.3vw  rgb(173, 98, 243);
         }
         .table4_2
         {
-
+            color: rgb(34, 0, 65,0.7);
+            font: normal 600 1.5vw/2vw Roboto1;
+            letter-spacing: 0.1vw;
+        }
+        .table4_3box
+        {
+            height: 7vw;
+            margin: auto;
+        }
+        #premium_button
+        {
+            border: 0.2vw solid rgb(124, 27, 181);
+            background-color:  rgb(138, 36, 234);
+            border-radius: 2vw;
+            color: rgba(236, 234, 243, 1);
+            font: normal 200 1.7vw Coolvetica2;
+            letter-spacing: 0.15vw;
+            height: 4.3vw;
+            width: 20vw;
+        }
+        .div1
+        {
+            box-sizing: border-box;
+            display: inline-flex;
+            height: 30vw;
+            max-height: 30vw;
+            margin: 10vw 4vw 0 4vw;
+        }
+        .div2
+        {
+            background-color: black;
+            border-radius: 2vw;
+            border: 0.3vw double rgb(138, 36, 234);;
+            height: 25vw;
+            text-align: center;
+            width: 20vw;
+        }
+        .secure
+        {
+            border: 0.2vw solid red;
+            color: rgb(212, 72, 255);
+            font: normal 500 1.5vw Roboto2;
+            letter-spacing: 0.15vw;
+        }
+        .div2_image
+        {
+            border: 0.2vw solid wheat;
+            height: 12vw;
+            margin: 2vw 0 0 0;
+        }
+        .div3
+        {
+            background-color: black;
+            border-radius: 2vw;
+            border: 0.3vw double rgb(138, 36, 234);
+            height: 25vw;
+            margin: 0 0 0 2vw;
+            text-align: center;
+            width: 20vw;
+        }
+        .div4
+        {
+            background-color: black;
+            border-radius: 2vw;
+            border: 0.3vw double rgb(138, 36, 234);;
+            height: 25vw;
+            margin: 0 0 0 2vw;
+            text-align: center;
+            width: 20vw;
+        }
+        .div5
+        {
+            background-color: black;
+            border-radius: 2vw;
+            border: 0.3vw double rgb(138, 36, 234);;
+            height: 25vw;
+            margin: 0 0 0 2vw;
+            text-align: center;
+            width: 20vw;
         }
     }
-    /*
-        * {
-            font-family: "Poppins", sans-serif;
-            box-sizing: border-box;
-        }
-
-
-        .hero {
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 80px;
-            font: normal normal Arial;
-            max-width: 1500px;
-            padding-top: 5rem;
-        }
-    
-        .hero-content {
-            max-width: 50%;
-            font: normal normal Arial;
-        }
-    
-        .hero h1 {
-            font-size: 50px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            font: normal normal Arial;
-            line-height: 50px;
-        }
-    
-        .hero p {
-            padding-top: 2rem;
-            padding-bottom: 3rem;
-            font-size: 30px;
-            letter-spacing: 2px;
-            color: #000;
-            font: normal normal  Arial;
-        }
-    
-        .learn-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.7rem 2rem;
-            font: normal normal Arial;
-            font-weight: 700;
-            font-size: 18px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            backface-visibility: hidden;
-            border: 0.3rem solid transparent;
-            border-radius: 3rem;
-        }
-    
-        .bn1 {
-            border-color: transparent;
-            background-color: #ffffff;
-            color: #000;
-            transform: 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-        }
-    
-        .bn1:hover {
-            transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-        }
-
-        .hero-image img {
-            width: 450px;
-            border-radius: 15px;
-        }
-
-        .container {
-            display: flex;
-            width: 80%;
-            max-width: 1200px;
-            align-items: center;
-            justify-content: space-between;
-            margin: 80px;
-        }
-
-        .left-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .icon-circle {
-            width: 100px;
-            height: 100px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .icon-circle img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-        }
-
-        .right-section {
-            max-width: 500px;
-            color: #4c1c7d;
-        }
-
-        .right-section h1 {
-            font-size: 50px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: #6f2ea2;
-        }
-
-        .right-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.3;
-            color: #000;
-        }
-
-        .upgrade-btn {
-            display: inline-block;
-            padding: 0.5em 1.7em;
-            margin: 0 0.1em 0.1em 0;
-            border: 0.16em solid rgba(255, 255, 255, 0);
-            background-color: rgb(80, 10, 172);
-            border-radius: 2em;
-            box-sizing: border-box;
-            text-decoration: none;
-            font-family: "Roboto", sans-serif;
-            font-weight: 300;
-            color: #ffffff;
-            text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-            text-align: center;
-            transition: all 0.2s;
-        }
-
-        .upgrade-btn:hover {
-            border-color: rgb(255, 255, 255);
-        }
-            */
+   
