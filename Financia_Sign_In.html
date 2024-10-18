@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href=""><!--Financia logo not yet available-->
     <link rel="stylesheet" href="Financia CSS/Financia_Sign_In_Css.css">
-    <link rel="stylesheet" href="https://fontawesome.com/icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Financia</title>
     <style>
                 @media screen and (max-width: 1920px) and (max-height: 1080px)
@@ -66,40 +66,42 @@
         </tr>
     </table>
 
-     <!-- Login Container -->
+     
      <div class="login-container">
         <div class="login-box">
             <form action="">
                 <table>
-                    <tr class="input-group">
-                        <td><label for="username" min="2">Email / Username</label></td>
+                    <tr class="input-group" >
+                        <td><label for="username">Email / Username</label></td>
                     </tr>
-                    <tr class="input-group">
-                        <td>
-                            <i class="fa-regular fa-user"></i>
-                            <input type="text" id="username">
-                        </td>
-                    </tr>
-                    <tr class="input-group">
-                        <td><label for="password">Password</label></td>
-                    </tr>
-                    <tr class="input-group">
-                        <td>
-                            <i class="fa fa-lock"></i>
-                            <input type="password" id="password">
-                        </td>
-                    </tr>
+                    <table>
+                        <tr class="input-group">
+                            <td>
+                                <div class="input-container">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="username" placeholder="Email / Username" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="input-group">
+                            <td><label for="password">Password</label></td>
+                        </tr>
+                        <tr class="input-group">
+                            <td>
+                                <div class="input-container">
+                                    <i class="fa fa-lock"></i>
+                                    <input type="password" id="password" placeholder="Password" required>
+                                    <i class="fa-hide"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
                    
                     <tr>
                         <td style="padding: 0px;"><hr class="divider"></td> 
                     </tr>
-                    <tr>
-                        <td class="links">
-                            <a href="#">New User?</a>
-                            <div class="vertical-line"></div>
-                            <a href="#">ForgoOt Password?</a>
-                        </td>
-                    </tr>
+
                     <tr>
                         <td><input class="login-btn" type="submit" value="Log In" ></td>
                     </tr>
@@ -107,4 +109,5 @@
             </form>
         </div>
     </div>
+
 </body>
