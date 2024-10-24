@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href=""><!--Financia logo not yet available-->
     <link rel="stylesheet" href="Financia CSS/Financia_Sign_Up_Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <title>Financia Sign Up</title>
     <style>
@@ -66,33 +67,48 @@
         </tr>
     </table>
 
-    <div class="container">
-        <h2>Financia Sign Up</h2>
-        <form>
-            <div class="form-group">
-                <input type="text" placeholder="Email / Username" required>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password" required>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Confirm Password" required>
-            </div>
-            <div class="form-group">
-                <input type="date" placeholder="Birthdate" required>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Country" required>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" required>
-                <label class="checkbox-label">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
-            </div>
-            <div class="buttons">
-                <button type="submit">Sign Up</button>
-                <button type="button" class="google">Sign Up with Google</button>
-            </div>
-        </form>
+    <div class="login-container">
+        <div class="login-box">
+            <form action="">
+                <table>
+                    <tr class="input-group" >
+                        <td><label for="username">Email / Username</label></td>
+                    </tr>
+                    <table>
+                        <tr class="input-group">
+                            <td>
+                                <div class="input-container">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="username" placeholder="Email / Username" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="input-group">
+                            <td><label for="password">Password</label></td>
+                        </tr>
+                        <tr class="input-group">
+                            <td>
+                                <div class="input-container">
+                                    <i class="fa fa-lock"></i>
+                                    <input type="password" id="password" placeholder="Password" required>
+                                    <i class="fa-hide"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                   
+                    <tr>
+                        <td style="padding: 0px;"><hr class="divider"></td> 
+                    </tr>
+
+                    <tr>
+                        <td><input class="login-btn" type="submit" value="Log In" ></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
+
 </body>
 </html>

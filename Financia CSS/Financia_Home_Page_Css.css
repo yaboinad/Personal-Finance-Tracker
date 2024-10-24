@@ -6,7 +6,7 @@
             border-bottom: 0.2vw solid  rgb(138, 36, 234);
             height: 4.2vw;
             margin: -0.44vw -0.44vw 0 -0.44vw;
-            width: 98.75vw;
+            width: 100vw;
         }
         .Financia_box
         {
@@ -24,6 +24,8 @@
         {
             text-align: center;
             width: 5vw;
+            margin: 0;
+            padding: 0;
         }
         .notification_button
         {
@@ -33,6 +35,8 @@
         {
             text-align: center;
             width: 5vw;
+            margin: 0;
+            padding: 0;
         }
         .signin_button
         {
@@ -42,6 +46,8 @@
         {
             text-align: center;
             width: 5vw;
+            margin: 0;
+            padding: 0;
         }
         .settings_button
         {
@@ -52,11 +58,13 @@
             background-color: black;
             height: 3vw;
             margin: 0 -0.44vw 0 -0.44vw;
-            width: 98.75vw;
+            width: 100vw;
         }
         .nav_link_box
         {
             text-align: center;
+            padding: 0;
+            margin: 0;
         }
         .nav_links
         {
@@ -249,6 +257,7 @@
             text-align: center;
             width: 20vw;
         }
+    }
         .footer
         {
             background-color: #d4a5ff;
@@ -296,5 +305,5 @@
         {
             text-decoration: underline;
         }
-    }
+    
    
