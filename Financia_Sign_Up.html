@@ -72,7 +72,7 @@
             <form action="">
                 <table>
                     <tr class="input-group" >
-                        <td><label for="username">Email / Username</label></td>
+                        <td><label for="email">Email / Username</label></td>
                     </tr>
                     <table>
                         <tr class="input-group">
@@ -95,6 +95,59 @@
                                 </div>
                             </td>
                         </tr>
+                        <tr class="input-group">
+                            <td><label for="birthdate">Birthdate</label></td>
+                        </tr>
+                        <tr class="input-group">
+                            <td>
+                                <div class="input-container">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    <input type="date" id="birthdate" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="input-group">
+                            <td><label for="country">Country</label></td>
+                        </tr>
+                        <tr class="input-group">
+                            <td>
+                                <div class="input-container">
+                                    <i class="fa-regular fa-globe"></i>
+                                    <select id="country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="AF">Afghanistan</option>
+                                        <option value="AL">Albania</option>
+                                        <option value="DZ">Algeria</option>
+                                        <option value="AS">American Samoa</option>
+                                        <option value="AD">Andorra</option>
+                                        <option value="AO">Angola</option>
+                                        <option value="AI">Anguilla</option>
+                                        <option value="AQ">Antarctica</option>
+                                        <option value="AG">Antigua and Barbuda</option>
+                                        <option value="AR">Argentina</option>
+                                        <option value="AM">Armenia</option>
+                                        <option value="AW">Aruba</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="AT">Austria</option>
+                                        <option value="AZ">Azerbaijan</option>
+                                        <option value="BS">Bahamas</option>
+                                        <option value="BH">Bahrain</option>
+                                        <option value="BD">Bangladesh</option>
+                                        <option value="BB">Barbados</option>
+                                        <option value="BY">Belarus</option>
+                                        <option value="BE">Belgium</option>
+                                        <option value="BZ">Belize</option>
+                                        <option value="BJ">Benin</option>
+                                        <option value="BM">Bermuda</option>
+                                        <option value="BT">Bhutan</option>
+                                        <option value="BO">Bolivia</option>
+                                        <option value="BA">Bosnia and Herzegovina</option>
+                                        <option value="BW">Botswana</option>
+                                        <option value="BR">Brazil</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
                     </table>
                     
                    
@@ -103,7 +156,12 @@
                     </tr>
 
                     <tr>
-                        <td><input class="login-btn" type="submit" value="Log In" ></td>
+                        <td><input class="login-btn" type="submit" value="Sign Up"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="login-btn" type="button" onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=openid%20profile%20email&state=YOUR_STATE';">Sign Up with Google</button>
+                        </td>
                     </tr>
                 </table>
             </form>
