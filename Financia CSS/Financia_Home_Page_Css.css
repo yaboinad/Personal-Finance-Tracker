@@ -214,11 +214,30 @@
             text-align: center;
             width: 20vw;
         }
+        .div2 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
+        .div3 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
+        .div4 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
+        .div5 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
         .secure
         {
-            border: 0.2vw solid red;
             color: rgb(212, 72, 255);
-            font: normal 500 1.5vw Roboto2;
+            font: normal 500 1.2vw Roboto2;
             letter-spacing: 0.15vw;
         }
         .div2_image
@@ -226,6 +245,24 @@
             border: 0.2vw solid wheat;
             height: 12vw;
             margin: 2vw 0 0 0;
+        }
+        .simple
+        {
+            color: rgb(212, 72, 255);
+            font: normal 500 1.2vw Roboto2;
+            letter-spacing: 0.15vw;
+        }
+        .goal_oriented
+        {
+            color: rgb(212, 72, 255);
+            font: normal 500 1.2vw Roboto2;
+            letter-spacing: 0.15vw;
+        }
+        .insightful
+        {
+            color: rgb(212, 72, 255);
+            font: normal 500 1.2vw Roboto2;
+            letter-spacing: 0.15vw;
         }
         .div3
         {
@@ -298,12 +335,6 @@
         .footer-links .column 
         {
             margin: 10px;
-            justify-content: center;
-        }
-        .footer-links .column_2
-        {
-            margin: 10px;
-            display: flex;
             justify-content: center;
         }
         .footer-links a
