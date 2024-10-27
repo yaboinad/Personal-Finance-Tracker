@@ -92,6 +92,7 @@
         width: 300px;
         text-align: center;
         border-bottom: 40px solid black;
+        padding-bottom: 10px;
         
     }
 
@@ -150,18 +151,18 @@
     }
 
     .login-btn {
-        background-color: #4a1b8f;
-        color: #fff;
+        background-color: #fff;
+        color: #000;
         padding: 10px;
         border: none;
         border-radius: 20px;
-        width: 100%;
+        width: 40%;
         cursor: pointer;
         font-size: 16px;
     }
 
     .login-btn:hover {
-        background-color: #321163;
+        transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
     }
     
 

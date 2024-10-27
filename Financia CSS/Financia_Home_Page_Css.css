@@ -38,9 +38,20 @@
             margin: 0;
             padding: 0;
         }
-        .signin_button
+        .signin_settings
         {
             height: 2.5vw;
+        }
+        .signin_button, .signup_button
+        {
+            Color: #fff;
+            background-color: #8a23ee;
+            padding: 0.5vw 1vw;
+            border: none;
+            border-radius: 2vw;
+            text-decoration: none;
+            font-family: Roboto2;
+            font-size: 1.2vw;
         }
         .settings_box
         {
@@ -214,11 +225,30 @@
             text-align: center;
             width: 20vw;
         }
+        .div2 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
+        .div3 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
+        .div4 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
+        .div5 hero-content
+        {
+            font: normal 600 1.2vw Roboto1;
+            color: #fff
+        }
         .secure
         {
-            border: 0.2vw solid red;
             color: rgb(212, 72, 255);
-            font: normal 500 1.5vw Roboto2;
+            font: normal 500 1.2vw Roboto2;
             letter-spacing: 0.15vw;
         }
         .div2_image
@@ -226,6 +256,24 @@
             border: 0.2vw solid wheat;
             height: 12vw;
             margin: 2vw 0 0 0;
+        }
+        .simple
+        {
+            color: rgb(212, 72, 255);
+            font: normal 500 1.2vw Roboto2;
+            letter-spacing: 0.15vw;
+        }
+        .goal_oriented
+        {
+            color: rgb(212, 72, 255);
+            font: normal 500 1.2vw Roboto2;
+            letter-spacing: 0.15vw;
+        }
+        .insightful
+        {
+            color: rgb(212, 72, 255);
+            font: normal 500 1.2vw Roboto2;
+            letter-spacing: 0.15vw;
         }
         .div3
         {
@@ -267,6 +315,7 @@
             text-align: center;
             color: #000;
             position: relative;
+            width: 100;
         }
         .social-media
         {
@@ -274,10 +323,13 @@
             border-top: 2px solid #000;
             border-bottom: 2px solid #000;
             padding: 10px 0;
+            width: 100%;
+            margin: 0;
         }
         .social-media a 
         {
             margin: 0 15px;
+            padding: 0 15px;
         }
         .social-media img 
         {
@@ -289,10 +341,12 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            font: normal 600 0.8vw Roboto1;
         }
         .footer-links .column 
         {
             margin: 10px;
+            justify-content: center;
         }
         .footer-links a
         {
@@ -303,7 +357,12 @@
         }
         .footer-links a:hover 
         {
-            text-decoration: underline;
+            text-decoration: none;
+        }
+        .border-top
+        {
+            padding: 0;
+            margin: 0;
         }
     
    
