@@ -32,13 +32,25 @@
 
     .sign_box {
         text-align: center;
-        width: 5vw;
+        width: 8vw;
         margin: 0;
         padding: 0;
     }
 
-    .signin_button {
+    .signin_settings {
         height: 2.5vw;
+    }
+
+    .signin_button,
+    .signup_button {
+        Color: #fff;
+        background-color: #8a23ee;
+        padding: 0.5vw 1vw;
+        border: none;
+        border-radius: 2vw;
+        text-decoration: none;
+        font-family: Roboto2;
+        font-size: 1.2vw;
     }
 
     .settings_box {
@@ -63,6 +75,7 @@
         text-align: center;
         padding: 0;
         margin: 0;
+        position: relative;
     }
 
     .nav_links {
@@ -70,6 +83,42 @@
         font: normal normal 1.5vw Coolvetica2;
         letter-spacing: 0.1vw;
         text-decoration: none;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #000;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropdown-content a {
+        color: rgb(117, 111, 222);
+        padding: 8px 12px;
+        text-decoration: none;
+        display: block;
+        font: normal 600 1vw Roboto1;
+    }
+
+    /* Show dropdown on hover */
+    .nav_link_box:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Styling for dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: none;
+    }
+
+    .arrow_down_icon {
+        height: 1vw;
+        margin: 0 0 0 0.2vw;
+        vertical-align: middle;
     }
 
     /* Login Box */
