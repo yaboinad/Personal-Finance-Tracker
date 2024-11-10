@@ -1,0 +1,184 @@
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        background: linear-gradient(180deg, #c7a3f5, #7b42d2);
+        overflow-x: hidden;
+    }
+
+    .table1 {
+        background: rgb(0, 0, 0);
+        border-bottom: 0.2vw solid rgb(138, 36, 234);
+        height: 4.2vw;
+        margin: -0.44vw -0.44vw 0 -0.44vw;
+        width: 98.75vw;
+    }
+
+    .Financia_box {
+        text-align: center;
+        width: 21.5vw;
+    }
+
+    .Financia {
+        font: normal normal 800 2.5vw Roboto3;
+        letter-spacing: 0.2vw;
+        text-decoration: none;
+        color: rgb(138, 36, 234);
+    }
+
+    .e-pay_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .e-pay_button {
+        height: 3vw;
+    }
+
+    .notification_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .notification_button {
+        height: 2.5vw;
+    }
+
+    .account_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .account {
+        height: 2.5vw;
+    }
+
+    .settings_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .settings_button {
+        height: 2.5vw;
+    }
+
+    .table2 {
+        background-color: black;
+        height: 3vw;
+        margin: 0 -0.44vw 0 -0.44vw;
+        width: 98.75vw;
+    }
+
+    .td_select {
+        text-align: center;
+        width: 23vw;
+    }
+
+    .select_nav {
+        border: none;
+        background-color: black;
+        color: rgb(146, 141, 241);
+        font: normal 600 1.3vw/3vw Roboto1;
+        text-align: center;
+        width: 10vw;
+    }
+
+    .social_media_logo {
+        color: aliceblue;
+        height: 4vw;
+        padding: 0 1vw;
+    }
+
+    .div6 {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        padding: 2vw 0;
+    }
+
+    .table5 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2vw 0;
+    }
+
+    .footer_link_box {
+        text-align: center;
+        padding: 1vw 3vw;
+    }
+
+    .footer_links {
+        color: black;
+        font: normal 200 1.4vw Coolvetica2;
+        text-decoration: none;
+    }
+
+    .copyright {
+        font: normal 500 1.3vw Verdana;
+        text-align: center;
+        padding: 1vw 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #ffcbf2;
+    }
+
+    section {
+        margin-bottom: 3rem;
+        padding: 1rem;
+        border-radius: 10px;
+        background: #450774;
+    }
+
+    .chart {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .chart-btn {
+        background: #6a1b9a;
+        border: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        cursor: pointer;
+    }
+
+    .overview-container,
+    .expenses-container,
+    .history-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+    }
+
+    th,
+    td {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #6a1b9a;
+    }
+
+    .date-range input,
+    .date-range select {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        border: 1px solid #6a1b9a;
+        background: #35005f;
+        color: #fff;
+    }
+
+    .date-range {
+        text-align: center;
+    }
+}
