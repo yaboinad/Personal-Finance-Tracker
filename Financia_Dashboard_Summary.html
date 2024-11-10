@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="Financia CSS/Financia_Dashboard_Summary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Financia - Dashboard</title>
+    <style>
+        @media screen and (max-width: 1920px) and (max-height: 1080px) {
+            body {
+                background-image: url(Financia_Dashboard_Overview_Images/Dashboard\Overview\Background.png), url(Financia_Dashboard_Overview_Images/Dashboard\ Overview\ Background\ 2.png), url(Financia_Dashboard_Overview_Images/Dashboard\ Overview\ Background\ 3.png);
+                background-color: rgb(199, 163, 245);
+                background-repeat: no-repeat, no-repeat, no-repeat;
+                background-position-y: top, center, bottom;
+                background-size: 1800px 1600px, 1800px 1900px, 1800px 2340px;
+                width: 95vw;
+            }
+        }
+
+        @font-face
+
+        /*This will be served as font style for our website*/
+            {
+            font-family: Roboto1;
+            src: url(Financia_Fonts/roboto/Roboto-Light.ttf);
+        }
+
+        @font-face
+
+        /*This will be served as font style for our website*/
+            {
+            font-family: Roboto2;
+            src: url(Financia_Fonts/roboto/Roboto-Bold.ttf);
+        }
+
+        @font-face
+
+        /*This will be served as font style for our website*/
+            {
+            font-family: Roboto3;
+            src: url(Financia_Fonts/roboto/Roboto-Black.ttf);
+        }
+
+        @font-face {
+            font-family: Coolvetica1;
+            src: url(Financia_Fonts/coolvetica/coolvetica\ condensed\ rg.otf);
+        }
+
+        @font-face {
+            font-family: Coolvetica2;
+            src: url(Financia_Fonts/coolvetica/coolvetica\ rg.otf);
+        }
+    </style>
+</head>
+<body>
+    <table class="table1">
+        <tr>
+            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td style="width: 50vw;"></td>
+            <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
+            <td class="notification_box"><img class="notification_button" src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
+            <td class="account_box"><img class="account" src="Financia_Home_Page_Images/Account profile.png" alt=""></td>
+            <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png" alt=""></td>
+        </tr>
+    </table>
+    <table class="table2">
+        <form action="">
+            <tr>
+                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
+                    <option value="Dashboard">Dashboard</option>
+                    <option value="Overview">Overview</option>
+                    <option value="Summary">Summary</option>
+                </select></td>
+                <td class="td_select"><select class="select_nav" name="History" id="History_category">
+                    <option value="History">History</option>
+                    <option value="Activity Log">Activity Log</option>
+                    <option value="Transactions">Transactions</option>
+                    <option value="Previous Reports">Previous Reports</option>
+                </select></td>
+                <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
+                    <option value="Progress">Progress</option>
+                    <option value="Goals">Goals</option>
+                    <option value="Achievements">Achievements</option>
+                    <option value="Milestone">Milestone</option>
+                </select></td>
+                <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
+                    <option value="Insights">Insights</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Recommendations">Recommendations</option>
+                    <option value="Reports">Reports</option>
+                </select></td>
+                <td class="td_select"><select class="select_nav" name="News" id="News_category">
+                    <option value="News">News</option>
+                    <option value="Latest Updates">Latest Updates</option>
+                    <option value="Announcements">Announcements</option>
+                </select></td>
+            </tr>
+        </form>
+    </table>
+    <div class="summary-title">
+        <h1>Summary</h1>
+    </div>
+    <div class="summary-container">
+        <div class="filter-bar">
+            <select>
+                <option>Starting Month & Year</option>
+            </select>
+            <select>
+                <option>End Month & Year</option>
+            </select>
+            <button>✔</button>
+            <button>✖</button>
+        </div>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Income</th>
+                    <th>Expenses</th>
+                    <th>Net Profit</th>
+                    <th>Savings</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>June 2024</td>
+                    <td>₱ 5000</td>
+                    <td>₱ 3200</td>
+                    <td>₱ 1800</td>
+                    <td>₱ 500</td>
+                    <td>₱ 1,300</td>
+                </tr>
+                <tr>
+                    <td>July 2024</td>
+                    <td>₱ 4800</td>
+                    <td>₱ 3100</td>
+                    <td>₱ 1700</td>
+                    <td>₱ 400</td>
+                    <td>₱ 2,600</td>
+                </tr>
+                <tr>
+                    <td>August 2024</td>
+                    <td>₱ 5200</td>
+                    <td>₱ 3400</td>
+                    <td>₱ 1800</td>
+                    <td>₱ 600</td>
+                    <td>₱ 3,800</td>
+                </tr>
+                <tr>
+                    <td>September 2024</td>
+                    <td>₱ 5100</td>
+                    <td>₱ 3300</td>
+                    <td>₱ 1800</td>
+                    <td>₱ 700</td>
+                    <td>₱ 4,900</td>
+                </tr>
+                <tr>
+                    <td>October 2024</td>
+                    <td>₱ 5400</td>
+                    <td>₱ 3500</td>
+                    <td>₱ 1900</td>
+                    <td>₱ 600</td>
+                    <td>₱ 6,200</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="summary-title">
+        <h1>Overall Summary</h1>
+    </div>
+    <div class="summary-container">
+        <div class="filter-bar">
+            <select>
+                <option>Starting Month</option>
+            </select>
+            <select>
+                <option>End Month</option>
+            </select>
+            <button>✔</button>
+            <button>✖</button>
+        </div>
+        <div class="content">
+            <div class="box">
+                <h3>Total Income : ₱ 25,500</h3>
+                <p>Over the five months, the total income from all sources amounted to ₱25,500. This includes salary, freelance work, investment returns, or other income sources.</p>
+            </div>
+            <div class="box">
+                <h3>Total Net Profit : ₱ 9,000</h3>
+                <p>The net profit, which is the difference between income and expenses, totaled ₱9,000 across the five months. This shows that after covering all expenses, there was a healthy margin of leftover income each month.</p>
+            </div>
+            <div class="box">
+                <h3>Total Expenses : ₱ 16,500</h3>
+                <p>Total expenses for the five-month period were ₱16,500, which includes fixed and variable costs such as rent, utilities, groceries, and discretionary spending.</p>
+            </div>
+            <div class="box">
+                <h3>Total Savings : ₱ 2,800</h3>
+                <p>From the net profit, a total of ₱2,800 was set aside in savings over the five months, showing disciplined savings behavior.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+        <div class="summary-title">
+            <h1>Goal Summary</h1>
+        </div>
+        <div class="summary-container">
+            <div class="filter-bar">
+            <select>
+                    <option>Goal Status</option>
+            </select>
+            <input type="text" class="search-bar" placeholder="Search goals..." />
+            <select>
+                <option>Clear Goal</option>
+            </select>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Edit</th>
+                        <th>Goal Name</th>
+                        <th>Target</th>
+                        <th>Deadline</th>
+                        <th>Progress</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>
+                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                        </td>
+                        <td>Emergency Fund</td>
+                        <td>₱ 5,000</td>
+                        <td>2024-12-31</td>
+                        <td>60%</td>
+                      
+                        <td>
+                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                        </td>
+                        <td>Credit Card Repayment</td>
+                        <td>₱ 2,000</td>
+                        <td>2024-11-15</td>
+                        <td>45%</td>
+                        <td>
+                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                        </td>
+                        <td>Vacation Savings</td>
+                        <td>₱ 3,000</td>
+                        <td>2025-06-01</td>
+                        <td>25%</td>
+                        <td>
+                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                        </td>
+                        <td>Retirement Fund</td>
+                        <td>₱ 10,000</td>
+                        <td>2025-12-31</td>
+                        <td>35%</td>
+                        <td>
+                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                        </td>
+                        <td>Side Hustle Income</td>
+                        <td>₱ 1,500</td>
+                        <td>2024-12-01</td>
+                        <td>50%</td>
+                        <td>
+                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    <div>
+        <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 39vw;">
+        <hr style="width: 10vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
+        <hr style="width: 3vw; border: 0.1vw solid black; margin: -0.2vw 0 0 53.5vw;">
+        <hr style="width: 38.2vw; border: 0.1vw solid black; margin: -0.2vw 0 0 60vw;">
+    </div>
+    <div class="div6">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/facebook.png" alt="">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/twitter.png" alt="">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/tiktok.png" alt="">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/instagram.png" alt="">
+    </div>
+    <table class="table5">
+        <tr>
+            <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
+        </tr>
+        <tr>
+            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
+        </tr>
+        <tr>
+            <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
+        </tr>
+    </table>
+    <br>
+    <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
+    <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
+
+</body>
+</html>
