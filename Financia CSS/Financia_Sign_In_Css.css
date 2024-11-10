@@ -1,15 +1,16 @@
-
-
-
 @media screen and (max-width: 1920px) and (max-height: 1080px)
     {
+        table
+        {
+            border-collapse: collapse;
+        }
         .table1
         {
             background: rgb(0, 0, 0);
             border-bottom: 0.2vw solid  rgb(138, 36, 234);
             height: 4.2vw;
             margin: -0.44vw -0.44vw 0 -0.44vw;
-            width: 100vw;
+            width: 98.75vw;
         }
         .Financia_box
         {
@@ -23,25 +24,30 @@
             text-decoration: none;
             color: rgb(138, 36, 234);
         }
+        .e-pay_box
+        {
+            text-align: center;
+            width: 5vw;
+        }
+        .e-pay_button
+        {
+            height: 3vw;
+        }
         .notification_box
         {
             text-align: center;
             width: 5vw;
-            margin: 0;
-            padding: 0;
         }
         .notification_button
         {
             height: 2.5vw;
         }
-        .sign_box
+        .account_box
         {
             text-align: center;
             width: 5vw;
-            margin: 0;
-            padding: 0;
         }
-        .signin_button
+        .account
         {
             height: 2.5vw;
         }
@@ -49,8 +55,6 @@
         {
             text-align: center;
             width: 5vw;
-            margin: 0;
-            padding: 0;
         }
         .settings_button
         {
@@ -61,21 +65,58 @@
             background-color: black;
             height: 3vw;
             margin: 0 -0.44vw 0 -0.44vw;
-            width: 100vw;
+            width: 98.75vw;
         }
-        .nav_link_box
+        .td_select
         {
             text-align: center;
-            padding: 0;
-            margin: 0;
+            width: 23vw;
         }
-        .nav_links
+        .select_nav
         {
-            color: rgb(117, 111, 222);
-            font: normal normal 1.5vw Coolvetica2;
-            letter-spacing: 0.1vw;
-            text-decoration: none;
+            border: none;
+            background-color: black;
+            color: rgb(146, 141, 241);
+            font: normal 600 1.3vw/3vw Roboto1;
+            text-align: center;
+            width: 10vw;
         }
+        .table3
+        {
+            border-radius: 2vw;
+            background-color: rgb(136, 130, 241);
+            margin: 7vw 0 0 35vw;
+            width: 27.5vw;
+        }
+        .labelbox_table3
+        {
+            
+        }
+        .label_table3
+        {
+            font: normal 600 1.4vw/2.5vw Roboto1;
+            letter-spacing: 0.1vw;
+            margin: 0 0 0 2vw;
+        }
+        .input_table3
+        {
+            border-radius: 0.6vw;
+            border: 0.2vw solid rgb(151, 139, 248);
+            font: normal 400 1.1vw Arial;
+            letter-spacing: 0.1vw;
+            height: 2.2vw;
+            text-indent: 1vw;
+            margin: 0 0 0 2vw;
+            width: 22vw;
+        }
+        .new_user
+        {
+            color: rgb(80, 9, 134);
+            font: normal 500 1.2vw Roboto2;
+            text-decoration: none;
+            margin: 0 2.5vw 0 3.5vw;
+        }
+
 
            /* Login Box */
 
@@ -237,3 +278,75 @@ label {
 {
     text-decoration: underline;
 }
+
+        .forgot_password
+        {
+            color: rgb(80, 9, 134);
+            font: normal 500 1.2vw Roboto2;
+            text-decoration: none;
+            margin: 0 2vw 0 2.5vw;
+        }
+        .log_in
+        {
+            color: rgb(4, 0, 8);
+            background-color: rgb(222, 214, 242);
+            border: none;
+            border-radius: 2.5vw;
+            font: normal 200 1.1vw Coolvetica2;
+            letter-spacing: 0.1vw;
+            height: 2.5vw;
+            margin: 2vw 0 0 2vw;
+            width: 9vw;
+        }
+        .google
+        {
+            height: 3vw;
+            margin: -4vw 0 0.45vw 12.5vw;
+        }
+        .sign_in
+        {
+            color: rgb(4, 0, 8);
+            background-color: rgb(222, 214, 242);
+            border-radius: 2.5vw;
+            border: none;
+            font: normal 200 0.9vw Coolvetica2;
+            letter-spacing: 0.1vw;
+            margin: 0 0 0 1.6vw;
+            text-indent: 2vw;
+            height: 2.5vw;
+            width: 13vw;
+        }
+        .social_media_logo
+        {
+            color: aliceblue;
+            height: 4vw;
+            padding: 0 1vw;
+        }
+        .div6
+        {
+            margin: -2vw 0 0 8vw;
+            text-align: center;
+        }
+        .table5
+        {
+            margin: 3vw 0 0 17vw;
+        }
+        .footer_link_box
+        {
+            text-align: center;
+            padding: 2vw 5vw;
+        }
+        .footer_links
+        {
+            color: black;
+            font: normal 200 1.4vw Coolvetica2;
+            letter-spacing: 0.15vw;
+            text-decoration: none;
+        }
+        .copyright
+        {
+            font: normal 500 1.3vw Verdana;
+            text-indent: 37vw;
+        }
+    }
+

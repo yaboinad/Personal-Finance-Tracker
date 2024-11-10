@@ -1,12 +1,16 @@
 @media screen and (max-width: 1920px) and (max-height: 1080px)
     {
+        table
+        {
+            border-collapse: collapse;
+        }
         .table1
         {
             background: rgb(0, 0, 0);
             border-bottom: 0.2vw solid  rgb(138, 36, 234);
             height: 4.2vw;
             margin: -0.44vw -0.44vw 0 -0.44vw;
-            width: 100vw;
+            width: 98.75vw;
         }
         .Financia_box
         {
@@ -20,45 +24,37 @@
             text-decoration: none;
             color: rgb(138, 36, 234);
         }
+        .e-pay_box
+        {
+            text-align: center;
+            width: 5vw;
+        }
+        .e-pay_button
+        {
+            height: 3vw;
+        }
         .notification_box
         {
             text-align: center;
             width: 5vw;
-            margin: 0;
-            padding: 0;
         }
         .notification_button
         {
             height: 2.5vw;
         }
-        .sign_box
+        .account_box
         {
             text-align: center;
             width: 5vw;
-            margin: 0;
-            padding: 0;
         }
-        .signin_settings
+        .account
         {
             height: 2.5vw;
-        }
-        .signin_button, .signup_button
-        {
-            Color: #fff;
-            background-color: #8a23ee;
-            padding: 0.5vw 1vw;
-            border: none;
-            border-radius: 2vw;
-            text-decoration: none;
-            font-family: Roboto2;
-            font-size: 1.2vw;
         }
         .settings_box
         {
             text-align: center;
             width: 5vw;
-            margin: 0;
-            padding: 0;
         }
         .settings_button
         {
@@ -69,26 +65,21 @@
             background-color: black;
             height: 3vw;
             margin: 0 -0.44vw 0 -0.44vw;
-            width: 100vw;
+            width: 98.75vw;
         }
-        .nav_link_box
+        .td_select
         {
             text-align: center;
-            padding: 0;
-            margin: 0;
+            width: 23vw;
         }
-        .nav_links
+        .select_nav
         {
-            color: rgb(117, 111, 222);
-            font: normal normal 1.5vw Coolvetica2;
-            letter-spacing: 0.1vw;
-            text-decoration: none;
-        }
-        .arrow_down_icon
-        {
-            height: 1vw;
-            margin: 0 0 0 0.2vw;
-            vertical-align:middle;
+            border: none;
+            background-color: black;
+            color: rgb(146, 141, 241);
+            font: normal 600 1.3vw/3vw Roboto1;
+            text-align: center;
+            width: 10vw;
         }
         .table3
         {
@@ -117,13 +108,13 @@
         }
         #Learn_more
         {
-            border: none;
+            border: 0.3vw double rgb(110, 77, 211);
             background-color: rgba(236, 234, 243, 1);
             border-radius: 2vw;
             font: normal 200 1.7vw Coolvetica2;
             letter-spacing: 0.2vw;
             height: 3.7vw;
-            width: 17vw;
+            width: 15vw;
         }
         .image1
         {
@@ -214,7 +205,7 @@
             display: inline-flex;
             height: 30vw;
             max-height: 30vw;
-            margin: 10vw 4vw 0 4vw;
+            margin: 12vw 4vw 0 4vw;
         }
         .div2
         {
@@ -225,55 +216,54 @@
             text-align: center;
             width: 20vw;
         }
-        .div2 hero-content
-        {
-            font: normal 600 1.2vw Roboto1;
-            color: #fff
-        }
-        .div3 hero-content
-        {
-            font: normal 600 1.2vw Roboto1;
-            color: #fff
-        }
-        .div4 hero-content
-        {
-            font: normal 600 1.2vw Roboto1;
-            color: #fff
-        }
-        .div5 hero-content
-        {
-            font: normal 600 1.2vw Roboto1;
-            color: #fff
-        }
         .secure
         {
             color: rgb(212, 72, 255);
-            font: normal 500 1.2vw Roboto2;
-            letter-spacing: 0.15vw;
-        }
-        .div2_image
-        {
-            border: 0.2vw solid wheat;
-            height: 12vw;
-            margin: 2vw 0 0 0;
-        }
-        .simple
-        {
-            color: rgb(212, 72, 255);
-            font: normal 500 1.2vw Roboto2;
+            font: normal 500 1.6vw Roboto2;
+            padding: 0 0 1vw 0;
             letter-spacing: 0.15vw;
         }
         .goal_oriented
         {
-            color: rgb(212, 72, 255);
-            font: normal 500 1.2vw Roboto2;
+            color: rgb(254, 63, 152);
+            font: normal 500 1.6vw Roboto2;
             letter-spacing: 0.15vw;
+            padding: 0 0 1vw 0;
+        }
+        .simple
+        {
+            color: rgb(251, 223, 184);
+            font: normal 500 1.6vw Roboto2;
+            letter-spacing: 0.15vw;
+            padding: 0 0 1vw 0;
         }
         .insightful
         {
-            color: rgb(212, 72, 255);
-            font: normal 500 1.2vw Roboto2;
+            color: rgb(248, 237, 136);
+            font: normal 500 1.6vw Roboto2;
             letter-spacing: 0.15vw;
+            padding: 0 0 1vw 0;
+        }
+        .div2_image
+        {
+            height: 13vw;
+            margin: 2vw 0 0 0;
+        }
+        .div1_link_box
+        {
+            background-color: rgb(74, 4, 100);
+            box-sizing: border-box;
+            border-radius: 0 0 1.5vw 1.5vw;
+            border: 0.2vw solid purple;
+            height: 4.6vw;
+            margin: -1vw 0 0 0;
+        }
+        .div1_links
+        {
+            color: rgb(213, 169, 242);
+            font: normal 200 1.1vw Roboto2;
+            letter-spacing: 0.1vw;
+            text-decoration: none;
         }
         .div3
         {
@@ -305,64 +295,36 @@
             text-align: center;
             width: 20vw;
         }
-    }
-        .footer
+        .social_media_logo
         {
-            background-color: #d4a5ff;
-            background-size: cover;
-            background: no-repeat fixed;
-            padding: 20px;
+            color: aliceblue;
+            height: 4vw;
+            padding: 0 1vw;
+        }
+        .div6
+        {
+            margin: -2vw;
             text-align: center;
-            color: #000;
-            position: relative;
-            width: 100;
         }
-        .social-media
+        .table5
         {
-            margin-bottom: 20px;
-            border-top: 2px solid #000;
-            border-bottom: 2px solid #000;
-            padding: 10px 0;
-            width: 100%;
-            margin: 0;
+            margin: 3vw 0 0 17vw;
         }
-        .social-media a 
+        .footer_link_box
         {
-            margin: 0 15px;
-            padding: 0 15px;
+            text-align: center;
+            padding: 2vw 5vw;
         }
-        .social-media img 
+        .footer_links
         {
-            width: 30px;
-            height: 30px;
-        }
-        .footer-links 
-        {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            font: normal 600 0.8vw Roboto1;
-        }
-        .footer-links .column 
-        {
-            margin: 10px;
-            justify-content: center;
-        }
-        .footer-links a
-        {
-            color: #000;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-        }
-        .footer-links a:hover 
-        {
+            color: black;
+            font: normal 200 1.4vw Coolvetica2;
+            letter-spacing: 0.15vw;
             text-decoration: none;
         }
-        .border-top
+        .copyright
         {
-            padding: 0;
-            margin: 0;
+            font: normal 500 1.3vw Verdana;
+            text-align: center;
         }
-    
-   
+    }
