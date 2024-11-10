@@ -57,61 +57,49 @@
     <table class="table1">
         <tr>
             <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
-            <td style="width: 75vw;"></td>
+            <td style="width: 50vw;"></td>
+            <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
             <td class="notification_box"><img class="notification_button"
                     src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
-            <td class="sign_box"><a href="Financia_Sign_In.html" class="signin_button">Sign In</a></td>
-            <td class="sign_box"><a href="Financia_Sign_Up.html" class="signup_button">Sign Up</a></td>
-            <td class="sign_box"><img class="signin_settings" src="Financia_Home_Page_Images/Sign in logo.png" alt="">
+            <td class="account_box"><img class="account" src="Financia_Home_Page_Images/Account profile.png" alt="">
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
                     alt=""></td>
         </tr>
     </table>
     <table class="table2">
-        <tr>
-            <td style="width: 5vw;"></td>
-            <td class="nav_link_box"><a class="nav_links" href="">Dashboard <img class="arrow_down_icon"
-                        src="Financia_Home_Page_Images/arrow down icon.png" alt=""></a>
-                <div class="dropdown-content">
-                    <a href="#">Overview</a>
-                    <a href="#">Summary </a>
-                </div>
-            </td>
-
-            <td class="nav_link_box"><a class="nav_links" href="">History <img class="arrow_down_icon"
-                        src="Financia_Home_Page_Images/arrow down icon.png" alt=""></a>
-                <div class="dropdown-content">
-                    <a href="#">Activity Log</a>
-                    <a href="#">Transactions</a>
-                    <a href="#">Previous Reports</a>
-                </div>
-            </td>
-            <td class="nav_link_box"><a class="nav_links" href="">Progress <img class="arrow_down_icon"
-                        src="Financia_Home_Page_Images/arrow down icon.png" alt=""></a>
-                <div class="dropdown-content">
-                    <a href="#">Goals</a>
-                    <a href="#">Achievements</a>
-                    <a href="#">Milestone</a>
-                </div>
-            </td>
-            <td class="nav_link_box"><a class="nav_links" href="">Insights <img class="arrow_down_icon"
-                        src="Financia_Home_Page_Images/arrow down icon.png" alt=""></a>
-                <div class="dropdown-content">
-                    <a href="#">Data Analysis</a>
-                    <a href="#">Recommendations</a>
-                    <a href="#">Reports</a>
-                </div>
-            </td>
-            <td class="nav_link_box"><a class="nav_links" href="">News <img class="arrow_down_icon"
-                        src="Financia_Home_Page_Images/arrow down icon.png" alt=""></a>
-                <div class="dropdown-content">
-                    <a href="#">Latest Updates</a>
-                    <a href="#">Announcements</a>
-                </div>
-            </td>
-            <td style="width: 5vw;"></td>
-        </tr>
+        <form action="">
+            <tr>
+                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
+                        <option value="Dashboard">Dashboard</option>
+                        <option value="Overview">Overview</option>
+                        <option value="Summary">Summary</option>
+                    </select></td>
+                <td class="td_select"><select class="select_nav" name="History" id="History_category">
+                        <option value="History">History</option>
+                        <option value="Activity Log">Activity Log</option>
+                        <option value="Transactions">Transactions</option>
+                        <option value="Previous Reports">Previous Reports</option>
+                    </select></td>
+                <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
+                        <option value="Progress">Progress</option>
+                        <option value="Goals">Goals</option>
+                        <option value="Achievements">Achievements</option>
+                        <option value="Milestone">Milestone</option>
+                    </select></td>
+                <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
+                        <option value="Insights">Insights</option>
+                        <option value="Data Analysis">Data Analysis</option>
+                        <option value="Recommendations">Recommendations</option>
+                        <option value="Reports">Reports</option>
+                    </select></td>
+                <td class="td_select"><select class="select_nav" name="News" id="News_category">
+                        <option value="News">News</option>
+                        <option value="Latest Updates">Latest Updates</option>
+                        <option value="Announcements">Announcements</option>
+                    </select></td>
+            </tr>
+        </form>
     </table>
 
     <div class="login-container">
@@ -155,156 +143,119 @@
                                 <select id="country" required>
                                     <option value="">Select Country</option>
                                     <option value="AF">Afghanistan</option>
-                                        <option value="AL">Albania</option>
-                                        <option value="DZ">Algeria</option>
-                                        <option value="AS">American Samoa</option>
-                                        <option value="AD">Andorra</option>
-                                        <option value="AO">Angola</option>
-                                        <option value="AI">Anguilla</option>
-                                        <option value="AQ">Antarctica</option>
-                                        <option value="AG">Antigua and Barbuda</option>
-                                        <option value="AR">Argentina</option>
-                                        <option value="AM">Armenia</option>
-                                        <option value="AW">Aruba</option>
-                                        <option value="AU">Australia</option>
-                                        <option value="AT">Austria</option>
-                                        <option value="AZ">Azerbaijan</option>
-                                        <option value="BS">Bahamas</option>
-                                        <option value="BH">Bahrain</option>
-                                        <option value="BD">Bangladesh</option>
-                                        <option value="BB">Barbados</option>
-                                        <option value="BY">Belarus</option>
-                                        <option value="BE">Belgium</option>
-                                        <option value="BZ">Belize</option>
-                                        <option value="BJ">Benin</option>
-                                        <option value="BM">Bermuda</option>
-                                        <option value="BT">Bhutan</option>
-                                        <option value="BO">Bolivia</option>
-                                        <option value="BA">Bosnia and Herzegovina</option>
-                                        <option value="BW">Botswana</option>
-                                        <option value="BR">Brazil</option>
+                                    <option value="AL">Albania</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="AS">American Samoa</option>
+                                    <option value="AD">Andorra</option>
+                                    <option value="AO">Angola</option>
+                                    <option value="AI">Anguilla</option>
+                                    <option value="AQ">Antarctica</option>
+                                    <option value="AG">Antigua and Barbuda</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="AM">Armenia</option>
+                                    <option value="AW">Aruba</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="AZ">Azerbaijan</option>
+                                    <option value="BS">Bahamas</option>
+                                    <option value="BH">Bahrain</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="BB">Barbados</option>
+                                    <option value="BY">Belarus</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="BZ">Belize</option>
+                                    <option value="BJ">Benin</option>
+                                    <option value="BM">Bermuda</option>
+                                    <option value="BT">Bhutan</option>
+                                    <option value="BO">Bolivia</option>
+                                    <option value="BA">Bosnia and Herzegovina</option>
+                                    <option value="BW">Botswana</option>
+                                    <option value="BR">Brazil</option>
 
                                 </select>
                             </div>
 
-                                    </select>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                            </select>
+        </div>
+        </td>
+        </tr>
+        </table>
 
 
-                    <tr>
-                        <td style="padding: 0px;">
-                            <hr class="divider">
-
-                        </td>
-                    </tr>
-                    <tr class="input-group">
-                        <td><label for="confirm-password">Confirm Password</label></td>
-                    </tr>
-                    <tr class="input-group">
-                        <td>
-
-                            <div class="input-container">
-                                <i class="fa fa-lock icon"></i>
-                                <input type="password" id="confirm-password" placeholder="Password" required>
-                                <i class="fa fa-eye toggle-icon"></i>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="input-group">
-                        <td colspan="2">
-                            <input type="checkbox" id="terms" required>
-                            <label for="terms">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
-
-                            <button class="login-btn" type="button"
-                                onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=openid%20profile%20email&state=YOUR_STATE';">Sign
-                                Up with Google</button>
-
-                        </td>
-                    </tr>
-                </table>
-    
+        <tr>
+            <td style="padding: 0px;">
                 <hr class="divider">
-    
-                <div class="button-container">
-                    <button class="login-btn">Sign Up</button>
-                    <div class="vertical-line"></div>
-                    <button class="google-btn">Sign Up with Google</button>
+
+            </td>
+        </tr>
+        <tr class="input-group">
+            <td><label for="confirm-password">Confirm Password</label></td>
+        </tr>
+        <tr class="input-group">
+            <td>
+
+                <div class="input-container">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" id="confirm-password" placeholder="Password" required>
+                    <i class="fa fa-eye toggle-icon"></i>
                 </div>
-            </form>
+            </td>
+        </tr>
+        <tr class="input-group">
+            <td colspan="2">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
+
+                <button class="login-btn" type="button"
+                    onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=openid%20profile%20email&state=YOUR_STATE';">Sign
+                    Up with Google</button>
+
+            </td>
+        </tr>
+        </table>
+
+        <hr class="divider">
+
+        <div class="button-container">
+            <button class="login-btn">Sign Up</button>
+            <div class="vertical-line"></div>
+            <button class="google-btn">Sign Up with Google</button>
         </div>
+        </form>
     </div>
-
-    
-    <footer class="footer">
-        <div class="social-media">
-            <a href="#"><img src="" alt="Facebook"></a>
-            <a href="#"><img src="" alt="X"></a>
-            <a href="#"><img src="" alt="TikTok"></a>
-            <a href="#"><img src="" alt="Instagram"></a>
-        </div>
-        <div class="footer-links">
-            <div class="column">
-                <a href="#">About Us</a>
-                <a href="#">User Support</a>
-                <a href="#">Contact Us</a>
-            </div>
-        <div class="footer-links">
-            <div class="column">
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Security Information</a>
-            </div>
-        <div class="footer-links">
-            <div class="column">
-                <a href="#">Market Insights</a>
-                <a href="#">Budget Planner</a>
-                <a href="#">Savings Tracker</a>
-            </div>    
-        </div>
-    </footer>
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <div class="footer-links">
-                <div class="column">
-                    <a href="#">About Us</a>
-                    <a href="#">User Support</a>
-                    <a href="#">Contact Us</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <div class="column">
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Security Information</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <div class="column">
-                    <a href="#">Market Insights</a>
-                    <a href="#">Budget Planner</a>
-                    <a href="#">Savings Tracker</a>
-                </div>
-            </div>
-
+    </div>
+    <div>
+        <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 39vw;">
+        <hr style="width: 10vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
+        <hr style="width: 3vw; border: 0.1vw solid black; margin: -0.2vw 0 0 53.5vw;">
+        <hr style="width: 38.2vw; border: 0.1vw solid black; margin: -0.2vw 0 0 60vw;">
+    </div>
+    <div class="div6">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/facebook.png" alt="">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/twitter.png" alt="">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/tiktok.png" alt="">
+        <img class="social_media_logo" src="Financia_Home_Page_Images/instagram.png" alt="">
+    </div>
+    <table class="table5">
+        <tr>
+            <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
+        </tr>
+        <tr>
+            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
+        </tr>
+        <tr>
+            <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
+        </tr>
+    </table>
+    <br>
+    <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
+    <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
 
 </body>
 

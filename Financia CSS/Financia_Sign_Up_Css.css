@@ -19,6 +19,15 @@
         color: rgb(138, 36, 234);
     }
 
+    .e-pay_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .e-pay_button {
+        height: 3vw;
+    }
+
     .notification_box {
         text-align: center;
         width: 5vw;
@@ -30,27 +39,13 @@
         height: 2.5vw;
     }
 
-    .sign_box {
+    .account_box {
         text-align: center;
-        width: 8vw;
-        margin: 0;
-        padding: 0;
+        width: 5vw;
     }
 
-    .signin_settings {
+    .account {
         height: 2.5vw;
-    }
-
-    .signin_button,
-    .signup_button {
-        Color: #fff;
-        background-color: #8a23ee;
-        padding: 0.5vw 1vw;
-        border: none;
-        border-radius: 2vw;
-        text-decoration: none;
-        font-family: Roboto2;
-        font-size: 1.2vw;
     }
 
     .settings_box {
@@ -71,378 +66,182 @@
         width: 100vw;
     }
 
-    .nav_link_box {
+    .td_select {
         text-align: center;
-        margin: 0;
-        padding: 0;
-        position: relative;
+        width: 23vw;
     }
 
-    .nav_links {
-        color: rgb(117, 111, 222);
-        font: normal normal 1.5vw Coolvetica2;
-        letter-spacing: 0.1vw;
-        text-decoration: none;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #000;
-        min-width: 150px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        padding: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+    .select_nav {
+        border: none;
+        background-color: black;
+        color: rgb(146, 141, 241);
+        font: normal 600 1.3vw/3vw Roboto1;
+        text-align: center;
+        width: 10vw;
     }
 
 
-/* Center the login-container */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Full viewport height for vertical centering */
-}
-
-/* Styling for login-box */
-.login-box {
-    background-color: #b490ff; /* Adjusted background color */
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: 400px; /* Adjust width as needed */
-    text-align: center;
-    border-bottom: 40px solid black;
-}
-
-/* Input group and container styles */
-.input-group td {
-    padding-bottom: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 5px;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-.input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.input-container .icon {
-    position: absolute;
-    left: 10px; /* Adjust as needed */
-    color: #888;
-    font-size: 16px;
-}
-
-.input-container input,
-.input-container select {
-    width: 100%;
-    padding: 10px 10px 10px 35px; /* Padding for icon space */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-/* Icon inside input */
-.input-container .icon {
-    position: absolute;
-    left: 10px;
-    color: #888;
-    font-size: 16px;
-}
-
-/* Clear icon */
-.clear-icon {
-    position: absolute;
-    right: 10px;
-    color: #888;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Toggle (eye) icon */
-.toggle-icon {
-    position: absolute;
-    right: 10px;
-    color: #888;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Button container and button styling */
-.button-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.divider {
-    border: none;
-    border-bottom: 4px solid black;
-    width: 100%;
-    margin: 20px 0;
-}
-
-.vertical-line {
-    width: 2px;
-    height: 20px;
-    background-color: black;
-    margin: 0 10px;
-}
-
-.login-btn, .google-btn {
-    background-color: #fff;
-    color: #000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 40%; /* Adjust width for button */
-}
-
-.google-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    color: #000;
-}
-
-.google-btn::before {
-    content: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg');
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.footer
-{
-    background-color: #d4a5ff;
-    background-size: cover;
-    background: no-repeat fixed;
-    padding: 20px;
-    text-align: center;
-    color: #000;
-    position: relative;
-}
-.social-media
-{
-    margin-bottom: 20px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
-    padding: 10px 0;
-}
-.social-media a 
-{
-    margin: 0 15px;
-}
-.social-media img 
-{
-    width: 30px;
-    height: 30px;
-}
-.footer-links 
-{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.footer-links .column 
-{
-    margin: 10px;
-}
-.footer-links a
-{
-    color: #000;
-    .dropdown-content a {
-        color: rgb(117, 111, 222);
-        padding: 8px 12px;
-        text-decoration: none;
-        display: block;
-        font: normal 600 1vw Roboto1;
-    }
-
-    /* Show dropdown on hover */
-    .nav_link_box:hover .dropdown-content {
-        display: block;
-    }
-
-    /* Styling for dropdown links on hover */
-    .dropdown-content a:hover {
-        background-color: none;
-    }
-
-    .arrow_down_icon {
-        height: 1vw;
-        margin: 0 0 0 0.2vw;
-        vertical-align: middle;
-    }
-
-    /* Login Box */
-
+    /* Center the login-container */
     .login-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 80vh;
-        /* Full viewport height */
+        /* Full viewport height for vertical centering */
     }
-}
 
-.login-box {
-    background-color: #9f69ff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: 300px;
-    text-align: center;
-    border-bottom: 40px solid black;
-    padding-bottom: 10px;
+    /* Styling for login-box */
+    .login-box {
+        background-color: #b490ff;
+        /* Adjusted background color */
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        width: 400px;
+        /* Adjust width as needed */
+        text-align: center;
+        border-bottom: 40px solid black;
+    }
 
-}
+    /* Input group and container styles */
+    .input-group td {
+        padding-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 5px;
+        text-align: left;
+        font-size: 0.9rem;
+    }
 
-/* Table Display */
-.login-box table {
-    width: 100%;
-    margin-bottom: 10px;
-}
+    .input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 
-/* Input Group */
-.input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
+    .input-container .icon {
+        position: absolute;
+        left: 10px;
+        /* Adjust as needed */
+        color: #888;
+        font-size: 16px;
+    }
 
-.input-container i {
-    position: absolute;
-    left: 10px;
-    /* Adjust the position as needed */
-    color: #888;
-    font-size: 16px;
-}
+    .input-container input,
+    .input-container select {
+        width: 100%;
+        padding: 10px 10px 10px 35px;
+        /* Padding for icon space */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
 
-.input-container input {
-    width: 100%;
-    padding: 10px 10px 10px 35px;
-    /* Add left padding to avoid overlap with the icon */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
+    /* Icon inside input */
+    .input-container .icon {
+        position: absolute;
+        left: 10px;
+        color: #888;
+        font-size: 16px;
+    }
 
-label {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 10px 10px 10px;
-}
+    /* Clear icon */
+    .clear-icon {
+        position: absolute;
+        right: 10px;
+        color: #888;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
-/* Full-width black horizontal line (divider) */
-.divider {
-    border: none;
-    border-bottom: 4px solid black;
-    /* Creates the black line */
-    width: 100%;
-    /* Full width */
-    margin: 20px 0px;
-    /* Adds space above and below the line */
-}
+    /* Toggle (eye) icon */
+    .toggle-icon {
+        position: absolute;
+        right: 10px;
+        color: #888;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
-/* Links style */
+    /* Button container and button styling */
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
 
+    .divider {
+        border: none;
+        border-bottom: 4px solid black;
+        width: 100%;
+        margin: 20px 0;
+    }
 
+    .vertical-line {
+        width: 2px;
+        height: 20px;
+        background-color: black;
+        margin: 0 10px;
+    }
 
+    .login-btn,
+    .google-btn {
+        background-color: #fff;
+        color: #000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 40%;
+        /* Adjust width for button */
+    }
 
-.vertical-line {
-    width: 2px;
-    /* Width of the vertical line */
-    height: 20px;
-    /* Height of the vertical line */
-    background-color: rgb(0, 0, 0);
-    /* Color of the vertical line */
-    margin: 0px 10px;
-    /* Margin on left and right */
-    padding-top: 0%;
-}
+    .google-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        color: #000;
+    }
 
-.login-btn {
-    background-color: #fff;
-    color: #000;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    width: 40%;
-    cursor: pointer;
-    font-size: 16px;
-}
+    .google-btn::before {
+        content: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg');
+        display: inline-block;
+        margin-right: 10px;
+    }
 
-.login-btn:hover {
-    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-}
+    .social_media_logo {
+        color: aliceblue;
+        height: 4vw;
+        padding: 0 1vw;
+    }
 
-.footer {
-    background-color: #d4a5ff;
-    text-align: center;
-    padding: 20px 0;
-}
+    .div6 {
+        margin: -2vw;
+        text-align: center;
+    }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    .table5 {
+        margin: 3vw 0 0 17vw;
+    }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
+    .footer_link_box {
+        text-align: center;
+        padding: 2vw 5vw;
+    }
 
-.social-links a {
-    color: #333;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
+    .footer_links {
+        color: black;
+        font: normal 200 1.4vw Coolvetica2;
+        letter-spacing: 0.15vw;
+        text-decoration: none;
+    }
 
-.social-links a:hover {
-    color: #1877f2;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    font: normal 600 0.8vw Roboto1;
-}
-
-.column {
-    margin: 10px;
-}
-
-.footer-links a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-    margin: 5px 0;
-}
-
-.footer-links a:hover 
-{
-    text-decoration: underline;
-}
-
-
-
-.footer-links a:hover {
-    text-decoration: none;
+    .copyright {
+        font: normal 500 1.3vw Verdana;
+        text-align: center;
+    }
 
 }
