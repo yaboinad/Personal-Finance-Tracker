@@ -71,51 +71,43 @@
         <div class="login-box">
             <form action="">
                 <table>
-                    <tr class="input-group" >
+                    <tr class="input-group">
                         <td><label for="email">Email / Username</label></td>
+                        <td><label for="birthdate">Birthdate</label></td>
                     </tr>
-                    <table>
-                        <tr class="input-group">
-                            <td>
-                                <div class="input-container">
-                                    <i class="fa-regular fa-user"></i>
-                                    <input type="text" id="username" placeholder="Email / Username" required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="input-group">
-                            <td><label for="password">Password</label></td>
-                        </tr>
-                        <tr class="input-group">
-                            <td>
-                                <div class="input-container">
-                                    <i class="fa fa-lock"></i>
-                                    <input type="password" id="password" placeholder="Password" required>
-                                    <i class="fa-hide"></i>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="input-group">
-                            <td><label for="birthdate">Birthdate</label></td>
-                        </tr>
-                        <tr class="input-group">
-                            <td>
-                                <div class="input-container">
-                                    <i class="fa-regular fa-calendar-days"></i>
-                                    <input type="date" id="birthdate" required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="input-group">
-                            <td><label for="country">Country</label></td>
-                        </tr>
-                        <tr class="input-group">
-                            <td>
-                                <div class="input-container">
-                                    <i class="fa-regular fa-globe"></i>
-                                    <select id="country" required>
-                                        <option value="">Select Country</option>
-                                        <option value="AF">Afghanistan</option>
+                    <tr class="input-group">
+                        <td>
+                            <div class="input-container">
+                                <i class="fa-regular fa-user icon"></i>
+                                <input type="text" id="username" placeholder="Email / Username" required>
+                                <i class="fa fa-times-circle clear-icon"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fa-regular fa-calendar-days icon"></i>
+                                <input type="date" id="birthdate" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="input-group">
+                        <td><label for="password">Password</label></td>
+                        <td><label for="country">Country</label></td>
+                    </tr>
+                    <tr class="input-group">
+                        <td>
+                            <div class="input-container">
+                                <i class="fa fa-lock icon"></i>
+                                <input type="password" id="password" placeholder="Password" required>
+                                <i class="fa fa-eye toggle-icon"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fa-regular fa-globe icon"></i>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="AF">Afghanistan</option>
                                         <option value="AL">Albania</option>
                                         <option value="DZ">Algeria</option>
                                         <option value="AS">American Samoa</option>
@@ -144,29 +136,67 @@
                                         <option value="BA">Bosnia and Herzegovina</option>
                                         <option value="BW">Botswana</option>
                                         <option value="BR">Brazil</option>
-                                    </select>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                    
-                   
-                    <tr>
-                        <td style="padding: 0px;"><hr class="divider"></td> 
+                                </select>
+                            </div>
+                        </td>
                     </tr>
-
-                    <tr>
-                        <td><input class="login-btn" type="submit" value="Sign Up"></td>
+                    <tr class="input-group">
+                        <td><label for="confirm-password">Confirm Password</label></td>
                     </tr>
-                    <tr>
+                    <tr class="input-group">
                         <td>
-                            <button class="login-btn" type="button" onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=openid%20profile%20email&state=YOUR_STATE';">Sign Up with Google</button>
+                            <div class="input-container">
+                                <i class="fa fa-lock icon"></i>
+                                <input type="password" id="confirm-password" placeholder="Password" required>
+                                <i class="fa fa-eye toggle-icon"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="input-group">
+                        <td colspan="2">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
                         </td>
                     </tr>
                 </table>
+    
+                <hr class="divider">
+    
+                <div class="button-container">
+                    <button class="login-btn">Sign Up</button>
+                    <div class="vertical-line"></div>
+                    <button class="google-btn">Sign Up with Google</button>
+                </div>
             </form>
         </div>
     </div>
-
+    
+    <footer class="footer">
+        <div class="social-media">
+            <a href="#"><img src="" alt="Facebook"></a>
+            <a href="#"><img src="" alt="X"></a>
+            <a href="#"><img src="" alt="TikTok"></a>
+            <a href="#"><img src="" alt="Instagram"></a>
+        </div>
+        <div class="footer-links">
+            <div class="column">
+                <a href="#">About Us</a>
+                <a href="#">User Support</a>
+                <a href="#">Contact Us</a>
+            </div>
+        <div class="footer-links">
+            <div class="column">
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Security Information</a>
+            </div>
+        <div class="footer-links">
+            <div class="column">
+                <a href="#">Market Insights</a>
+                <a href="#">Budget Planner</a>
+                <a href="#">Savings Tracker</a>
+            </div>    
+        </div>
+    </footer>
 </body>
 </html>
