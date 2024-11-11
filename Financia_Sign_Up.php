@@ -1,3 +1,33 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $birthdate = $_POST['birthdate'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confrimPassword'];
+    $country = $_POST['country'];
+
+    if ($password !== $confrimPassword) {
+        echo "<p stlyle='color: red;'>Passwords do not match.</p>";
+        exit;
+    }
+}
+
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+$_SESSION['user'] = [
+    'username' => $username,
+    'birthdate' => $birthdate,
+    'password' => $password,
+    'country' => $country
+];
+
+echo "<p style='color: green;'>Registration succesful! Welcome, $username.</p>";
+echo "<a href='login.php'>Go to Login Page</a>";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -11,11 +41,10 @@
     <title>Financia - Sign Up</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
-            body 
-            {
+            body {
                 background: url(Financia_Sign_Up_Images/sign\ in\ background.png) no-repeat scroll;
                 background-color: rgb(199, 163, 245);
-                background-size: 1800px 900px;
+                background-size: 1920px 890px;
                 width: 90vw;
             }
         }
@@ -129,7 +158,7 @@
 
     <div class="login-container">
         <div class="login-box">
-            <form action="">
+            <form action="signup.php" method="post">
                 <table>
                     <tr class="input-group">
                         <td><label for="email">Email / Username</label></td>
@@ -139,14 +168,15 @@
                         <td>
                             <div class="input-container">
                                 <i class="fa-regular fa-user icon"></i>
-                                <input type="text" id="username" placeholder="Email / Username" required>
+                                <input type="text" id="username" name="username" placeholder="Email / Username"
+                                    required>
                                 <i class="fa fa-times-circle clear-icon"></i>
                             </div>
                         </td>
                         <td>
                             <div class="input-container">
                                 <i class="fa-regular fa-calendar-days icon"></i>
-                                <input type="date" id="birthdate" required>
+                                <input type="date" id="birthdate" name="birthdate" required>
                             </div>
                         </td>
                     </tr>
@@ -158,45 +188,26 @@
                         <td>
                             <div class="input-container">
                                 <i class="fa fa-lock icon"></i>
-                                <input type="password" id="password" placeholder="Password" required>
+                                <input type="password" id="password" name="password" placeholder="Password" required>
                                 <i class="fa fa-eye toggle-icon"></i>
                             </div>
                         </td>
                         <td>
                             <div class="input-container">
                                 <i class="fa-regular fa-globe icon"></i>
-                                <select id="country" required>
+                                <select id="country" name="country" required>
                                     <option value="">Select Country</option>
-                                    <option value="AF">Afghanistan</option>
-                                    <option value="AL">Albania</option>
-                                    <option value="DZ">Algeria</option>
-                                    <option value="AS">American Samoa</option>
-                                    <option value="AD">Andorra</option>
-                                    <option value="AO">Angola</option>
-                                    <option value="AI">Anguilla</option>
-                                    <option value="AQ">Antarctica</option>
-                                    <option value="AG">Antigua and Barbuda</option>
-                                    <option value="AR">Argentina</option>
-                                    <option value="AM">Armenia</option>
-                                    <option value="AW">Aruba</option>
                                     <option value="AU">Australia</option>
                                     <option value="AT">Austria</option>
-                                    <option value="AZ">Azerbaijan</option>
-                                    <option value="BS">Bahamas</option>
                                     <option value="BH">Bahrain</option>
                                     <option value="BD">Bangladesh</option>
-                                    <option value="BB">Barbados</option>
-                                    <option value="BY">Belarus</option>
                                     <option value="BE">Belgium</option>
-                                    <option value="BZ">Belize</option>
-                                    <option value="BJ">Benin</option>
-                                    <option value="BM">Bermuda</option>
-                                    <option value="BT">Bhutan</option>
+                                    <option value="BJ">Berlin</option>
                                     <option value="BO">Bolivia</option>
-                                    <option value="BA">Bosnia and Herzegovina</option>
-                                    <option value="BW">Botswana</option>
                                     <option value="BR">Brazil</option>
-
+                                    <option value="PH">Phillipines</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
                                 </select>
                             </div>
 
@@ -206,13 +217,6 @@
         </tr>
         </table>
 
-
-        <tr>
-            <td style="padding: 0px;">
-                <hr class="divider">
-
-            </td>
-        </tr>
         <tr class="input-group">
             <td><label for="confirm-password">Confirm Password</label></td>
         </tr>
@@ -221,19 +225,15 @@
 
                 <div class="input-container">
                     <i class="fa fa-lock icon"></i>
-                    <input type="password" id="confirm-password" placeholder="Password" required>
+                    <input type="password" id="confirm-password" name="confirmPassword" placeholder="Password" required>
                     <i class="fa fa-eye toggle-icon"></i>
                 </div>
             </td>
         </tr>
         <tr class="input-group">
             <td colspan="2">
-                <input type="checkbox" id="terms" required>
+                <input type="checkbox" id="terms" name="terms" required>
                 <label for="terms">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
-
-                <button class="login-btn" type="button"
-                    onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=openid%20profile%20email&state=YOUR_STATE';">Sign
-                    Up with Google</button>
 
             </td>
         </tr>
@@ -242,9 +242,9 @@
         <hr class="divider">
 
         <div class="button-container">
-            <button class="login-btn">Sign Up</button>
+            <button type="submit" class="login-btn">Sign Up</button>
             <div class="vertical-line"></div>
-            <button class="google-btn">Sign Up with Google</button>
+            <button type="button" class="google-btn">Sign Up with Google</button>
         </div>
         </form>
     </div>
