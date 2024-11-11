@@ -1,18 +1,11 @@
 @media screen and (max-width: 1920px) and (max-height: 1080px) {
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        background: linear-gradient(180deg, #c7a3f5, #7b42d2);
-        overflow-x: hidden;
-    }
 
     .table1 {
         background: rgb(0, 0, 0);
         border-bottom: 0.2vw solid rgb(138, 36, 234);
         height: 4.2vw;
         margin: -0.44vw -0.44vw 0 -0.44vw;
-        width: 98.75vw;
+        width: 99.16vw;
     }
 
     .Financia_box {
@@ -98,7 +91,7 @@
         background-color: black;
         height: 3vw;
         margin: 0 -0.44vw 0 -0.44vw;
-        width: 98.75vw;
+        width: 99.16vw;
     }
 
     .td_select {

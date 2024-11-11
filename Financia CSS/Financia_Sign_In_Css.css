@@ -8,7 +8,7 @@
         border-bottom: 0.2vw solid rgb(138, 36, 234);
         height: 4.2vw;
         margin: -0.44vw -0.44vw 0 -0.44vw;
-        width: 98.75vw;
+        width: 99.16vw;
     }
 
     .Financia_box {
@@ -94,7 +94,7 @@
         background-color: black;
         height: 3vw;
         margin: 0 -0.44vw 0 -0.44vw;
-        width: 98.75vw;
+        width: 99.16vw;
     }
 
     .td_select {
@@ -117,6 +117,7 @@
         margin: 7vw 0 0 35vw;
         width: 27.5vw;
     }
+
     .label_table3 {
         font: normal 600 1.4vw/2.5vw Roboto1;
         letter-spacing: 0.1vw;
@@ -140,12 +141,14 @@
         text-decoration: none;
         margin: 0 2.5vw 0 3.5vw;
     }
+
     .login-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 80vh;
     }
+
     .login-box {
         background-color: #9f69ff;
         padding: 30px;
@@ -156,6 +159,7 @@
         position: relative;
         border-bottom: solid black 40px;
     }
+
     .input-group {
         display: flex;
         flex-direction: column;
@@ -189,6 +193,7 @@
         right: 10px;
         left: auto;
     }
+
     label {
         font-family: Arial, Helvetica, sans-serif;
         margin-bottom: 5px;
@@ -203,6 +208,7 @@
         width: 100%;
         margin: 20px 0;
     }
+
     .links {
         display: flex;
         justify-content: space-between;
@@ -224,6 +230,7 @@
         height: 20px;
         background-color: black;
     }
+
     .login-btn {
         background-color: white;
         color: black;
