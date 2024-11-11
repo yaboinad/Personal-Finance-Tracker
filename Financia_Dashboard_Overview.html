@@ -63,7 +63,28 @@
             <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
             <td class="notification_box"><img class="notification_button"
                     src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
-            <td class="account_box"><img class="account" src="Financia_Home_Page_Images/Account profile.png" alt="">
+            <td class="account_box">
+                <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="Financia_Sign_In.html">Sign In</a>
+                    <a href="Financia_Sign_Up.html">Sign Up</a>
+                    <script>
+                        const accountBtn = document.getElementById('accountBtn');
+                        const dropdownMenu = document.getElementById('dropdownMenu');
+
+                        // Toggle the dropdown menu visibility
+                        accountBtn.addEventListener('click', () => {
+                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        });
+
+                        // Close the dropdown if clicked outside
+                        window.addEventListener('click', (event) => {
+                            if (event.target !== accountBtn && !dropdownMenu.contains(event.target)) {
+                                dropdownMenu.style.display = 'none';
+                            }
+                        });
+                    </script>
+                </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
                     alt=""></td>
@@ -72,11 +93,22 @@
     <table class="table2">
         <form action="">
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
+                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category"
+                        onchange="navigateToPage()">
                         <option value="Dashboard">Dashboard</option>
-                        <option value="Overview">Overview</option>
-                        <option value="Summary">Summary</option>
+                        <option value="Financia_Dashboard_Overview.html">Overview</option>
+                        <option value="Financia_Dashboard_Summary.html">Summary</option>
                     </select></td>
+                <script>
+                    function navigateToPage() {
+                        const selectElement = document.getElementById("Dashboard_category");
+                        const selectedValue = selectElement.value;
+
+                        if (selectedValue) {
+                            window.location.href = selectedValue;
+                        }
+                    }
+                </script>
                 <td class="td_select"><select class="select_nav" name="History" id="History_category">
                         <option value="History">History</option>
                         <option value="Activity Log">Activity Log</option>

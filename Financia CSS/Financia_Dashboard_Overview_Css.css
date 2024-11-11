@@ -50,6 +50,37 @@
         width: 5vw;
     }
 
+    #accountBtn {
+        cursor: pointer;
+    }
+
+    /* Dropdown Menu Styling */
+    .dropdown-menu {
+        position: absolute;
+        top: 60px;
+        /* Adjust based on the size of the account icon */
+        right: 0;
+        background-color: #450774;
+        border-radius: 8px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        min-width: 150px;
+    }
+
+    .dropdown-menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        transition: background 0.3s;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #6a1b9a;
+    }
+
     .account {
         height: 2.5vw;
     }
@@ -124,19 +155,33 @@
     h2 {
         text-align: center;
         margin-bottom: 1rem;
-        color: #ffcbf2;
+        color: #f9f9f9;
     }
 
     section {
+        backdrop-filter: blur(10px);
+        background-color: rgb(255, 255, 255, 0.027);
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
+
+        display: block;
+        justify-self: center;
+        align-items: center;
+
+        margin-top: 3rem;
         margin-bottom: 3rem;
         padding: 1rem;
         border-radius: 10px;
-        background: #450774;
     }
 
     .chart {
         text-align: center;
         margin-bottom: 1rem;
+    }
+
+    .chart p {
+        color: #f9f9f9;
     }
 
     .chart-btn {
@@ -167,6 +212,7 @@
         padding: 1rem;
         text-align: center;
         border-bottom: 1px solid #6a1b9a;
+        color: #f9f9f9;
     }
 
     .date-range input,

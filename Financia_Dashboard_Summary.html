@@ -56,48 +56,83 @@
         }
     </style>
 </head>
+
 <body>
     <table class="table1">
         <tr>
             <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
             <td style="width: 50vw;"></td>
             <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
-            <td class="notification_box"><img class="notification_button" src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
-            <td class="account_box"><img class="account" src="Financia_Home_Page_Images/Account profile.png" alt=""></td>
-            <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png" alt=""></td>
+            <td class="notification_box"><img class="notification_button"
+                    src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
+            <td class="account_box">
+                <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="Financia_Sign_In.html">Sign In</a>
+                    <a href="Financia_Sign_Up.html">Sign Up</a>
+                    <script>
+                        const accountBtn = document.getElementById('accountBtn');
+                        const dropdownMenu = document.getElementById('dropdownMenu');
+
+                        // Toggle the dropdown menu visibility
+                        accountBtn.addEventListener('click', () => {
+                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        });
+
+                        // Close the dropdown if clicked outside
+                        window.addEventListener('click', (event) => {
+                            if (event.target !== accountBtn && !dropdownMenu.contains(event.target)) {
+                                dropdownMenu.style.display = 'none';
+                            }
+                        });
+                    </script>
+            </td>
+            <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
+                    alt=""></td>
         </tr>
     </table>
     <table class="table2">
         <form action="">
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
-                    <option value="Dashboard">Dashboard</option>
-                    <option value="Overview">Overview</option>
-                    <option value="Summary">Summary</option>
-                </select></td>
+                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category"
+                        onchange="navigateToPage()">
+                        <option value="Dashboard">Dashboard</option>
+                        <option value="Financia_Dashboard_Overview.html">Overview</option>
+                        <option value="Financia_Dashboard_Summary.html">Summary</option>
+                    </select></td>
+                <script>
+                    function navigateToPage() {
+                        const selectElement = document.getElementById("Dashboard_category");
+                        const selectedValue = selectElement.value;
+
+                        if (selectedValue) {
+                            window.location.href = selectedValue;
+                        }
+                    }
+                </script>
                 <td class="td_select"><select class="select_nav" name="History" id="History_category">
-                    <option value="History">History</option>
-                    <option value="Activity Log">Activity Log</option>
-                    <option value="Transactions">Transactions</option>
-                    <option value="Previous Reports">Previous Reports</option>
-                </select></td>
+                        <option value="History">History</option>
+                        <option value="Activity Log">Activity Log</option>
+                        <option value="Transactions">Transactions</option>
+                        <option value="Previous Reports">Previous Reports</option>
+                    </select></td>
                 <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
-                    <option value="Progress">Progress</option>
-                    <option value="Goals">Goals</option>
-                    <option value="Achievements">Achievements</option>
-                    <option value="Milestone">Milestone</option>
-                </select></td>
+                        <option value="Progress">Progress</option>
+                        <option value="Goals">Goals</option>
+                        <option value="Achievements">Achievements</option>
+                        <option value="Milestone">Milestone</option>
+                    </select></td>
                 <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
-                    <option value="Insights">Insights</option>
-                    <option value="Data Analysis">Data Analysis</option>
-                    <option value="Recommendations">Recommendations</option>
-                    <option value="Reports">Reports</option>
-                </select></td>
+                        <option value="Insights">Insights</option>
+                        <option value="Data Analysis">Data Analysis</option>
+                        <option value="Recommendations">Recommendations</option>
+                        <option value="Reports">Reports</option>
+                    </select></td>
                 <td class="td_select"><select class="select_nav" name="News" id="News_category">
-                    <option value="News">News</option>
-                    <option value="Latest Updates">Latest Updates</option>
-                    <option value="Announcements">Announcements</option>
-                </select></td>
+                        <option value="News">News</option>
+                        <option value="Latest Updates">Latest Updates</option>
+                        <option value="Announcements">Announcements</option>
+                    </select></td>
             </tr>
         </form>
     </table>
@@ -170,7 +205,7 @@
             </tbody>
         </table>
     </div>
-    
+
     <div class="summary-title">
         <h1>Overall Summary</h1>
     </div>
@@ -188,116 +223,121 @@
         <div class="content">
             <div class="box">
                 <h3>Total Income : ₱ 25,500</h3>
-                <p>Over the five months, the total income from all sources amounted to ₱25,500. This includes salary, freelance work, investment returns, or other income sources.</p>
+                <p>Over the five months, the total income from all sources amounted to ₱25,500. This includes salary,
+                    freelance work, investment returns, or other income sources.</p>
             </div>
             <div class="box">
                 <h3>Total Net Profit : ₱ 9,000</h3>
-                <p>The net profit, which is the difference between income and expenses, totaled ₱9,000 across the five months. This shows that after covering all expenses, there was a healthy margin of leftover income each month.</p>
+                <p>The net profit, which is the difference between income and expenses, totaled ₱9,000 across the five
+                    months. This shows that after covering all expenses, there was a healthy margin of leftover income
+                    each month.</p>
             </div>
             <div class="box">
                 <h3>Total Expenses : ₱ 16,500</h3>
-                <p>Total expenses for the five-month period were ₱16,500, which includes fixed and variable costs such as rent, utilities, groceries, and discretionary spending.</p>
+                <p>Total expenses for the five-month period were ₱16,500, which includes fixed and variable costs such
+                    as rent, utilities, groceries, and discretionary spending.</p>
             </div>
             <div class="box">
                 <h3>Total Savings : ₱ 2,800</h3>
-                <p>From the net profit, a total of ₱2,800 was set aside in savings over the five months, showing disciplined savings behavior.</p>
+                <p>From the net profit, a total of ₱2,800 was set aside in savings over the five months, showing
+                    disciplined savings behavior.</p>
             </div>
         </div>
     </div>
     </div>
 
-        <div class="summary-title">
-            <h1>Goal Summary</h1>
-        </div>
-        <div class="summary-container">
-            <div class="filter-bar">
+    <div class="summary-title">
+        <h1>Goal Summary</h1>
+    </div>
+    <div class="summary-container">
+        <div class="filter-bar">
             <select>
-                    <option>Goal Status</option>
+                <option>Goal Status</option>
             </select>
             <input type="text" class="search-bar" placeholder="Search goals..." />
             <select>
                 <option>Clear Goal</option>
             </select>
-            </div>
-            <table class="summary-table">
-                <thead>
-                    <tr>
-                        <th>Edit</th>
-                        <th>Goal Name</th>
-                        <th>Target</th>
-                        <th>Deadline</th>
-                        <th>Progress</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        
-                        <td>
-                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
-                        </td>
-                        <td>Emergency Fund</td>
-                        <td>₱ 5,000</td>
-                        <td>2024-12-31</td>
-                        <td>60%</td>
-                      
-                        <td>
-                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
-                        </td>
-                        <td>Credit Card Repayment</td>
-                        <td>₱ 2,000</td>
-                        <td>2024-11-15</td>
-                        <td>45%</td>
-                        <td>
-                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
-                        </td>
-                        <td>Vacation Savings</td>
-                        <td>₱ 3,000</td>
-                        <td>2025-06-01</td>
-                        <td>25%</td>
-                        <td>
-                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
-                        </td>
-                        <td>Retirement Fund</td>
-                        <td>₱ 10,000</td>
-                        <td>2025-12-31</td>
-                        <td>35%</td>
-                        <td>
-                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
-                        </td>
-                        <td>Side Hustle Income</td>
-                        <td>₱ 1,500</td>
-                        <td>2024-12-01</td>
-                        <td>50%</td>
-                        <td>
-                            <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Edit</th>
+                    <th>Goal Name</th>
+                    <th>Target</th>
+                    <th>Deadline</th>
+                    <th>Progress</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td>
+                        <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                    </td>
+                    <td>Emergency Fund</td>
+                    <td>₱ 5,000</td>
+                    <td>2024-12-31</td>
+                    <td>60%</td>
+
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                    </td>
+                    <td>Credit Card Repayment</td>
+                    <td>₱ 2,000</td>
+                    <td>2024-11-15</td>
+                    <td>45%</td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                    </td>
+                    <td>Vacation Savings</td>
+                    <td>₱ 3,000</td>
+                    <td>2025-06-01</td>
+                    <td>25%</td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                    </td>
+                    <td>Retirement Fund</td>
+                    <td>₱ 10,000</td>
+                    <td>2025-12-31</td>
+                    <td>35%</td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-edit" title="Edit" style="cursor: pointer;"></i>
+                    </td>
+                    <td>Side Hustle Income</td>
+                    <td>₱ 1,500</td>
+                    <td>2024-12-01</td>
+                    <td>50%</td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 39vw;">
@@ -333,4 +373,5 @@
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
 
 </body>
+
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href=""><!--Financia logo not yet available-->
-    <link rel="stylesheet" href="Financia CSS/Financia_Home_Page_Css.css">
-    <title>Financia - Home Page</title>
+    <link rel="stylesheet" href="Financia CSS/Financia_E_Pay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Financia - E - Pay</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
-                background-image: url(Financia_Home_Page_Images/Financia\ Home\ Page\ Background\ 1.png), url(Financia_Home_Page_Images/Financia\ Home\ Page\ Background\ 2.png), url(Financia_Home_Page_Images/Financia\ Home\ Page\ Background\ 3.mdp);
+                background-image: url(Financia_Dashboard_Overview_Images/Dashboard\Overview\Background.png), url(Financia_Dashboard_Overview_Images/Dashboard\ Overview\ Background\ 2.png), url(Financia_Dashboard_Overview_Images/Dashboard\ Overview\ Background\ 3.png);
                 background-color: rgb(199, 163, 245);
                 background-repeat: no-repeat, no-repeat, no-repeat;
                 background-position-y: top, center, bottom;
@@ -68,7 +68,6 @@
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="Financia_Sign_In.html">Sign In</a>
                     <a href="Financia_Sign_Up.html">Sign Up</a>
-                    <a href="Financia-E-Pay.html">E-Pay</a>
                     <script>
                         const accountBtn = document.getElementById('accountBtn');
                         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -92,25 +91,15 @@
                     alt=""></td>
         </tr>
     </table>
+
     <table class="table2">
         <form action="">
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category"
-                        onchange="navigateToPage()">
+                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
                         <option value="Dashboard">Dashboard</option>
-                        <option value="Financia_Dashboard_Overview.html">Overview</option>
-                        <option value="Financia_Dashboard_Summary.html">Summary</option>
+                        <option value="Overview">Overview</option>
+                        <option value="Summary">Summary</option>
                     </select></td>
-                <script>
-                    function navigateToPage() {
-                        const selectElement = document.getElementById("Dashboard_category");
-                        const selectedValue = selectElement.value;
-
-                        if (selectedValue) {
-                            window.location.href = selectedValue;
-                        }
-                    }
-                </script>
                 <td class="td_select"><select class="select_nav" name="History" id="History_category">
                         <option value="History">History</option>
                         <option value="Activity Log">Activity Log</option>
@@ -137,84 +126,163 @@
             </tr>
         </form>
     </table>
+    <div class="summary-title">
+        <h1>E-Pay Overview</h1>
+    </div>
+    <div class="summary-container">
+        <div class="filter-bar">
+            <select>
+                <option>Starting Month & Year</option>
+            </select>
+            <select>
+                <option>End Month & Year</option>
+            </select>
+            <button>✔</button>
+            <button>✖</button>
+        </div>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Transaction Name and Type</th>
+                    <th>Amount Transferred</th>
+                    <th>Payment Options</th>
+                    <th>Description</th>
+                    <th>Date and Time</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Transfer to Bank</td>
+                    <td>₱ 1,500</td>
+                    <td>Online Bank</td>
+                    <td>Monthly Rent</td>
+                    <td>2024-11-01
+                        10:00 AM
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
 
-    <div style="display:inline-flex;">
-        <table class="table3">
-            <tr>
-                <td class="table3_1">Building Financial Freedom Step by Step</td>
-            </tr>
-            <tr>
-                <td class="table3_2">Explore proven strategies and expert guidance to <br> grow and protect your wealth.
-                </td>
-            </tr>
-            <tr>
-                <form action="">
-                    <td class="table3_3"><input type="submit" id="Learn_more" value="Learn More"></td>
-                </form>
-            </tr>
-        </table>
-        <img class="image1" src="Financia_Home_Page_Images/Financia Home Page Image 1.png" alt="">
-    </div>
-    <br>
-    <picture class="circles">
-        <img class="purple_circle1" src="Financia_Home_Page_Images/Purple_circle image.png" alt="">
-        <img class="white_circle1" src="Financia_Home_Page_Images/White_circle image.png" alt="">
-        <img class="black_circle1" src="Financia_Home_Page_Images/Black_circle image.png" alt="">
-    </picture>
-    <br>
-    <div style="display:inline-flex;">
-        <picture class="circles2">
-            <img class="image2" src="Financia_Home_Page_Images/Financia Home Page Image2.png" alt="">
-            <img class="image3" src="Financia_Home_Page_Images/Financia Home Page Image3.png" alt="">
-            <img class="image4" src="Financia_Home_Page_Images/Financia Home Page Image4.png" alt="">
-        </picture>
-        <table class="table4">
-            <tr>
-                <td class="table4_1">Your Money, Your Way: Advanced Finance Tracking Made Simple</td>
-            </tr>
-            <tr>
-                <td class="table4_2">Get real-time reports, saving forecasts, and powerful budget tools. Explore premium
-                    for deeper insights <br> and custom options</td>
-            </tr>
-            <tr>
-                <form action="">
-                    <td class="table4_3box"><input class="table4_3" type="button" id="premium_button"
-                            value="Upgrade to Premium"></td>
-                </form>
-            </tr>
+                <tr>
+                    <td>GCash Transfer</td>
+                    <td>₱ 300</td>
+                    <td>GCash</td>
+                    <td>Mobile Load</td>
+                    <td>2024-11-02
+                        2:30 AM
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Bank Deposit</td>
+                    <td>₱ 10,000</td>
+                    <td>Online Bank</td>
+                    <td>Salary</td>
+                    <td>2024-11-03
+                        9:00 AM
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GCash Payment</td>
+                    <td>₱ 2,500</td>
+                    <td>GCash</td>
+                    <td>Online Purchases</td>
+                    <td>2024-11-04
+                        5:45 AM
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bank Transfer</td>
+                    <td>₱ 5,400</td>
+                    <td>GCash</td>
+                    <td>Loan Repayment</td>
+                    <td>2024-11-05
+                        11:15 AM
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" title="Delete" style="cursor: pointer;"></i>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
-    <div class="div1">
-        <div class="div2">
-            <img class="div2_image" src="Financia_Home_Page_Images/cyber-security.png" alt="">
-            <p class="secure">Secure</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Learn More About Security</a>
+    <div class="summary-title">
+        <h1>E-pay</h1>
+    </div>
+    <div class="epay-container">
+        <div class="epay-card">
+            <div class="top-bar">
+                <select id="transaction-type">
+                    <option>Transfer Money</option>
+                    <option>Pay Bills</option>
+                    <option>Request Money</option>
+                </select>
+                <button class="confirm-btn">Confirm Payment</button>
             </div>
-        </div>
-        <div class="div3">
-            <img class="div2_image" src="Financia_Home_Page_Images/easy.png" alt="">
-            <p class="simple">Simple</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Discover how it works</a>
+
+            <div class="field">
+                <label>Transaction Name:</label>
+                <input type="text" value="Food Delivery">
             </div>
-        </div>
-        <div class="div4">
-            <img class="div2_image" src="Financia_Home_Page_Images/target.png" alt="">
-            <p class="goal_oriented">Goal Oriented</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Start setting goals</a>
+
+            <div class="field">
+                <label>Payment Options:</label>
+                <div class="payment-options">
+                    <button>BDO</button>
+                    <button>GCash</button>
+                </div>
             </div>
-        </div>
-        <div class="div5">
-            <img class="div2_image" src="Financia_Home_Page_Images/insight.png" alt="">
-            <p class="insightful">Insightful</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Read the latest news</a>
+
+            <div class="field">
+                <label>Account Balance:</label>
+                <div class="balance">₱ 100,000</div>
+            </div>
+
+            <div class="field">
+                <label>Recipient Name:</label>
+                <input type="text" value="Mark David">
+            </div>
+
+            <div class="field">
+                <label>Recipient Account Number:</label>
+                <input type="text" value="9421998221">
+            </div>
+
+            <div class="field">
+                <label>Recipient Email:</label>
+                <input type="email" value="markdavid@gmail.com">
+            </div>
+
+            <div class="field">
+                <label>Description (optional):</label>
+                <textarea>This is a comment for my transaction</textarea>
+            </div>
+
+            <div class="field">
+                <label>Date of Payment (optional):</label>
+                <input type="date" value="2024-11-11">
+            </div>
+
+            <div class="field">
+                <label>Pin Code:</label>
+                <input type="password" value="123456">
             </div>
         </div>
     </div>
+
+
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
         <hr style="width: 9vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
@@ -247,6 +315,8 @@
     <br>
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
+    </table>
+
 </body>
 
 </html>
