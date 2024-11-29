@@ -230,7 +230,7 @@ label {
 }
 
         
-}
+
 .footer
 {
     background-color: #d4a5ff;
@@ -348,5 +348,6 @@ label {
             font: normal 500 1.3vw Verdana;
             text-indent: 37vw;
         }
-    }
+    
 
+    }
