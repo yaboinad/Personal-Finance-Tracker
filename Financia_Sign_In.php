@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -130,36 +133,51 @@
 
     =======
     <table class="table3">
-        <form action="">
+        <?php
+        if (isset($_SESSION['login_errors'])) {
+            foreach ($_SESSION['login_errors'] as $error) {
+                echo "<p style='color: red; text-align: center;'>$error</p>";
+            }
+            unset($_SESSION['login_errors']);
+        }
+        ?>
+        <form action="/Personal-Finance-Tracker/backend/process_signin.php" method="POST">
             <tr>
-                <td class="labelbox_table3"><br><label class="label_table3" for="user_email">Email / Username</label>
+                <td class="labelbox_table3">
+                    <br><label class="label_table3" for="username">Email / Username</label>
                 </td>
             </tr>
             <tr>
-                <td><input class="input_table3" type="email" placeholder="Email" autofocus autocomplete="" required>
+                <td>
+                    <input class="input_table3" type="text" name="username" placeholder="Email" autofocus required>
                 </td>
             </tr>
             <tr>
-                <td class="labelbox_table3"><label class="label_table3" for="user_password">Password</label></td>
-            </tr>
-            <tr>
-                <td><input class="input_table3" type="email" placeholder="Password" autocomplete="" required></td>
-            </tr>
-            <tr>
-                <td><br>
-                    <hr style="border: 0.1vw solid black;">
+                <td class="labelbox_table3">
+                    <label class="label_table3" for="password">Password</label>
                 </td>
             </tr>
             <tr>
-                <td><a class="new_user" href="">New User?</a><span style="font: normal 500 1.5vw arial;">|</span><a
-                        class="forgot_password" href="">Forgot Password ?</a></td>
+                <td>
+                    <input class="input_table3" type="password" name="password" placeholder="Password" required>
+                </td>
             </tr>
             <tr>
-                <form action="">
-                    <td><input class="log_in" type="submit" value="Log In"><input class="sign_in" type="submit"
-                            value="Sign in with Google"><img class="google"
-                            src="Financia_Sign_In_Images/google logo.png" alt=""></td>
-                </form>
+                <td><br><hr style="border: 0.1vw solid black;"></td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="new_user" href="Financia_Sign_Up.php">New User?</a>
+                    <span style="font: normal 500 1.5vw arial;">|</span>
+                    <a class="forgot_password" href="">Forgot Password?</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="log_in" type="submit" value="Log In">
+                    <input class="sign_in" type="submit" value="Sign in with Google">
+                    <img class="google" src="Financia_Sign_In_Images/google logo.png" alt="">
+                </td>
             </tr>
             <tr>
                 <td>
