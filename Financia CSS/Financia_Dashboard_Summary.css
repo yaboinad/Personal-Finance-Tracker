@@ -94,7 +94,31 @@
         background-color: black;
         height: 3vw;
         margin: 0 -0.44vw 0 -0.44vw;
-        width: 99.16vw;
+        width: 99.10vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .td_link {
+        text-align: center;
+        width: auto;
+    }
+
+    .nav_link {
+        padding: 0.7vw 1.5vw;
+        margin: 0 5vw;
+        color: rgb(146, 141, 241);
+        font: normal 600 1.3vw Roboto1;
+        text-align: center;
+        text-decoration: none;
+        /*padding: 0.5vw 1vw;*/
+        transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .nav_link:hover {
+        color: rgb(236, 234, 243);
+        text-shadow: 0 0 0.5vw rgb(138, 36, 234);
     }
 
     .td_select {
