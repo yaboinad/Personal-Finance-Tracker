@@ -1,33 +1,6 @@
 <?php
 session_start();
-
-if ($_SERVER["REQUEST METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $birthdate = $_POST['birthdate'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confrimPassword'];
-    $country = $_POST['country'];
-
-    if ($password !== $confrimPassword) {
-        echo "<p stlyle='color: red;'>Passwords do not match.</p>";
-        exit;
-    }
-}
-
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-$_SESSION['user'] = [
-    'username' => $username,
-    'birthdate' => $birthdate,
-    'password' => $password,
-    'country' => $country
-];
-
-echo "<p style='color: green;'>Registration succesful! Welcome, $username.</p>";
-echo "<a href='login.php'>Go to Login Page</a>";
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -158,8 +131,17 @@ echo "<a href='login.php'>Go to Login Page</a>";
 
     <div class="login-container">
         <div class="login-box">
-            <form action="signup.php" method="post">
+            <?php
+            if (isset($_SESSION['signup_errors'])) {
+                foreach ($_SESSION['signup_errors'] as $error) {
+                    echo "<p style='color: red;'>$error</p>";
+                }
+                unset($_SESSION['signup_errors']);
+            }
+            ?>
+            <form action="/Personal-Finance-Tracker/backend/process_signup.php" method="POST">
                 <table>
+                    <!-- First row of inputs -->
                     <tr class="input-group">
                         <td><label for="email">Email / Username</label></td>
                         <td><label for="birthdate">Birthdate</label></td>
@@ -180,74 +162,93 @@ echo "<a href='login.php'>Go to Login Page</a>";
                             </div>
                         </td>
                     </tr>
+   
+                <!-- Password and City row -->
+                <tr class="input-group">
+                    <td><label for="password">Password</label></td>
+                    <td><label for="city">City</label></td>
+                </tr>
+                <tr class="input-group">
+                    <td>
+                        <div class="input-container">
+                            <i class="fa fa-lock icon"></i>
+                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <i class="fa fa-eye toggle-icon"></i>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-container">
+                            <i class="fa-solid fa-location-dot icon"></i>
+                            <select id="city" name="city" required>
+                                <option value="">Select City</option>
+                                <option value="MNL">Manila</option>
+                                <option value="QC">Quezon City</option>
+                                <option value="MKT">Makati</option>
+                                <option value="TGG">Taguig</option>
+                                <option value="PSG">Pasig</option>
+                                <option value="PSY">Pasay</option>
+                                <option value="MND">Mandaluyong</option>
+                                <option value="MRK">Marikina</option>
+                                <option value="CLO">Caloocan</option>
+                                <option value="VLZ">Valenzuela</option>
+                                <option value="PRQ">Parañaque</option>
+                                <option value="MNT">Muntinlupa</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+
+                    <!-- Confirm Password row -->
                     <tr class="input-group">
-                        <td><label for="password">Password</label></td>
-                        <td><label for="country">Country</label></td>
+                        <td><label for="confirm-password">Confirm Password</label></td>
                     </tr>
                     <tr class="input-group">
                         <td>
                             <div class="input-container">
                                 <i class="fa fa-lock icon"></i>
-                                <input type="password" id="password" name="password" placeholder="Password" required>
+                                <input type="password" id="confirm-password" name="confirmPassword" placeholder="Password" required>
                                 <i class="fa fa-eye toggle-icon"></i>
                             </div>
                         </td>
-                        <td>
+                    </tr>
+                    <!-- OTP Input -->
+                    <tr class="input-group">
+                        <td colspan="2" style="text-align: center;">
+                            <label for="otp" style="display: inline-block;">Enter One Time Pin Code</Code></label>
+                        </td>
+                    </tr>
+                    <tr class="input-group">
+                        <td colspan="2">
                             <div class="input-container">
-                                <i class="fa-regular fa-globe icon"></i>
-                                <select id="country" name="country" required>
-                                    <option value="">Select Country</option>
-                                    <option value="AU">Australia</option>
-                                    <option value="AT">Austria</option>
-                                    <option value="BH">Bahrain</option>
-                                    <option value="BD">Bangladesh</option>
-                                    <option value="BE">Belgium</option>
-                                    <option value="BJ">Berlin</option>
-                                    <option value="BO">Bolivia</option>
-                                    <option value="BR">Brazil</option>
-                                    <option value="PH">Phillipines</option>
-                                    <option value="US">United States</option>
-                                    <option value="UK">United Kingdom</option>
-                                </select>
+                                <i class="fa-solid fa-key icon"></i>
+                                <input type="text" id="otp" name="otp" placeholder="Enter 6-digit OTP" 
+                                       maxlength="6" pattern="\d{6}" required>
+                                <button type="button" class="send-otp" id="sendOtpBtn">Send OTP</button>
                             </div>
+                            <div id="otpMessage" style="color: green; margin-top: 5px; display: none;"></div>
+                        </td>
+                    </tr>
+                    <!-- Terms checkbox -->
+                    <tr class="input-group">
+                        <td colspan="2">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
+                        </td>
+                    </tr>
+                </table>
 
-                            </select>
-        </div>
-        </td>
-        </tr>
-        </table>
+                <hr class="divider">
 
-        <tr class="input-group">
-            <td><label for="confirm-password">Confirm Password</label></td>
-        </tr>
-        <tr class="input-group">
-            <td>
-
-                <div class="input-container">
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" id="confirm-password" name="confirmPassword" placeholder="Password" required>
-                    <i class="fa fa-eye toggle-icon"></i>
+                <div class="button-container">
+                    <button type="submit" class="login-btn">Sign Up</button>
+                    <div class="vertical-line"></div>
+                    <button type="button" class="google-btn">
+                        <img src="Financia_Sign_Up_Images/google logo.png" alt="Google">
+                        Sign Up with Google
+                    </button>
                 </div>
-            </td>
-        </tr>
-        <tr class="input-group">
-            <td colspan="2">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I have read and agree to Financia.com's Terms of Service and Privacy Policy</label>
-
-            </td>
-        </tr>
-        </table>
-
-        <hr class="divider">
-
-        <div class="button-container">
-            <button type="submit" class="login-btn">Sign Up</button>
-            <div class="vertical-line"></div>
-            <button type="button" class="google-btn">Sign Up with Google</button>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
     <div>
         <hr style="margin: 11vw 0 0 -1vw; border: 0.1vw solid black; width: 39vw;">
@@ -282,6 +283,94 @@ echo "<a href='login.php'>Go to Login Page</a>";
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendOtpBtn = document.getElementById('sendOtpBtn');
+            const otpMessage = document.getElementById('otpMessage');
+            const emailInput = document.getElementById('username');
+
+            sendOtpBtn.addEventListener('click', function() {
+                const email = emailInput.value;
+                if (!email) {
+                    alert('Please enter your email first');
+                    return;
+                }
+
+                // Disable the button
+                sendOtpBtn.disabled = true;
+                
+                // Fetch OTP from PHP
+                fetch('/Personal-Finance-Tracker/backend/send_otp.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        otpMessage.style.display = 'block';
+                        otpMessage.style.textAlign = 'center';
+                        otpMessage.textContent = `OTP Code: ${data.otp}`;
+                        
+                        // Handle button cooldown
+                        let timeLeft = 30;
+                        sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
+                        
+                        const timer = setInterval(() => {
+                            timeLeft--;
+                            sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
+                            if (timeLeft <= 0) {
+                                clearInterval(timer);
+                                sendOtpBtn.disabled = false;
+                                sendOtpBtn.textContent = 'Send OTP';
+                            }
+                        }, 1000);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Failed to send OTP. Please try again.');
+                        sendOtpBtn.disabled = false;
+                    });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        // Handle password visibility toggle
+        const toggleIcons = document.querySelectorAll('.toggle-icon');
+        toggleIcons.forEach(icon => {
+            icon.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.classList.remove('fa-eye');
+                    this.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    this.classList.remove('fa-eye-slash');
+                    this.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // Handle clear icon functionality
+        const clearIcons = document.querySelectorAll('.clear-icon');
+        const inputs = document.querySelectorAll('input[type="text"]:not([id="otp"])');
+
+        // Show/hide clear icon based on input content
+        inputs.forEach(input => {
+            const clearIcon = input.nextElementSibling;
+            
+            // Initial state
+            clearIcon.style.display = input.value ? 'block' : 'none';
+            
+            // Input event listener
+            input.addEventListener('input', function() {
+                clearIcon.style.display = this.value ? 'block' : 'none';
+            });
+
+            // Clear icon click handler
+            clearIcon.addEventListener('click', function() {
+                input.value = '';
+                this.style.display = 'none';
+                input.focus();
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>
