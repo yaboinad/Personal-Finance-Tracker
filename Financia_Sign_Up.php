@@ -97,37 +97,24 @@ session_start();
     <table class="table2">
         <form action="">
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
-                        <option value="Dashboard">Dashboard</option>
-                        <option value="Overview">Overview</option>
-                        <option value="Summary">Summary</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="History" id="History_category">
-                        <option value="History">History</option>
-                        <option value="Activity Log">Activity Log</option>
-                        <option value="Transactions">Transactions</option>
-                        <option value="Previous Reports">Previous Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
-                        <option value="Progress">Progress</option>
-                        <option value="Goals">Goals</option>
-                        <option value="Achievements">Achievements</option>
-                        <option value="Milestone">Milestone</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
-                        <option value="Insights">Insights</option>
-                        <option value="Data Analysis">Data Analysis</option>
-                        <option value="Recommendations">Recommendations</option>
-                        <option value="Reports">Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="News" id="News_category">
-                        <option value="News">News</option>
-                        <option value="Latest Updates">Latest Updates</option>
-                        <option value="Announcements">Announcements</option>
-                    </select></td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">Summary</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">History</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">Transactions</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">Reports</button>
+                </td>
             </tr>
         </form>
-    </table>
+    </table> 
 
     <div class="login-container">
         <div class="login-box">
@@ -241,11 +228,6 @@ session_start();
 
                 <div class="button-container">
                     <button type="submit" class="login-btn">Sign Up</button>
-                    <div class="vertical-line"></div>
-                    <button type="button" class="google-btn">
-                        <img src="Financia_Sign_Up_Images/google logo.png" alt="Google">
-                        Sign Up with Google
-                    </button>
                 </div>
             </form>
         </div>

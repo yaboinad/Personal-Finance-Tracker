@@ -96,38 +96,24 @@ session_start();
     <table class="table2">
         <form action="">
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
-                        <option value="Dashboard">Dashboard</option>
-                        <option value="Overview">Overview</option>
-                        <option value="Summary">Summary</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="History" id="History_category">
-                        <option value="History">History</option>
-                        <option value="Activity Log">Activity Log</option>
-                        <option value="Transactions">Transactions</option>
-                        <option value="Previous Reports">Previous Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
-                        <option value="Progress">Progress</option>
-                        <option value="Goals">Goals</option>
-                        <option value="Achievements">Achievements</option>
-                        <option value="Milestone">Milestone</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
-                        <option value="Insights">Insights</option>
-                        <option value="Data Analysis">Data Analysis</option>
-                        <option value="Recommendations">Recommendations</option>
-                        <option value="Reports">Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="News" id="News_category">
-                        <option value="News">News</option>
-                        <option value="Latest Updates">Latest Updates</option>
-                        <option value="Announcements">Announcements</option>
-                    </select></td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">Summary</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">History</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">Transactions</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" onclick="window.location.href='#'">Reports</button>
+                </td>
             </tr>
         </form>
     </table>
-
 
 
 
@@ -141,7 +127,7 @@ session_start();
             unset($_SESSION['login_errors']);
         }
         ?>
-        <form action="/Personal-Finance-Tracker/backend/process_signin.php" method="POST">
+        <form action="/Personal-Finance-Tracker/backend/process_signin.php" method="POST" style="text-align: center;">
             <tr>
                 <td class="labelbox_table3">
                     <br><label class="label_table3" for="username">Email / Username</label>
@@ -163,26 +149,23 @@ session_start();
                 </td>
             </tr>
             <tr>
-                <td><br><hr style="border: 0.1vw solid black;"></td>
+                <td><br><hr style="border: 0.1vw solid black; width: 100%; margin: 0 auto;"></td>
             </tr>
             <tr>
-                <td>
+                <td style="text-align: center;">
                     <a class="new_user" href="Financia_Sign_Up.php">New User?</a>
                     <span style="font: normal 500 1.5vw arial;">|</span>
                     <a class="forgot_password" href="">Forgot Password?</a>
                 </td>
             </tr>
             <tr>
-                <td>
-                    <input class="log_in" type="submit" value="Log In">
-                    <input class="sign_in" type="submit" value="Sign in with Google">
-                    <img class="google" src="Financia_Sign_In_Images/google logo.png" alt="">
+                <td style="text-align: center;">
+                    <input class="log_in" type="submit" value="Log In" style="display: block; margin: 1vw auto;">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <hr
-                        style="border: none; border-radius: 0 0 2vw 2vw; height: 2.5vw; background-color: rgb(0, 0, 0); margin: -0.5vw 0 0 0;">
+                    <hr style="border: none; border-radius: 0 0 2vw 2vw; height: 2.5vw; background-color: rgb(0, 0, 0); margin: -0.5vw 0 0 0;">
                 </td>
             </tr>
         </form>
