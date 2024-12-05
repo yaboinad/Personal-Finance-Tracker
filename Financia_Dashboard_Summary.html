@@ -62,30 +62,23 @@
         <tr>
             <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
             <td style="width: 50vw;"></td>
-            <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
+            <td class="e-pay_box">
+                <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
+                <div class="dropdown-menu" id="dropdownMenuEpay">
+                    <a href="Financia-E-Pay.html">E-Pay</a>
+                </div>
+            </td>
+
             <td class="notification_box"><img class="notification_button"
                     src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
-                <div class="dropdown-menu" id="dropdownMenu">
+                <div class="dropdown-menu" id="dropdownMenuAccount">
                     <a href="Financia_Sign_In.html">Sign In</a>
-                    <a href="Financia_Sign_Up.html">Sign Up</a>
-                    <script>
-                        const accountBtn = document.getElementById('accountBtn');
-                        const dropdownMenu = document.getElementById('dropdownMenu');
+                    <a href="Financia_Sign_Up.php">Sign Up</a>
+                    <a href="#">Account</a>
 
-                        // Toggle the dropdown menu visibility
-                        accountBtn.addEventListener('click', () => {
-                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-                        });
-
-                        // Close the dropdown if clicked outside
-                        window.addEventListener('click', (event) => {
-                            if (event.target !== accountBtn && !dropdownMenu.contains(event.target)) {
-                                dropdownMenu.style.display = 'none';
-                            }
-                        });
-                    </script>
+                </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
                     alt=""></td>
@@ -101,7 +94,7 @@
                     <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="#">History</a>
+                    <a class="nav_link" href="Financia_History.html">History</a>
                 </td>
                 <td class="td_link">
                     <a class="nav_link" href="#">Transactions</a>
@@ -347,6 +340,38 @@
     <br>
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
+
+    <script>
+        // E-Pay Dropdown
+        const epayBtn = document.getElementById('epayBtn');
+        const dropdownMenuEpay = document.getElementById('dropdownMenuEpay');
+
+        // Account Dropdown
+        const accountBtn = document.getElementById('accountBtn');
+        const dropdownMenuAccount = document.getElementById('dropdownMenuAccount');
+
+        // Toggle visibility of E-Pay dropdown
+        epayBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from bubbling up
+            dropdownMenuEpay.style.display =
+                dropdownMenuEpay.style.display === 'block' ? 'none' : 'block';
+            dropdownMenuAccount.style.display = 'none'; // Close other dropdown
+        });
+
+        // Toggle visibility of Account dropdown
+        accountBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from bubbling up
+            dropdownMenuAccount.style.display =
+                dropdownMenuAccount.style.display === 'block' ? 'none' : 'block';
+            dropdownMenuEpay.style.display = 'none'; // Close other dropdown
+        });
+
+        // Close dropdowns when clicking outside
+        window.addEventListener('click', () => {
+            dropdownMenuEpay.style.display = 'none';
+            dropdownMenuAccount.style.display = 'none';
+        });
+    </script>
 
 </body>
 
