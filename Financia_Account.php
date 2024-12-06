@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href=""><!--Financia logo not yet available-->
-    <link rel="stylesheet" href="Financia CSS/Financia_Home_Page_Css.css">
-    <title>Financia - Home Page</title>
+    <link rel="stylesheet" href="Financia_Account.css">
+    <title>Financia - Account</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
@@ -104,83 +104,58 @@
         </form>
     </table>
 
-    <div style="display:inline-flex;">
-        <table class="table3">
-            <tr>
-                <td class="table3_1">Building Financial Freedom Step by Step</td>
-            </tr>
-            <tr>
-                <td class="table3_2">Explore proven strategies and expert guidance to <br> grow and protect your wealth.
-                </td>
-            </tr>
-            <tr>
-                <form action="">
-                    <td class="table3_3"><input type="submit" id="Learn_more" value="Learn More"></td>
-                </form>
-            </tr>
-        </table>
-        <img class="image1" src="Financia_Home_Page_Images/Financia Home Page Image 1.png" alt="">
-    </div>
-    <br>
-    <picture class="circles">
-        <img class="purple_circle1" src="Financia_Home_Page_Images/Purple_circle image.png" alt="">
-        <img class="white_circle1" src="Financia_Home_Page_Images/White_circle image.png" alt="">
-        <img class="black_circle1" src="Financia_Home_Page_Images/Black_circle image.png" alt="">
-    </picture>
-    <br>
-    <div style="display:inline-flex;">
-        <picture class="circles2">
-            <img class="image2" src="Financia_Home_Page_Images/Financia Home Page Image2.png" alt="">
-            <img class="image3" src="Financia_Home_Page_Images/Financia Home Page Image3.png" alt="">
-            <img class="image4" src="Financia_Home_Page_Images/Financia Home Page Image4.png" alt="">
-        </picture>
-        <table class="table4">
-            <tr>
-                <td class="table4_1">Your Money, Your Way: Advanced Finance Tracking Made Simple</td>
-            </tr>
-            <tr>
-                <td class="table4_2">Get real-time reports, saving forecasts, and powerful budget tools. Explore premium
-                    for deeper insights <br> and custom options</td>
-            </tr>
-            <tr>
-                <form action="">
-                    <td class="table4_3box"><input class="table4_3" type="button" id="premium_button"
-                            value="Upgrade to Premium"></td>
-                </form>
-            </tr>
-        </table>
+    <div class="account-info">
+        <div class="username-header">
+            <span>Username</span>
+            <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon">
+        </div>
+
+        <div class="info-row info-grouped">
+            <div class="info-group">
+                <div class="info-label">Email</div>
+                <div class="info-value">
+                    <span>user@example.com</span>
+                    <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon">
+                </div>
+            </div>
+            <div class="info-group">
+                <div class="info-label">Account Created</div>
+                <div class="info-value">01/01/24</div>
+            </div>
+            <div class="info-group">
+                <div class="info-label">City</div>
+                <div class="info-value">City Name</div>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="connected-account">
+                <div class="custom-select">
+                    <div class="selected-image">
+                        <img src="Financia_E-Pay_Image/bdo.png" alt="BDO" id="selectedBankImage">
+                        <div class="dropdown-arrow"></div>
+                    </div>
+                    <div class="select-options">
+                        <div class="option" data-value="gcash">
+                            <img src="Financia_E-Pay_Image/gcash.png" alt="GCash">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="account-input" placeholder="Account Number"   >
+                    <input type="email" class="email-input" placeholder="Email Address">
+                </div>
+                <button class="connect-btn">Connect</button>
+            </div>
+            
+            <div class="connected-status">
+                <div class="status-label">Connected Account</div>
+                <input type="text" class="status-input"  disabled>
+                <input type="text" class="status-input"  disabled>
+            </div>
+        </div>
     </div>
 
-    <div class="div1">
-        <div class="div2">
-            <img class="div2_image" src="Financia_Home_Page_Images/cyber-security.png" alt="">
-            <p class="secure">Secure</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Learn More About Security</a>
-            </div>
-        </div>
-        <div class="div3">
-            <img class="div2_image" src="Financia_Home_Page_Images/easy.png" alt="">
-            <p class="simple">Simple</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Discover how it works</a>
-            </div>
-        </div>
-        <div class="div4">
-            <img class="div2_image" src="Financia_Home_Page_Images/target.png" alt="">
-            <p class="goal_oriented">Goal Oriented</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Start setting goals</a>
-            </div>
-        </div>
-        <div class="div5">
-            <img class="div2_image" src="Financia_Home_Page_Images/insight.png" alt="">
-            <p class="insightful">Insightful</p>
-            <div class="div1_link_box">
-                <a class="div1_links" href=""><br>Read the latest news</a>
-            </div>
-        </div>
-    </div>
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
         <hr style="width: 9vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
@@ -244,8 +219,32 @@
             dropdownMenuEpay.style.display = 'none';
             dropdownMenuAccount.style.display = 'none';
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const customSelect = document.querySelector('.custom-select');
+            const selectedImage = document.querySelector('.selected-image');
+            const selectedBankImage = document.getElementById('selectedBankImage');
+            const option = document.querySelector('.option');
+
+            selectedImage.addEventListener('click', function() {
+                customSelect.classList.toggle('active');
+            });
+
+            option.addEventListener('click', function() {
+                const newSrc = this.querySelector('img').src;
+                const oldSrc = selectedBankImage.src;
+                selectedBankImage.src = newSrc;
+                this.querySelector('img').src = oldSrc;
+                customSelect.classList.remove('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!customSelect.contains(e.target)) {
+                    customSelect.classList.remove('active');
+                }
+            });
+        });
     </script>
-
 </body>
-
 </html>

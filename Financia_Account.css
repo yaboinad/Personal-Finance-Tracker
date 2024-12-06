@@ -173,11 +173,11 @@
     }
 
     .account-info {
-        background: rgba(69, 7, 116, 0.9);
+        background: rgba(17, 2, 29, 0.562);
         border-radius: 15px;
         border-bottom: 60px solid black;
         margin: 2vw auto;
-        width: 85%;
+        width: 80%;
         max-width: 1200px;
         color: white;
         height: auto;
@@ -185,19 +185,28 @@
 
     .info-row {
         margin-bottom: 2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4vw;
     }
 
     .info-label {
         color: #9291F1;
         font: normal 600 1.2vw Roboto1;
-        margin-bottom: 0.5vw;
+        margin-bottom: 0;
+        min-width: 150px;
+        text-align: center;
     }
 
     .info-value {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1vw;
         font: normal 500 1.5vw Roboto2;
+        margin-bottom: 2vw;
+        text-align: center;
     }
 
     .edit-icon {
@@ -207,9 +216,12 @@
     }
 
     .info-group {
-        display: inline-block;
-        margin-right: 4vw;
-        height: 100px;
+        flex: 0 1 auto; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        height: auto;
+        
     }
 
     .connected-account {
@@ -218,29 +230,77 @@
         align-items: center;
     }
 
-    .bank-select,
+    .input-group {
+        display: flex;
+        flex-direction: column;  /* Stack inputs vertically */
+        gap: 1vw;
+    }
+
+    .bank-select {
+        appearance: none;
+        width: 200px;
+        height: 50px;  /* Adjust height as needed */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        background-image: url('Financia_E-Pay_Image/bdo.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;  /* This will make image fit inside while maintaining aspect ratio */
+        padding: 5px;
+        cursor: pointer;
+    }
+    
+    .bank-select option[value="bdo"] {
+        background: url('Financia_E-Pay_Image/bdo.png') no-repeat center;
+        background-size: contain;
+        height: auto;
+    }
+    
+    .bank-select option[value="gcash"] {
+        background: url('Financia_E-Pay_Image/gcash.png') no-repeat center;
+        background-size: contain;
+        height: auto;
+    }
+    
+    /* Hide the text content */
+    .bank-select option {
+        color: transparent;
+    }
+
     .account-input,
     .email-input {
-        padding: 0.5vw;
-        border-radius: 5px;
-        border: 1px solid #9291F1;
-        background: transparent;
-        color: white;
+        padding: 0.6vw;
+        border-radius: 20px;
+        border: 2px solid #8316ff;
+        background: white;
+        color: #8316ff;
         font: normal 400 1vw Roboto1;
+        text-align: center;
+        height: 1vw;
+        width: 200px;
+        outline: none;
+    }
+
+    .status-label {
+        color: #9291F1;
+        font: normal 600 1.2vw Roboto1;
+        text-align: center;
     }
 
     .connect-btn {
-        background: #8A24EA;
-        color: white;
-        border: none;
-        padding: 0.5vw 2vw;
-        border-radius: 5px;
+        background: rgb(199, 212, 255);
+        color: rgb(104, 62, 253);
+        border: 2px solid #4063ff;
+        padding: 1.2vw 2.6vw;
+        border-radius: 20px;
         cursor: pointer;
         font: normal 600 1vw Roboto2;
+        align-self: flex-center;  
     }
 
     .connect-btn:hover {
-        background: #6a1b9a;
+        background: rgb(144, 168, 247);
     }
 
     .username-header {
@@ -264,18 +324,118 @@
     }
 
     .info-grouped {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #9291F1;
-        padding-bottom: 1vw;
+        border-bottom: 2px solid #9291F1;
+        padding-bottom: 2vw;
         margin-bottom: 2vw;
-        width: 100%;
-        box-sizing: border-box;
     }
 
-    .info-group {
-        flex: 1;
+    .connected-status {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        margin-left: 2vw;
+    }
+
+    .status-input {
+        padding: 0.5vw;
+        border-radius: 20px;
+        border: 1px solid #9291F1;
+        background:#c8b4f4;
+        font: normal 400 1vw Roboto1;
         text-align: center;
     }
+
+}
+
+.custom-select {
+    position: relative;
+    width: 120px;
+}
+
+.selected-image {
+    position: relative;
+    border: 2px solid #4063ff;
+    border-radius: 20px;
+    padding: 1px 10px;  
+    cursor: pointer;
+    background: rgb(199, 212, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-image img {
+    width: 50%;
+    height: 25px;  /* Reduced from 35px */
+    object-fit: contain;
+    display: block;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #333;
+}
+
+.select-options {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #4063ff;
+    border-top: none;
+    border-radius: 20px;
+    z-index: 1000;
+}
+
+.option {
+    padding: 1px;  /* Reduced padding */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option:hover {
+    background: rgb(199, 212, 255);
+    border-radius: 20px;
+}
+
+.option img {
+    width: 50%;
+    height: 25px;  /* Reduced from 35px */
+    object-fit: contain;
+    display: block;
+}
+
+.custom-select.active .select-options {
+    display: block;
+}
+
+.save-btn {
+    margin-left: 10px;
+    padding: 2px 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: #45a049;
+}
+
+.info-value input {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }

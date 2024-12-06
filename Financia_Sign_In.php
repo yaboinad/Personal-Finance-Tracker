@@ -68,25 +68,14 @@ session_start();
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="Financia_Sign_In.html">Sign In</a>
-                    <a href="Financia_Sign_Up.html">Sign Up</a>
-                    <script>
-                        const accountBtn = document.getElementById('accountBtn');
-                        const dropdownMenu = document.getElementById('dropdownMenu');
-
-                        // Toggle the dropdown menu visibility
-                        accountBtn.addEventListener('click', () => {
-                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-                        });
-
-                        // Close the dropdown if clicked outside
-                        window.addEventListener('click', (event) => {
-                            if (event.target !== accountBtn && !dropdownMenu.contains(event.target)) {
-                                dropdownMenu.style.display = 'none';
-                            }
-                        });
-                    </script>
-
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+                        <a href="Financia_Dashboard_Overview.php">Dashboard</a>
+                        <a href="Financia_Profile.php">Profile</a>
+                        <a href="backend/logout.php">Logout</a>
+                    <?php else: ?>
+                        <a href="Financia_Sign_In.php">Sign In</a>
+                        <a href="Financia_Sign_Up.php">Sign Up</a>
+                    <?php endif; ?>
                 </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
@@ -117,9 +106,13 @@ session_start();
 
 
 
-    =======
+
     <table class="table3">
         <?php
+        if (isset($_SESSION['signup_success'])) {
+            echo "<p style='color: green; text-align: center;'>" . $_SESSION['signup_success'] . "</p>";
+            unset($_SESSION['signup_success']);
+        }
         if (isset($_SESSION['login_errors'])) {
             foreach ($_SESSION['login_errors'] as $error) {
                 echo "<p style='color: red; text-align: center;'>$error</p>";
@@ -127,7 +120,7 @@ session_start();
             unset($_SESSION['login_errors']);
         }
         ?>
-        <form action="/Personal-Finance-Tracker/backend/process_signin.php" method="POST" style="text-align: center;">
+        <form action="/Personal-Finance-Tracker/backend/process_login.php" method="POST" style="text-align: center;">
             <tr>
                 <td class="labelbox_table3">
                     <br><label class="label_table3" for="username">Email / Username</label>

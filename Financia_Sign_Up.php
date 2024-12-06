@@ -126,7 +126,7 @@ session_start();
                 unset($_SESSION['signup_errors']);
             }
             ?>
-            <form action="/Personal-Finance-Tracker/backend/process_signup.php" method="POST">
+            <form action="backend/process_signup.php" method="POST">
                 <table>
                     <!-- First row of inputs -->
                     <tr class="input-group">

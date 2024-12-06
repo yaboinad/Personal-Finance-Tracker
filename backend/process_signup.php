@@ -76,8 +76,14 @@ try {
         $city
     ])) {
         // Successful registration
-        $_SESSION['signup_success'] = "Registration successful!";
-        header("Location: /Personal-Finance-Tracker/Financia_Sign_In.html");
+        $_SESSION['signup_success'] = "Registration successful! You can now sign in with your new account.";
+        
+        // If user is already logged in, keep them logged in
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+            header("Location: ../Financia.php");
+        } else {
+            header("Location: ../Financia_Sign_In.php");
+        }
         exit();
     } else {
         throw new Exception("Insert failed");
@@ -86,7 +92,7 @@ try {
 } catch(Exception $e) {
     error_log("Registration error: " . $e->getMessage());
     $_SESSION['signup_errors'] = ["Registration failed: " . $e->getMessage()];
-    header("Location: /Personal-Finance-Tracker/Financia_Sign_Up.php");
+    header("Location: ../Financia_Sign_Up.php");
     exit();
 }
 ?>

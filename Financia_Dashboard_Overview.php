@@ -1,3 +1,7 @@
+<?php
+require_once 'backend/check_session.php';
+// Now only logged-in users can access this page
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +78,7 @@
                 <div class="dropdown-menu" id="dropdownMenuAccount">
                     <a href="Financia_Sign_In.html">Sign In</a>
                     <a href="Financia_Sign_Up.php">Sign Up</a>
-                    <a href="#">Account</a>
+                    <a href="Financia_Account.php">Account</a>
 
                 </div>
             </td>
