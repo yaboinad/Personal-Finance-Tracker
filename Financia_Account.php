@@ -1,3 +1,22 @@
+<?php 
+session_start(); 
+include 'backend/db_connect.php';  // Make sure this path is correct
+
+// Redirect if not logged in
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: Financia_Sign_In.php');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'] ?? 0;
+$sql = "SELECT username_email, created_at, city FROM users WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+$stmt->close();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -72,10 +91,9 @@
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuAccount">
-                    <a href="Financia_Sign_In.html">Sign In</a>
                     <a href="Financia_Sign_Up.php">Sign Up</a>
-                    <a href="#">Account</a>
-
+                    <a href="Financia_Account.php" class="active">Account</a>
+                    <a href="backend/logout.php">Logout</a>
                 </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
@@ -106,25 +124,34 @@
 
     <div class="account-info">
         <div class="username-header">
-            <span>Username</span>
+            <span><?php echo htmlspecialchars($user['username_email'] ?? 'Username'); ?></span>
             <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon">
         </div>
 
         <div class="info-row info-grouped">
             <div class="info-group">
                 <div class="info-label">Email</div>
-                <div class="info-value">
-                    <span>user@example.com</span>
-                    <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon">
+                <div class="info-value" id="emailContainer">
+                    <?php if (!empty($user['email'])): ?>
+                        <span id="emailDisplay"><?php echo htmlspecialchars($user['email']); ?></span>
+                    <?php else: ?>
+                        <span id="emailDisplay">Add email</span>
+                    <?php endif; ?>
+                    <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon" id="editEmailBtn">
+                    <div id="emailEditContainer" style="display: none;">
+                        <input type="email" id="emailInput" placeholder="Enter email">
+                        <button id="saveEmailBtn">Save</button>
+                        <button id="cancelEmailBtn">Cancel</button>
+                    </div>
                 </div>
             </div>
             <div class="info-group">
                 <div class="info-label">Account Created</div>
-                <div class="info-value">01/01/24</div>
+                <div class="info-value"><?php echo date('m/d/y', strtotime($user['created_at'] ?? '')); ?></div>
             </div>
             <div class="info-group">
                 <div class="info-label">City</div>
-                <div class="info-value">City Name</div>
+                <div class="info-value"><?php echo htmlspecialchars($user['city'] ?? 'Not specified'); ?></div>
             </div>
         </div>
 
@@ -243,6 +270,63 @@
                 if (!customSelect.contains(e.target)) {
                     customSelect.classList.remove('active');
                 }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailContainer = document.getElementById('emailContainer');
+            const emailDisplay = document.getElementById('emailDisplay');
+            const editEmailBtn = document.getElementById('editEmailBtn');
+            const emailEditContainer = document.getElementById('emailEditContainer');
+            const emailInput = document.getElementById('emailInput');
+            const saveEmailBtn = document.getElementById('saveEmailBtn');
+            const cancelEmailBtn = document.getElementById('cancelEmailBtn');
+
+            editEmailBtn.addEventListener('click', function() {
+                emailDisplay.style.display = 'none';
+                editEmailBtn.style.display = 'none';
+                emailEditContainer.style.display = 'inline-block';
+                emailInput.value = emailDisplay.textContent !== 'Add email' ? emailDisplay.textContent : '';
+            });
+
+            cancelEmailBtn.addEventListener('click', function() {
+                emailDisplay.style.display = 'inline';
+                editEmailBtn.style.display = 'inline';
+                emailEditContainer.style.display = 'none';
+            });
+
+            saveEmailBtn.addEventListener('click', function() {
+                const newEmail = emailInput.value.trim();
+                if (!newEmail) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                // Send to backend
+                fetch('backend/update_email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: newEmail
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        emailDisplay.textContent = newEmail;
+                        emailDisplay.style.display = 'inline';
+                        editEmailBtn.style.display = 'inline';
+                        emailEditContainer.style.display = 'none';
+                    } else {
+                        alert('Failed to update email: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('Error updating email');
+                    console.error('Error:', error);
+                });
             });
         });
     </script>

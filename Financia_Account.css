@@ -439,3 +439,8 @@
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
+.dropdown-menu a.active {
+    background-color: #8c23b6; /* or whatever color matches your hover state */
+    cursor: default;
+}
