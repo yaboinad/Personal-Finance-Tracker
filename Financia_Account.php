@@ -122,12 +122,12 @@ $stmt->close();
         </form>
     </table>
 
-    <div class="account-info">
+    
         <div class="username-header">
             <span><?php echo htmlspecialchars($user['username_email'] ?? 'Username'); ?></span>
             <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon">
         </div>
-
+    <div class="account-info">
         <div class="info-row info-grouped">
             <div class="info-group">
                 <div class="info-label">Email</div>
@@ -182,7 +182,10 @@ $stmt->close();
             </div>
         </div>
     </div>
-
+    <div class="username-footer">
+        <button class="footer-btn save-btn">Save Info</button>
+        <button class="footer-btn delete-btn">Delete Account</button>
+    </div>  
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
         <hr style="width: 9vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
