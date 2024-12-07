@@ -53,6 +53,14 @@
             font-family: Coolvetica2;
             src: url(Financia_Fonts/coolvetica/coolvetica\ rg.otf);
         }
+
+        .nav_link.disabled {
+            color: #999;
+            cursor: not-allowed;
+            text-decoration: none;
+            pointer-events: none;
+            opacity: 0.6;
+        }
     </style>
 </head>
 
@@ -91,19 +99,39 @@
         <form action="">
             <tr>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Overview</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Summary</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_History.html">History</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="Financia_History.html">History</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">History</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="#">Transactions</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="#">Transactions</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Transactions</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="#">Reports</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="#">Reports</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Reports</span>
+                    <?php endif; ?>
                 </td>
             </tr>
         </form>

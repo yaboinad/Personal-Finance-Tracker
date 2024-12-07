@@ -60,22 +60,18 @@ session_start();
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
             <td style="width: 50vw;"></td>
-            <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
+            <td class="e-pay_box">
+                <img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt="" style="opacity: 0.5; cursor: not-allowed;">
+            </td>
             <td class="notification_box"><img class="notification_button"
                     src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-                        <a href="Financia_Dashboard_Overview.php">Dashboard</a>
-                        <a href="Financia_Profile.php">Profile</a>
-                        <a href="backend/logout.php">Logout</a>
-                    <?php else: ?>
-                        <a href="Financia_Sign_In.php">Sign In</a>
-                        <a href="Financia_Sign_Up.php">Sign Up</a>
-                    <?php endif; ?>
+                    <a href="Financia.php">Home</a>
+                    <a href="Financia_Sign_Up.php">Sign Up</a>
                 </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
@@ -83,25 +79,45 @@ session_start();
         </tr>
     </table>
     <table class="table2">
-        <form action="">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            <form action="">
+                <tr>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Summary</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">History</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Transactions</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Reports</button>
+                    </td>
+                </tr>
+            </form>
+        <?php else: ?>
             <tr>
                 <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                    <button class="select_nav" disabled style="opacity: 0.5;">Overview</button>
                 </td>
                 <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='#'">Summary</button>
+                    <button class="select_nav" disabled style="opacity: 0.5;">Summary</button>
                 </td>
                 <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='#'">History</button>
+                    <button class="select_nav" disabled style="opacity: 0.5;">History</button>
                 </td>
                 <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='#'">Transactions</button>
+                    <button class="select_nav" disabled style="opacity: 0.5;">Transactions</button>
                 </td>
                 <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='#'">Reports</button>
+                    <button class="select_nav" disabled style="opacity: 0.5;">Reports</button>
                 </td>
             </tr>
-        </form>
+        <?php endif; ?>
     </table>
 
 
@@ -196,6 +212,25 @@ session_start();
     <br>
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
+    <script>
+        document.addEventListener('DOMContentLoaded',function() {
+            const accountBtn = document.getElementById('accountBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            // Toggle the dropdown menu visibility
+            accountBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent event from bubbling up
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close the dropdown if clicked outside
+            window.addEventListener('click', function(event) {
+                if (!accountBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
