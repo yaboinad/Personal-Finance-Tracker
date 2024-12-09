@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Financia CSS/Financia_History.css">
-    <title>Financia - History</title>
+    <link rel="stylesheet" href="Financia CSS/Financia_Transactions_Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Financia - Transactions</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
@@ -103,61 +104,111 @@
         </form>
     </table>
 
-    <div class="activity-title">
-        <h1>Activity Log</h1>
+    <div class="transactions-title">
+        <h1>Transactions</h1>
     </div>
-    <div class="activity-container">
+    <div class="transactions-header">
         <div class="filter-bar">
             <select>
-                <option>Sort by</option>
+                <option>Filter by Date</option>
             </select>
-            <button>✔</button>
-            <button>✖</button>
-            <input type="text" class="search-bar" placeholder="Search" />
+            <select>
+                <option>Sort by Type</option>
+            </select>
         </div>
-        <table class="activity-table">
-            <thead>
-                <tr>
-                    <th>Activity Name</th>
-                    <th>Category</th>
-                    <th>Date & Time</th>
-                    <th>More Info</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Grocery Shopping</td>
-                    <td>Expense</td>
-                    <td>2024-11-10 14:30</td>
-                    <td>View</td>
-                </tr>
-                <tr>
-                    <td>Salary Payment</td>
-                    <td>Income</td>
-                    <td>2024-11-01 09:00</td>
-                    <td>View</td>
-                </tr>
-                <tr>
-                    <td>Gym Membership</td>
-                    <td>Expense</td>
-                    <td>2024-11-05 18:00</td>
-                    <td>View</td>
-                </tr>
-                <tr>
-                    <td>Freelance Project</td>
-                    <td>Income</td>
-                    <td>2024-11-07 15:45</td>
-                    <td>View</td>
-                </tr>
-                <tr>
-                    <td>Dinner with Friends</td>
-                    <td>Expense</td>
-                    <td>2024-11-09 20:15</td>
-                    <td>View</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
+    <table class="transactions-table">
+        <thead>
+            <tr>
+                <th>Edit</th>
+                <th>Transaction Description</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Amount</th>
+                <th>Details</th>
+                <th>Transaction Type</th>
+                <th>Payment Method</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <i class="fas fa-edit icon" title="Edit"></i>
+                </td>
+                <td>Paid Electricity Bill</td>
+                <td>2024-12-31</td>
+                <td>12:45 PM</td>
+                <td>₱2,000</td>
+                <td>Paid via credit card</td>
+                <td>Expenses</td>
+                <td>Credit Card</td>
+                <td>
+                    <i class="fas fa-trash icon" title="Delete"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fas fa-edit icon" title="Edit"></i>
+                </td>
+                <td>Salary</td>
+                <td>2024-11-15</td>
+                <td>1:30 PM</td>
+                <td>₱20,000</td>
+                <td>Monthly Income</td>
+                <td>Income</td>
+                <td>Bank Transfer</td>
+                <td>
+                    <i class="fas fa-trash icon" title="Delete"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fas fa-edit icon" title="Edit"></i>
+                </td>
+                <td>Groceries</td>
+                <td>2025-06-01</td>
+                <td>9:15 AM</td>
+                <td>₱5,000</td>
+                <td>Paid via credit card</td>
+                <td>Expenses</td>
+                <td>Debit Card</td>
+                <td>
+                    <i class="fas fa-trash icon" title="Delete"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fas fa-edit icon" title="Edit"></i>
+                </td>
+                <td>Freelance Payment</td>
+                <td>2025-12-31</td>
+                <td>10:00 AM</td>
+                <td>₱8,000</td>
+                <td>Received payment</td>
+                <td>Income</td>
+                <td>Bank Transfer</td>
+                <td>
+                    <i class="fas fa-trash icon" title="Delete"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fas fa-edit icon" title="Edit"></i>
+                </td>
+                <td>Movie Tickets</td>
+                <td>2024-12-01</td>
+                <td>11:20 AM</td>
+                <td>₱600</td>
+                <td>Paid via cash</td>
+                <td>Expenses</td>
+                <td>Cash</td>
+                <td>
+                    <i class="fas fa-trash icon" title="Delete"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
@@ -223,6 +274,7 @@
             dropdownMenuAccount.style.display = 'none';
         });
     </script>
+
 </body>
 
 </html>

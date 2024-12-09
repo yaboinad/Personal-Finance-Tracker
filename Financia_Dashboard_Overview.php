@@ -96,10 +96,10 @@ require_once 'backend/check_session.php';
                     <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="#">History</a>
+                    <a class="nav_link" href="Financia_History.html">History</a>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="#">Transactions</a>
+                    <a class="nav_link" href="Financia_Transactions.html">Transactions</a>
                 </td>
                 <td class="td_link">
                     <a class="nav_link" href="#">Reports</a>
