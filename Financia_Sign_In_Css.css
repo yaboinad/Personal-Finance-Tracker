@@ -446,18 +446,45 @@
     }
 
     .error-message {
-        color: #ff0000;
-        background-color: rgba(255, 0, 0, 0.1);
-        border: 1px solid #ff0000;
+        background-color: #f44336;
+        color: white;
+        padding: 15px;
+        margin: 20px auto;
         border-radius: 5px;
-        padding: 8px;
-        margin: 5px 0;
         text-align: center;
+        max-width: 600px;
         font-family: Roboto1;
-        font-size: 0.9em;
+        animation: fadeIn 0.5s ease-in;
+        position: relative;
+        top: 20px;
     }
 
     .input-error {
         border: 1px solid #ff0000 !important;
+    }
+
+    .success-message {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 600px;
+        font-family: Roboto1;
+        animation: fadeIn 0.5s ease-in;
+        position: relative;
+        top: 20px;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

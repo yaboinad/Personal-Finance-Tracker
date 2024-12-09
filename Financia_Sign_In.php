@@ -129,8 +129,18 @@ session_start();
 
     <table class="table3">
         <?php
+        if (isset($_SESSION['reset_success'])) {
+            echo "<div class='success-message'>";
+            echo "<i class='fas fa-check-circle' style='margin-right: 10px;'></i>";
+            echo $_SESSION['reset_success'];
+            echo "</div>";
+            unset($_SESSION['reset_success']);
+        }
         if (isset($_SESSION['signup_success'])) {
-            echo "<p style='color: green; text-align: center;'>" . $_SESSION['signup_success'] . "</p>";
+            echo "<div class='success-message'>";
+            echo "<i class='fas fa-check-circle' style='margin-right: 10px;'></i>";
+            echo $_SESSION['signup_success'];
+            echo "</div>";
             unset($_SESSION['signup_success']);
         }
         if (isset($_SESSION['login_error'])) {

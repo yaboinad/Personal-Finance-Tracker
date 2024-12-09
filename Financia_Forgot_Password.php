@@ -68,7 +68,10 @@
 
     <?php
     if (isset($_SESSION['reset_success'])) {
-        echo "<div class='success-message'>" . $_SESSION['reset_success'] . "</div>";
+        echo "<div class='success-message'>";
+        echo "<i class='fas fa-check-circle' style='margin-right: 10px;'></i>";
+        echo $_SESSION['reset_success'];
+        echo "</div>";
         unset($_SESSION['reset_success']);
     }
     ?>

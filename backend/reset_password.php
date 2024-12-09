@@ -90,7 +90,7 @@ try {
     }
 
     if ($update_stmt->affected_rows > 0) {
-        $_SESSION['reset_success'] = "Password successfully reset. Please login with your new password.";
+        $_SESSION['reset_success'] = "✓ Password successfully reset! Please login with your new password.";
         header("Location: ../Financia_Sign_In.php");
     } else {
         throw new Exception("No rows were updated");

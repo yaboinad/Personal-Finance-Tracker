@@ -157,8 +157,11 @@ session_start();
                         <td>
                             <div class="input-container">
                                 <i class="fa-regular fa-user icon"></i>
-                                <input type="text" id="username" name="username" placeholder="Email / Username"
-                                    required>
+                                <input type="text" 
+                                       id="username" 
+                                       name="username" 
+                                       placeholder="Enter your email address" 
+                                       required>
                                 <i class="fa fa-times-circle clear-icon"></i>
                             </div>
                         </td>

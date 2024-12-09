@@ -2,8 +2,11 @@
 session_start(); 
 include 'backend/db_connect.php';
 
-// Get username directly from session
+// Get username or email from session
 $username_email = $_SESSION['username_email'] ?? 'Username';
+
+// Determine what text to display in the username header
+$display_text = strpos($username_email, '@') !== false ? 'Username' : $username_email;
 
 // If you still need other user data from database:
 if (isset($_SESSION['username_email'])) {
@@ -157,11 +160,11 @@ if (!empty($row['email'])) {
 
     
        <div class="username-header">
-         <span id="usernameDisplay"><?php echo htmlspecialchars($username_email); ?></span>
+         <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
          <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon" id="editUsernameBtn">
         <div id="usernameEditContainer" style="display: none;">
             <div class="input-wrapper">
-                <input type="text" id="usernameInput" placeholder="Enter username">
+                <input type="text" id="usernameInput" placeholder="Username">
             </div>
             <div class="button-wrapper">
                 <button id="saveUsernameBtn">Save</button>
@@ -468,7 +471,6 @@ if (!empty($row['email'])) {
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Username editing functionality
             const usernameDisplay = document.getElementById('usernameDisplay');
             const editUsernameBtn = document.getElementById('editUsernameBtn');
             const usernameEditContainer = document.getElementById('usernameEditContainer');
@@ -480,19 +482,20 @@ if (!empty($row['email'])) {
                 usernameDisplay.style.display = 'none';
                 editUsernameBtn.style.display = 'none';
                 usernameEditContainer.style.display = 'flex';
-                usernameInput.value = usernameDisplay.textContent;
-            });
-
-            cancelUsernameBtn.addEventListener('click', function() {
-                usernameDisplay.style.display = 'inline';
-                editUsernameBtn.style.display = 'inline';
-                usernameEditContainer.style.display = 'none';
+                // Don't pre-fill the input if it's the default "Username" text
+                usernameInput.value = usernameDisplay.textContent === 'Username' ? '' : usernameDisplay.textContent;
             });
 
             saveUsernameBtn.addEventListener('click', function() {
                 const newUsername = usernameInput.value.trim();
                 if (!newUsername) {
                     alert('Please enter a valid username');
+                    return;
+                }
+
+                // Add validation to prevent @ symbol in username
+                if (newUsername.includes('@')) {
+                    alert('Username cannot contain @ symbol');
                     return;
                 }
 
@@ -514,7 +517,7 @@ if (!empty($row['email'])) {
                             newUsername;
                         
                         usernameDisplay.textContent = displayUsername;
-                        usernameDisplay.title = newUsername; // Store full username for hover
+                        usernameDisplay.title = newUsername;
                         usernameDisplay.style.display = 'inline';
                         editUsernameBtn.style.display = 'inline';
                         usernameEditContainer.style.display = 'none';
@@ -742,9 +745,16 @@ if (!empty($row['email'])) {
                 const email = accountEmail.value.trim();
                 const accountType = selectedBankImage.src.includes('bdo') ? 'bdo' : 'gcash';
 
-                // Email format validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
+                // Check if account number is empty
+                if (!accountNumber) {
+                    accountInput.value = '';
+                    accountInput.placeholder = 'Please add account number';
+                    accountInput.style.borderColor = '#f44336';
+                    return;
+                }
+
+                // Basic email validation - just check for @ symbol
+                if (!email.includes('@')) {
                     accountEmail.value = '';
                     accountEmail.placeholder = 'Invalid email format';
                     accountEmail.style.borderColor = '#f44336';
