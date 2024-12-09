@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Financia_Sign_Up_Images/financia logo.png">
-    <link rel="stylesheet" href="Financia CSS/Financia_Sign_Up_Css.css">
+    <link rel="stylesheet" href="Financia_Sign_Up_Css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <title>Financia - Sign Up</title>
@@ -69,8 +69,8 @@ session_start();
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="Financia_Sign_In.html">Sign In</a>
-                    <a href="Financia_Sign_Up.html">Sign Up</a>
+                    <a href="Financia.php">Home</a>
+                    <a href="Financia_Sign_In.php">Sign In</a>
                     <script>
                         const accountBtn = document.getElementById('accountBtn');
                         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -95,39 +95,46 @@ session_start();
         </tr>
     </table>
     <table class="table2">
-        <form action="">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            <form action="">
+                <tr>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Summary</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">History</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Transactions</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Reports</button>
+                    </td>
+                </tr>
+            </form>
+        <?php else: ?>
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
-                        <option value="Dashboard">Dashboard</option>
-                        <option value="Overview">Overview</option>
-                        <option value="Summary">Summary</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="History" id="History_category">
-                        <option value="History">History</option>
-                        <option value="Activity Log">Activity Log</option>
-                        <option value="Transactions">Transactions</option>
-                        <option value="Previous Reports">Previous Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
-                        <option value="Progress">Progress</option>
-                        <option value="Goals">Goals</option>
-                        <option value="Achievements">Achievements</option>
-                        <option value="Milestone">Milestone</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
-                        <option value="Insights">Insights</option>
-                        <option value="Data Analysis">Data Analysis</option>
-                        <option value="Recommendations">Recommendations</option>
-                        <option value="Reports">Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="News" id="News_category">
-                        <option value="News">News</option>
-                        <option value="Latest Updates">Latest Updates</option>
-                        <option value="Announcements">Announcements</option>
-                    </select></td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Overview</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Summary</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">History</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Transactions</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Reports</button>
+                </td>
             </tr>
-        </form>
-    </table>
+        <?php endif; ?>
+    </table> 
 
     <div class="login-container">
         <div class="login-box">
@@ -139,7 +146,7 @@ session_start();
                 unset($_SESSION['signup_errors']);
             }
             ?>
-            <form action="/Personal-Finance-Tracker/backend/process_signup.php" method="POST">
+            <form action="backend/process_signup.php" method="POST">
                 <table>
                     <!-- First row of inputs -->
                     <tr class="input-group">
@@ -150,8 +157,11 @@ session_start();
                         <td>
                             <div class="input-container">
                                 <i class="fa-regular fa-user icon"></i>
-                                <input type="text" id="username" name="username" placeholder="Email / Username"
-                                    required>
+                                <input type="text" 
+                                       id="username" 
+                                       name="username" 
+                                       placeholder="Enter your email address" 
+                                       required>
                                 <i class="fa fa-times-circle clear-icon"></i>
                             </div>
                         </td>
@@ -172,7 +182,11 @@ session_start();
                     <td>
                         <div class="input-container">
                             <i class="fa fa-lock icon"></i>
-                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <input type="password" id="password" name="password" 
+                                placeholder="Password" 
+                                minlength="6" 
+                                title="Password must be at least 6 characters long"
+                                required>
                             <i class="fa fa-eye toggle-icon"></i>
                         </div>
                     </td>
@@ -181,36 +195,52 @@ session_start();
                             <i class="fa-solid fa-location-dot icon"></i>
                             <select id="city" name="city" required>
                                 <option value="">Select City</option>
-                                <option value="MNL">Manila</option>
-                                <option value="QC">Quezon City</option>
-                                <option value="MKT">Makati</option>
-                                <option value="TGG">Taguig</option>
-                                <option value="PSG">Pasig</option>
-                                <option value="PSY">Pasay</option>
-                                <option value="MND">Mandaluyong</option>
-                                <option value="MRK">Marikina</option>
-                                <option value="CLO">Caloocan</option>
-                                <option value="VLZ">Valenzuela</option>
-                                <option value="PRQ">Parañaque</option>
-                                <option value="MNT">Muntinlupa</option>
+                                <option value="Manila">Manila</option>
+                                <option value="Quezon City">Quezon City</option>
+                                <option value="Makati">Makati</option>
+                                <option value="Taguig">Taguig</option>
+                                <option value="Pasig">Pasig</option>
+                                <option value="Pasay">Pasay</option>
+                                <option value="Mandaluyong">Mandaluyong</option>
+                                <option value="Marikina">Marikina</option>
+                                <option value="Caloocan">Caloocan</option>
+                                <option value="Valenzuela">Valenzuela</option>
+                                <option value="Parañaque">Parañaque</option>
+                                <option value="Muntinlupa">Muntinlupa</option>
                             </select>
                         </div>
                     </td>
                 </tr>
 
-                    <!-- Confirm Password row -->
-                    <tr class="input-group">
-                        <td><label for="confirm-password">Confirm Password</label></td>
-                    </tr>
-                    <tr class="input-group">
-                        <td>
-                            <div class="input-container">
-                                <i class="fa fa-lock icon"></i>
-                                <input type="password" id="confirm-password" name="confirmPassword" placeholder="Password" required>
-                                <i class="fa fa-eye toggle-icon"></i>
-                            </div>
-                        </td>
-                    </tr>
+                <!-- Confirm Password and Mobile Number row -->
+                <tr class="input-group">
+                    <td><label for="confirm-password">Confirm Password</label></td>
+                    <td><label for="mobile">Mobile Number</label></td>
+                </tr>
+                <tr class="input-group">
+                    <td>
+                        <div class="input-container">
+                            <i class="fa fa-lock icon"></i>
+                            <input type="password" id="confirm-password" name="confirmPassword" 
+                                placeholder="Password" 
+                                minlength="6"
+                                title="Password must be at least 6 characters long"
+                                required>
+                            <i class="fa fa-eye toggle-icon"></i>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mobile-container">
+                            <div class="prefix-box">+63</div>
+                            <input type="text" id="mobile" name="mobile" 
+                               
+                                maxlength="11" 
+                                class="mobile-input"
+                                required>
+                        </div>
+                    </td>
+                </tr>
+
                     <!-- OTP Input -->
                     <tr class="input-group">
                         <td colspan="2" style="text-align: center;">
@@ -241,11 +271,6 @@ session_start();
 
                 <div class="button-container">
                     <button type="submit" class="login-btn">Sign Up</button>
-                    <div class="vertical-line"></div>
-                    <button type="button" class="google-btn">
-                        <img src="Financia_Sign_Up_Images/google logo.png" alt="Google">
-                        Sign Up with Google
-                    </button>
                 </div>
             </form>
         </div>
@@ -370,6 +395,28 @@ session_start();
             });
         });
     });
+
+    function formatPhoneNumber(input) {
+        // Remove any non-digit characters
+        let value = input.value.replace(/\D/g, '');
+        
+        // If the number starts with '9', add '0' prefix
+        if (value.startsWith('9')) {
+            value = '0' + value;
+        }
+        
+        // Ensure the number starts with '09'
+        if (value.length > 0 && !value.startsWith('09')) {
+            value = value.substring(0, 0);
+        }
+        
+        // Limit to 11 digits (including '09')
+        if (value.length > 11) {
+            value = value.substring(0, 11);
+        }
+        
+        input.value = value;
+    }
     </script>
 </body>
 

@@ -482,18 +482,19 @@
     }
 
     .payment-button {
-        transition: opacity 0.3s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background: white;
     }
 
-    .payment-button:not([disabled]):hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+    .payment-button:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: #76def8;
+        cursor: pointer;
     }
 
-    .payment-button[disabled] {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
+    .payment-button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .balance-cards {

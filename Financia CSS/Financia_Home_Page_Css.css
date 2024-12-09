@@ -125,6 +125,14 @@
         text-shadow: 0 0 0.5vw rgb(138, 36, 234);
     }
 
+    .nav_link.disabled {
+        color: #999;
+        cursor: not-allowed;
+        text-decoration: none;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
     .td_select {
         text-align: center;
         width: 23vw;

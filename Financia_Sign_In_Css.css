@@ -41,6 +41,7 @@
     .account_box {
         text-align: center;
         width: 5vw;
+        position: relative;
     }
 
     #accountBtn {
@@ -109,27 +110,76 @@
     }
 
     .table3 {
-        border-radius: 2vw;
         background-color: rgb(136, 130, 241);
-        margin: 7vw 0 0 35vw;
-        width: 27.5vw;
+        margin: 6vw auto;
+        width: 20vw;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        height: auto;
+        min-height: 25vw;
+        border-bottom: 50px solid black;
+        border-top: 2px solid rgb(98, 1, 255);
+        border-left: 2px solid rgb(98, 1, 255);
+        border-right: 2px solid rgb(98, 1, 255);
+    }
+
+    .input-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 1.5vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .input_table3 {
+        width: 18vw;
+        padding: 8px;
+        border-radius: 25px;
+        border: none;
+        background: white;
+        font: normal 400 1.1vw Arial;
+        letter-spacing: 0.1vw;
+        height: 3vw;
+    }
+
+    .labelbox_table3 {
+        text-align: left;
+        padding: 0;
+        margin-left: 2.5vw;
+        margin-bottom: 1vw;
     }
 
     .label_table3 {
         font: normal 600 1.4vw/2.5vw Roboto1;
         letter-spacing: 0.1vw;
-        margin: 0 0 0 2vw;
+        margin: 0;
+        color: black;
+        display: block;
+        padding-top: 0.4vw;
     }
 
-    .input_table3 {
-        border-radius: 0.6vw;
-        border: 0.2vw solid rgb(151, 139, 248);
-        font: normal 400 1.1vw Arial;
-        letter-spacing: 0.1vw;
-        height: 2.2vw;
-        text-indent: 1vw;
-        margin: 0 0 0 2vw;
-        width: 22vw;
+    /* Style for the links section */
+    .links-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    /* Style for the Log In button */
+    .log_in {
+        background: white;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 40px;
+        font-size: 1.1vw;
+        cursor: pointer;
+        margin: 1.5vw auto;
+    }
+
+    .log_in:hover {
+        background: #f0f0f0;
     }
 
     .new_user {
@@ -171,7 +221,6 @@
     .input-container input {
         width: 100%;
         padding: 10px 35px 10px 35px;
-        /* Adjusted to fit icons on both sides */
         border: 1px solid #ccc;
         border-radius: 10px;
         box-sizing: border-box;
@@ -183,7 +232,11 @@
         left: 10px;
         top: 50%;
         transform: translateY(-50%);
-        color: #888;
+        color: #000000;
+    }
+
+    .input-container .input_table3 {
+        padding-left: 35px; /* Make space for the icon */
     }
 
     .input-container .fa-hide {
@@ -298,18 +351,6 @@
         margin: 0 2vw 0 2.5vw;
     }
 
-    .log_in {
-        color: rgb(4, 0, 8);
-        background-color: rgb(222, 214, 242);
-        border: none;
-        border-radius: 2.5vw;
-        font: normal 200 1.1vw Coolvetica2;
-        letter-spacing: 0.1vw;
-        height: 2.5vw;
-        margin: 2vw 0 0 2vw;
-        width: 9vw;
-    }
-
     .google {
         height: 3vw;
         margin: -4vw 0 0.45vw 12.5vw;
@@ -358,5 +399,92 @@
     .copyright {
         font: normal 500 1.3vw Verdana;
         text-indent: 37vw;
+    }
+
+    /* Dropdown Menu Styles */
+    .account_box {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 4px;
+        padding: 8px 0;
+        z-index: 1000;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .new_user, .forgot_password {
+        display: inline-block;
+        padding: 0.5vw;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    .link-divider {
+        display: inline-block;
+        margin: 0 0vw;
+        vertical-align: middle;
+        line-height: 1;
+        position: relative;
+        top: -0.1vw;
+    }
+
+    .error-message {
+        background-color: #f44336;
+        color: white;
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 600px;
+        font-family: Roboto1;
+        animation: fadeIn 0.5s ease-in;
+        position: relative;
+        top: 20px;
+    }
+
+    .input-error {
+        border: 1px solid #ff0000 !important;
+    }
+
+    .success-message {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 600px;
+        font-family: Roboto1;
+        animation: fadeIn 0.5s ease-in;
+        position: relative;
+        top: 20px;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

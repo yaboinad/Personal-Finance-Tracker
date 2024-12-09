@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -21,7 +22,6 @@
 
         @font-face
 
-        /*This will be served as font style for our website*/
             {
             font-family: Roboto1;
             src: url(Financia_Fonts/roboto/Roboto-Light.ttf);
@@ -52,13 +52,21 @@
             font-family: Coolvetica2;
             src: url(Financia_Fonts/coolvetica/coolvetica\ rg.otf);
         }
+
+        .nav_link.disabled {
+            color: #999;
+            cursor: not-allowed;
+            text-decoration: none;
+            pointer-events: none;
+            opacity: 0.6;
+        }
     </style>
 </head>
 
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
             <td style="width: 50vw;"></td>
             <td class="e-pay_box">
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
@@ -72,10 +80,15 @@
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuAccount">
-                    <a href="Financia_Sign_In.html">Sign In</a>
-                    <a href="Financia_Sign_Up.php">Sign Up</a>
-                    <a href="#">Account</a>
-
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a href="Financia_Sign_Up.php">Sign Up</a>
+                        <a href="Financia_Account.php">Account</a>                        
+                        <a href="backend/logout.php">Logout</a>
+                    <?php else: ?>
+                        <a href="Financia_Sign_In.php">Sign In</a>
+                        <a href="Financia_Sign_Up.php">Sign Up</a>
+                        <a href="Financia_Account.php">Account</a>
+                    <?php endif; ?>
                 </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
@@ -86,19 +99,39 @@
         <form action="">
             <tr>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Overview</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Summary</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_History.html">History</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="Financia_History.html">History</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">History</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Transactions.html">Transactions</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="#">Transactions</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Transactions</span>
+                    <?php endif; ?>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="#">Reports</a>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <a class="nav_link" href="#">Reports</a>
+                    <?php else: ?>
+                        <span class="nav_link disabled">Reports</span>
+                    <?php endif; ?>
                 </td>
             </tr>
         </form>
@@ -244,6 +277,26 @@
             dropdownMenuEpay.style.display = 'none';
             dropdownMenuAccount.style.display = 'none';
         });
+
+        function checkLoginStatus() {
+            fetch('check_login.php')
+                .then(response => response.json())
+                .then(data => {
+                    const loggedInMenu = document.getElementById('loggedInMenu');
+                    const loggedOutMenu = document.getElementById('loggedOutMenu');
+                    
+                    if (data.logged_in) {
+                        loggedInMenu.style.display = 'block';
+                        loggedOutMenu.style.display = 'none';
+                    } else {
+                        loggedInMenu.style.display = 'none';
+                        loggedOutMenu.style.display = 'block';
+                    }
+                });
+        }
+
+        // Call this when page loads
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
     </script>
 
 </body>

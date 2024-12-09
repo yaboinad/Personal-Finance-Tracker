@@ -8,7 +8,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Financia_Sign_In_Images/financia logo.png">
-    <link rel="stylesheet" href="Financia CSS/Financia_Sign_In_Css.css">
+    <link rel="stylesheet" href="Financia_Sign_In_Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Financia - Sign In</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
@@ -54,39 +55,27 @@ session_start();
             font-family: Coolvetica2;
             src: url(Financia_Fonts/coolvetica/coolvetica\ rg.otf);
         }
+
+
+
     </style>
 </head>
 
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
             <td style="width: 50vw;"></td>
-            <td class="e-pay_box"><img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt=""></td>
+            <td class="e-pay_box">
+                <img class="e-pay_button" src="Financia_Home_Page_Images/plus.png" alt="" style="opacity: 0.5; cursor: not-allowed;">
+            </td>
             <td class="notification_box"><img class="notification_button"
                     src="Financia_Home_Page_Images/Notification bell.png" alt=""></td>
             <td class="account_box">
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="Financia_Sign_In.html">Sign In</a>
-                    <a href="Financia_Sign_Up.html">Sign Up</a>
-                    <script>
-                        const accountBtn = document.getElementById('accountBtn');
-                        const dropdownMenu = document.getElementById('dropdownMenu');
-
-                        // Toggle the dropdown menu visibility
-                        accountBtn.addEventListener('click', () => {
-                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-                        });
-
-                        // Close the dropdown if clicked outside
-                        window.addEventListener('click', (event) => {
-                            if (event.target !== accountBtn && !dropdownMenu.contains(event.target)) {
-                                dropdownMenu.style.display = 'none';
-                            }
-                        });
-                    </script>
-
+                    <a href="Financia.php">Home</a>
+                    <a href="Financia_Sign_Up.php">Sign Up</a>
                 </div>
             </td>
             <td class="settings_box"><img class="settings_button" src="Financia_Home_Page_Images/Settings logo.png"
@@ -94,54 +83,72 @@ session_start();
         </tr>
     </table>
     <table class="table2">
-        <form action="">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            <form action="">
+                <tr>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Summary</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">History</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Transactions</button>
+                    </td>
+                    <td class="td_select">
+                        <button class="select_nav" onclick="window.location.href='#'">Reports</button>
+                    </td>
+                </tr>
+            </form>
+        <?php else: ?>
             <tr>
-                <td class="td_select"><select class="select_nav" name="Dashboard" id="Dashboard_category">
-                        <option value="Dashboard">Dashboard</option>
-                        <option value="Overview">Overview</option>
-                        <option value="Summary">Summary</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="History" id="History_category">
-                        <option value="History">History</option>
-                        <option value="Activity Log">Activity Log</option>
-                        <option value="Transactions">Transactions</option>
-                        <option value="Previous Reports">Previous Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Progress" id="Progress_category">
-                        <option value="Progress">Progress</option>
-                        <option value="Goals">Goals</option>
-                        <option value="Achievements">Achievements</option>
-                        <option value="Milestone">Milestone</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="Insights" id="Insights_category">
-                        <option value="Insights">Insights</option>
-                        <option value="Data Analysis">Data Analysis</option>
-                        <option value="Recommendations">Recommendations</option>
-                        <option value="Reports">Reports</option>
-                    </select></td>
-                <td class="td_select"><select class="select_nav" name="News" id="News_category">
-                        <option value="News">News</option>
-                        <option value="Latest Updates">Latest Updates</option>
-                        <option value="Announcements">Announcements</option>
-                    </select></td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Overview</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Summary</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">History</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Transactions</button>
+                </td>
+                <td class="td_select">
+                    <button class="select_nav" disabled style="opacity: 0.5;">Reports</button>
+                </td>
             </tr>
-        </form>
+        <?php endif; ?>
     </table>
 
 
 
 
-    =======
     <table class="table3">
         <?php
-        if (isset($_SESSION['login_errors'])) {
-            foreach ($_SESSION['login_errors'] as $error) {
-                echo "<p style='color: red; text-align: center;'>$error</p>";
-            }
-            unset($_SESSION['login_errors']);
+        if (isset($_SESSION['reset_success'])) {
+            echo "<div class='success-message'>";
+            echo "<i class='fas fa-check-circle' style='margin-right: 10px;'></i>";
+            echo $_SESSION['reset_success'];
+            echo "</div>";
+            unset($_SESSION['reset_success']);
+        }
+        if (isset($_SESSION['signup_success'])) {
+            echo "<div class='success-message'>";
+            echo "<i class='fas fa-check-circle' style='margin-right: 10px;'></i>";
+            echo $_SESSION['signup_success'];
+            echo "</div>";
+            unset($_SESSION['signup_success']);
+        }
+        if (isset($_SESSION['login_error'])) {
+            echo "<div class='error-message'>" . htmlspecialchars($_SESSION['login_error']) . "</div>";
+            unset($_SESSION['login_error']);
         }
         ?>
-        <form action="/Personal-Finance-Tracker/backend/process_signin.php" method="POST">
+        <form action="/Personal-Finance-Tracker/backend/process_login.php" method="POST">
             <tr>
                 <td class="labelbox_table3">
                     <br><label class="label_table3" for="username">Email / Username</label>
@@ -149,7 +156,10 @@ session_start();
             </tr>
             <tr>
                 <td>
-                    <input class="input_table3" type="text" name="username" placeholder="Email" autofocus required>
+                    <div class="input-container">
+                        <i class="fas fa-user"></i>
+                        <input class="input_table3" type="text" name="username_email" placeholder="Username or Email" required>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -159,30 +169,25 @@ session_start();
             </tr>
             <tr>
                 <td>
-                    <input class="input_table3" type="password" name="password" placeholder="Password" required>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input class="input_table3" type="password" name="password" placeholder="Password" required>
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td><br><hr style="border: 0.1vw solid black;"></td>
+                <td><br><hr style="border: 2px solid black; width: 100%; margin: 0 0 0 0;"></td>
             </tr>
             <tr>
-                <td>
+                <td style="text-align: center; white-space: nowrap;">
                     <a class="new_user" href="Financia_Sign_Up.php">New User?</a>
-                    <span style="font: normal 500 1.5vw arial;">|</span>
-                    <a class="forgot_password" href="">Forgot Password?</a>
+                    <span class="link-divider">|</span>
+                    <a class="forgot_password" href="Financia_Forgot_Password.php">Forgot Password?</a>
                 </td>
             </tr>
             <tr>
-                <td>
-                    <input class="log_in" type="submit" value="Log In">
-                    <input class="sign_in" type="submit" value="Sign in with Google">
-                    <img class="google" src="Financia_Sign_In_Images/google logo.png" alt="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <hr
-                        style="border: none; border-radius: 0 0 2vw 2vw; height: 2.5vw; background-color: rgb(0, 0, 0); margin: -0.5vw 0 0 0;">
+                <td style="text-align: center;">
+                    <input class="log_in" type="submit" value="Log In" style="display: block; margin: 1vw auto;">
                 </td>
             </tr>
         </form>
@@ -220,6 +225,70 @@ session_start();
     <br>
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
+    <script>
+        document.addEventListener('DOMContentLoaded',function() {
+            const accountBtn = document.getElementById('accountBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            // Toggle the dropdown menu visibility
+            accountBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent event from bubbling up
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close the dropdown if clicked outside
+            window.addEventListener('click', function(event) {
+                if (!accountBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Password visibility toggle
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordInput = document.querySelector('input[type="password"]');
+
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle icon
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Clear input functionality
+            const clearIcon = document.querySelector('.fa-times');
+            const usernameInput = document.querySelector('input[name="username_email"]');
+
+            clearIcon.addEventListener('click', function() {
+                usernameInput.value = '';
+                usernameInput.focus();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const usernameInput = document.querySelector('input[name="username_email"]');
+            const passwordInput = document.querySelector('input[name="password"]');
+
+            usernameInput.addEventListener('input', function() {
+                if (this.value.length < 3) {
+                    this.classList.add('input-error');
+                } else {
+                    this.classList.remove('input-error');
+                }
+            });
+
+            passwordInput.addEventListener('input', function() {
+                if (this.value.length < 6) {
+                    this.classList.add('input-error');
+                } else {
+                    this.classList.remove('input-error');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
