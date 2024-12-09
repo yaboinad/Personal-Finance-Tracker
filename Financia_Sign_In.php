@@ -8,7 +8,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Financia_Sign_In_Images/financia logo.png">
-    <link rel="stylesheet" href="Financia CSS/Financia_Sign_In_Css.css">
+    <link rel="stylesheet" href="Financia_Sign_In_Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Financia - Sign In</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
@@ -54,6 +55,9 @@ session_start();
             font-family: Coolvetica2;
             src: url(Financia_Fonts/coolvetica/coolvetica\ rg.otf);
         }
+
+
+
     </style>
 </head>
 
@@ -129,14 +133,12 @@ session_start();
             echo "<p style='color: green; text-align: center;'>" . $_SESSION['signup_success'] . "</p>";
             unset($_SESSION['signup_success']);
         }
-        if (isset($_SESSION['login_errors'])) {
-            foreach ($_SESSION['login_errors'] as $error) {
-                echo "<p style='color: red; text-align: center;'>$error</p>";
-            }
-            unset($_SESSION['login_errors']);
+        if (isset($_SESSION['login_error'])) {
+            echo "<div class='error-message'>" . htmlspecialchars($_SESSION['login_error']) . "</div>";
+            unset($_SESSION['login_error']);
         }
         ?>
-        <form action="/Personal-Finance-Tracker/backend/process_login.php" method="POST" style="text-align: center;">
+        <form action="/Personal-Finance-Tracker/backend/process_login.php" method="POST">
             <tr>
                 <td class="labelbox_table3">
                     <br><label class="label_table3" for="username">Email / Username</label>
@@ -144,7 +146,10 @@ session_start();
             </tr>
             <tr>
                 <td>
-                    <input class="input_table3" type="text" name="username" placeholder="Email" autofocus required>
+                    <div class="input-container">
+                        <i class="fas fa-user"></i>
+                        <input class="input_table3" type="text" name="username_email" placeholder="Username or Email" required>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -154,27 +159,25 @@ session_start();
             </tr>
             <tr>
                 <td>
-                    <input class="input_table3" type="password" name="password" placeholder="Password" required>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input class="input_table3" type="password" name="password" placeholder="Password" required>
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td><br><hr style="border: 0.1vw solid black; width: 100%; margin: 0 auto;"></td>
+                <td><br><hr style="border: 2px solid black; width: 100%; margin: 0 0 0 0;"></td>
             </tr>
             <tr>
-                <td style="text-align: center;">
+                <td style="text-align: center; white-space: nowrap;">
                     <a class="new_user" href="Financia_Sign_Up.php">New User?</a>
-                    <span style="font: normal 500 1.5vw arial;">|</span>
-                    <a class="forgot_password" href="">Forgot Password?</a>
+                    <span class="link-divider">|</span>
+                    <a class="forgot_password" href="Financia_Forgot_Password.php">Forgot Password?</a>
                 </td>
             </tr>
             <tr>
                 <td style="text-align: center;">
                     <input class="log_in" type="submit" value="Log In" style="display: block; margin: 1vw auto;">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <hr style="border: none; border-radius: 0 0 2vw 2vw; height: 2.5vw; background-color: rgb(0, 0, 0); margin: -0.5vw 0 0 0;">
                 </td>
             </tr>
         </form>
@@ -227,6 +230,51 @@ session_start();
             window.addEventListener('click', function(event) {
                 if (!accountBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
                     dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Password visibility toggle
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordInput = document.querySelector('input[type="password"]');
+
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle icon
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Clear input functionality
+            const clearIcon = document.querySelector('.fa-times');
+            const usernameInput = document.querySelector('input[name="username_email"]');
+
+            clearIcon.addEventListener('click', function() {
+                usernameInput.value = '';
+                usernameInput.focus();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const usernameInput = document.querySelector('input[name="username_email"]');
+            const passwordInput = document.querySelector('input[name="password"]');
+
+            usernameInput.addEventListener('input', function() {
+                if (this.value.length < 3) {
+                    this.classList.add('input-error');
+                } else {
+                    this.classList.remove('input-error');
+                }
+            });
+
+            passwordInput.addEventListener('input', function() {
+                if (this.value.length < 6) {
+                    this.classList.add('input-error');
+                } else {
+                    this.classList.remove('input-error');
                 }
             });
         });

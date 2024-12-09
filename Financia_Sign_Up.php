@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Financia_Sign_Up_Images/financia logo.png">
-    <link rel="stylesheet" href="Financia CSS/Financia_Sign_Up_Css.css">
+    <link rel="stylesheet" href="Financia_Sign_Up_Css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <title>Financia - Sign Up</title>
@@ -179,7 +179,11 @@ session_start();
                     <td>
                         <div class="input-container">
                             <i class="fa fa-lock icon"></i>
-                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <input type="password" id="password" name="password" 
+                                placeholder="Password" 
+                                minlength="6" 
+                                title="Password must be at least 6 characters long"
+                                required>
                             <i class="fa fa-eye toggle-icon"></i>
                         </div>
                     </td>
@@ -188,36 +192,52 @@ session_start();
                             <i class="fa-solid fa-location-dot icon"></i>
                             <select id="city" name="city" required>
                                 <option value="">Select City</option>
-                                <option value="MNL">Manila</option>
-                                <option value="QC">Quezon City</option>
-                                <option value="MKT">Makati</option>
-                                <option value="TGG">Taguig</option>
-                                <option value="PSG">Pasig</option>
-                                <option value="PSY">Pasay</option>
-                                <option value="MND">Mandaluyong</option>
-                                <option value="MRK">Marikina</option>
-                                <option value="CLO">Caloocan</option>
-                                <option value="VLZ">Valenzuela</option>
-                                <option value="PRQ">Parañaque</option>
-                                <option value="MNT">Muntinlupa</option>
+                                <option value="Manila">Manila</option>
+                                <option value="Quezon City">Quezon City</option>
+                                <option value="Makati">Makati</option>
+                                <option value="Taguig">Taguig</option>
+                                <option value="Pasig">Pasig</option>
+                                <option value="Pasay">Pasay</option>
+                                <option value="Mandaluyong">Mandaluyong</option>
+                                <option value="Marikina">Marikina</option>
+                                <option value="Caloocan">Caloocan</option>
+                                <option value="Valenzuela">Valenzuela</option>
+                                <option value="Parañaque">Parañaque</option>
+                                <option value="Muntinlupa">Muntinlupa</option>
                             </select>
                         </div>
                     </td>
                 </tr>
 
-                    <!-- Confirm Password row -->
-                    <tr class="input-group">
-                        <td><label for="confirm-password">Confirm Password</label></td>
-                    </tr>
-                    <tr class="input-group">
-                        <td>
-                            <div class="input-container">
-                                <i class="fa fa-lock icon"></i>
-                                <input type="password" id="confirm-password" name="confirmPassword" placeholder="Password" required>
-                                <i class="fa fa-eye toggle-icon"></i>
-                            </div>
-                        </td>
-                    </tr>
+                <!-- Confirm Password and Mobile Number row -->
+                <tr class="input-group">
+                    <td><label for="confirm-password">Confirm Password</label></td>
+                    <td><label for="mobile">Mobile Number</label></td>
+                </tr>
+                <tr class="input-group">
+                    <td>
+                        <div class="input-container">
+                            <i class="fa fa-lock icon"></i>
+                            <input type="password" id="confirm-password" name="confirmPassword" 
+                                placeholder="Password" 
+                                minlength="6"
+                                title="Password must be at least 6 characters long"
+                                required>
+                            <i class="fa fa-eye toggle-icon"></i>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mobile-container">
+                            <div class="prefix-box">+63</div>
+                            <input type="text" id="mobile" name="mobile" 
+                               
+                                maxlength="11" 
+                                class="mobile-input"
+                                required>
+                        </div>
+                    </td>
+                </tr>
+
                     <!-- OTP Input -->
                     <tr class="input-group">
                         <td colspan="2" style="text-align: center;">
@@ -372,6 +392,28 @@ session_start();
             });
         });
     });
+
+    function formatPhoneNumber(input) {
+        // Remove any non-digit characters
+        let value = input.value.replace(/\D/g, '');
+        
+        // If the number starts with '9', add '0' prefix
+        if (value.startsWith('9')) {
+            value = '0' + value;
+        }
+        
+        // Ensure the number starts with '09'
+        if (value.length > 0 && !value.startsWith('09')) {
+            value = value.substring(0, 0);
+        }
+        
+        // Limit to 11 digits (including '09')
+        if (value.length > 11) {
+            value = value.substring(0, 11);
+        }
+        
+        input.value = value;
+    }
     </script>
 </body>
 

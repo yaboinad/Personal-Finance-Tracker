@@ -98,31 +98,12 @@
         background-color: black;
         height: 3vw;
         margin: 0 -0.44vw 0 -0.44vw;
-        width: 99.10vw;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        width: 99.16vw;
     }
 
     .td_link {
         text-align: center;
         width: auto;
-    }
-
-    .nav_link {
-        padding: 0.7vw 1.5vw;
-        margin: 0 5vw;
-        color: rgb(146, 141, 241);
-        font: normal 600 1.3vw Roboto1;
-        text-align: center;
-        text-decoration: none;
-        /*padding: 0.5vw 1vw;*/
-        transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    .nav_link:hover {
-        color: rgb(236, 234, 243);
-        text-shadow: 0 0 0.5vw rgb(138, 36, 234);
     }
 
     .td_select {
@@ -139,8 +120,12 @@
         width: 10vw;
     }
 
+    .select_nav:not([disabled]):hover {
+        background-color: #670ef7;
+        border-radius: 20px;
+    }
 
- .social_media_logo {
+    .social_media_logo {
         color: aliceblue;
         height: 4vw;
         padding: 0 1vw;
@@ -173,32 +158,36 @@
     }
 
     .account-info {
-        background: rgba(17, 2, 29, 0.562);
+        background: #280444;
         border-radius: 15px;
-        border-bottom: 60px solid black;
-        margin: 20px auto 0px auto;  /* Increased top margin to make room for header */
-        width: 80%;
+        border-bottom: 40px solid #500c94;
+        margin: 20px auto 0px auto; 
+        width: 70%;
         max-width: 1200px;
         color: white;
         height: auto;
-        padding: 20px;
+        padding: 20px 20px 0px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .info-row {
-        margin-bottom: 2vw;
+        margin-bottom: 0vw;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 4vw;
+        background-color: rgba(70, 0, 128, 0.3);  
+        padding: 0px 20px 0px 20px;
+        width: 100%;
+
     }
 
     .info-label {
         color: #9291F1;
-        font: normal 600 1.2vw Roboto1;
-        margin-bottom: 0;
+        font: normal 600 1.6vw Roboto1;
+        margin-top: 1vw;
         min-width: 150px;
         text-align: center;
     }
@@ -208,8 +197,8 @@
         align-items: center;
         justify-content: center;
         gap: 1vw;
-        font: normal 500 1.5vw Roboto2;
-        margin-bottom: 2vw;
+        font: normal 500 1.4vw Roboto2;
+        margin-bottom: 1vw;
         text-align: center;
     }
 
@@ -225,8 +214,15 @@
         flex-direction: column; 
         align-items: center; 
         height: auto;
-        
+        background-color: #080414;
+        padding: 5px 20px 7px 20px;
+        border-radius: 10px;
+        min-width: 200px;
+        margin: 0 10px;
+        border: 1px solid rgba(138, 36, 234, 0.3);
     }
+
+
 
     .connected-account {
         display: flex;
@@ -272,12 +268,26 @@
         color: transparent;
     }
 
-    .account-input,
-    .email-input {
-        padding: 0.6vw;
+    .account-input {
+        margin: 2vw 0 0.5vw 0;
+        padding: 0.3vw;
         border-radius: 20px;
         border: 2px solid #8316ff;
-        background: white;
+        background: rgb(0, 0, 0);
+        color: #8316ff;
+        font: normal 400 1vw Roboto1;
+        text-align: center;
+        height: 1vw;
+        width: 200px;
+        outline: none;
+    }
+
+    .email-input {
+        margin: 0vw 0 2vw 0;
+        padding: 0.3vw;
+        border-radius: 20px;
+        border: 2px solid #8316ff;
+        background: rgb(0, 0, 0);
         color: #8316ff;
         font: normal 400 1vw Roboto1;
         text-align: center;
@@ -288,15 +298,50 @@
 
     .status-label {
         color: #9291F1;
-        font: normal 600 1.2vw Roboto1;
+        font: 1.2vw Roboto1;
         text-align: center;
+        margin-bottom: 0.5vw;
+    }
+
+    .status-inputs-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1vw;
+        background-color: rgb(3, 3, 3);
+        padding: 5px 10px 5px 10px;
+        border-radius: 20px;
+        border: 1px solid rgb(132, 0, 255);
+    }
+
+    .status-input {
+        position: relative;
+        flex: 1;
+        min-width: 100px;
+        max-width: 100px;
+        height: 35px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid #8316ff;
+        border-radius: 5px;
+        background-color: #ffffff !important;
+        color: transparent;
+    }
+
+    .status-input img {
+        width: 30px !important;
+        height: 30px !important;
+        object-fit: contain !important;
+        display: block !important;
+        position: absolute !important;
+        z-index: 1 !important;
     }
 
     .connect-btn {
-        background: rgb(199, 212, 255);
-        color: rgb(104, 62, 253);
-        border: 2px solid #4063ff;
-        padding: 1.2vw 2.6vw;
+        background: rgb(69, 0, 160);
+        color: white;
+        border: 1px solid #8d5efc;
+        padding: 0.5vw 1vw;
         border-radius: 20px;
         cursor: pointer;
         font: normal 600 1vw Roboto2;
@@ -304,7 +349,7 @@
     }
 
     .connect-btn:hover {
-        background: rgb(144, 168, 247);
+        background: rgb(98, 0, 255);
     }
 
     .username-header {
@@ -362,33 +407,36 @@
     }
 
     .save-btn {
-        background: rgb(199, 212, 255);
-        color: rgb(104, 62, 253);
-        border: 2px solid #4063ff;
+        background: #8814f4;
+        color: white;
+        border: 2px solid #a749ff;  
     }
 
     .save-btn:hover {
-        background: rgb(144, 168, 247);
+        background: rgb(98, 0, 255);
     }
 
     .delete-btn {
-        background: rgb(255, 199, 199);
-        color: rgb(253, 62, 62);
-        border: 2px solid #ff4040;
+        background: #8814f4;
+        color: white;
+        border: 2px solid #a748ff;
     }
 
     .delete-btn:hover {
-        background: rgb(247, 144, 144);
+        background: rgb(98, 0, 255);
     }
 
     .info-grouped {
-        width: 100%;
+        width: 95%;
         display: flex;
         justify-content: space-between;
-        background-color: rgba(128, 0,128, 0.3); /* Purple semi-transparent background */
+        background-color: rgba(128, 0,128, 0.3);
         border-radius: 15px;
+        border: 2px solid #8d47ff;
         padding: 20px;
         margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .connected-status {
@@ -396,13 +444,14 @@
         flex-direction: column;
         gap: 1vw;
         margin-left: 2vw;
+        align-items: center;
     }
 
     .status-input {
         padding: 0.5vw;
         border-radius: 20px;
         border: 1px solid #9291F1;
-        background:#c8b4f4;
+        background: none;
         font: normal 400 1vw Roboto1;
         text-align: center;
     }
@@ -519,5 +568,121 @@
 #saveEmailBtn, #cancelEmailBtn {
     padding: 5px 10px;
     cursor: pointer;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-family: Roboto1;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification.success {
+    background-color: #4CAF50;
+    border-left: 4px solid #45a049;
+}
+
+.notification.error {
+    background-color: #f44336;
+    border-left: 4px solid #da3c31;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.username-footer .footer-btn[value="Save Info"] {
+    background: #8814f4;
+    color: white;
+    border: 2px solid #a749ff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font: 0.7vw Roboto2;
+    min-width: 100px;
+    transition: all 0.3s ease;
+}
+
+.username-footer .footer-btn[value="Save Info"]:hover {
+    background: rgb(98, 0, 255);
+   
+    box-shadow: 0 4px 8px rgba(131, 22, 255, 0.4);
+}
+
+.username-footer .footer-btn[value="Save Info"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(131, 22, 255, 0.3);
+}
+
+.confirm-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.confirm-content {
+    background: rgb(119, 0, 255);
+    padding: 20px;
+    border: 2px solid #993fff;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Roboto1;
+}
+
+.confirm-content p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirm-buttons button {
+    padding: 8px 20px;
+    border: 2px solid #993fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Roboto1;
+    transition: all 0.3s ease;
+}
+
+.confirm-yes {
+    background: #000000;
+    color: white;
+}
+
+.confirm-no {
+    background: #000000;
+    color: white;
+}
+
+.confirm-buttons button:hover {
+    background: #8400ff;
 }
 }

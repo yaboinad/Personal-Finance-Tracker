@@ -1,3 +1,39 @@
+.mobile-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.prefix-box {
+    position: absolute;
+    left: 0;
+    padding: 8px 12px;
+    background: white;
+    border-right: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    color: #666;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.mobile-input {
+    width: 100%;
+    padding: 8px 10px 8px 55px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.input-container:has(.mobile-input-wrapper) {
+    position: relative;
+    display: block;
+}
+
 @media screen and (max-width: 1920px) and (max-height: 1080px) {
     .table1 {
         background: rgb(0, 0, 0);
@@ -321,4 +357,62 @@
         width: 100%;
         text-align: center;
     }
+
+
+    
+ /* Add these styles at the top of your file, before any media queries */
+.mobile-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.prefix-box {
+    position: absolute;
+    left: 0;
+    padding: 8px 12px;
+    background: white;
+    border-right: 1px solid #000000;
+    border-radius: 10px 0 0 10px;
+    color: #0a0a0a;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.mobile-input {
+    width: 100%;
+    padding: 8px 10px 8px 55px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Your existing media query starts here */
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    /* Your existing styles... */
+}
+}
+
+/* Remove outline from all input boxes */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.mobile-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.input-container input:focus {
+    outline: none;
+    box-shadow: none;
 }

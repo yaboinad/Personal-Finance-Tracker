@@ -22,7 +22,6 @@
 
         @font-face
 
-        /*This will be served as font style for our website*/
             {
             font-family: Roboto1;
             src: url(Financia_Fonts/roboto/Roboto-Light.ttf);
@@ -88,6 +87,7 @@
                     <?php else: ?>
                         <a href="Financia_Sign_In.php">Sign In</a>
                         <a href="Financia_Sign_Up.php">Sign Up</a>
+                        <a href="Financia_Account.php">Account</a>
                     <?php endif; ?>
                 </div>
             </td>

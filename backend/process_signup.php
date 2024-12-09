@@ -23,10 +23,18 @@ $password = $_POST['password'] ?? '';
 $confirmPassword = $_POST['confirmPassword'] ?? '';
 $birthdate = $_POST['birthdate'] ?? '';
 $city = $_POST['city'] ?? '';
+$mobile = $_POST['mobile'] ?? '';
 $otp = $_POST['otp'] ?? '';
 
 // Basic validation
 $errors = [];
+
+// Validate mobile number
+if (empty($mobile)) {
+    $errors[] = "Mobile number is required";
+} elseif (!preg_match("/^(09|\+639)\d{9}$/", $mobile)) {
+    $errors[] = "Invalid mobile number format";
+}
 
 // Validate username/email
 if (empty($username_email)) {
@@ -66,14 +74,15 @@ if (!empty($errors)) {
 try {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
-    $stmt = $pdo->prepare("INSERT INTO users (username_email, password, birthdate, city) 
-                          VALUES (?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO users (username_email, password, birthdate, city, mobile_number) 
+                          VALUES (?, ?, ?, ?, ?)");
     
     if ($stmt->execute([
         $username_email,
         $hashedPassword,
         $birthdate,
-        $city
+        $city,
+        $mobile
     ])) {
         // Successful registration
         $_SESSION['signup_success'] = "Registration successful! You can now sign in with your new account.";
