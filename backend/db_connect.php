@@ -1,20 +1,25 @@
 <?php
-$servername = "localhost";
-$username = "root";  // Your database username (default for XAMPP is "root")
-$password = "";      // Your database password (default for XAMPP is empty)
-$dbname = "financia";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'financia';
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+try {
+    $conn = new mysqli($host, $username, $password, $database);
+    
+    if ($conn->connect_error) {
+        error_log("Connection failed: " . $conn->connect_error);
+        throw new Exception("Database connection failed");
+    }
+    
+    // Set charset to handle special characters
+    $conn->set_charset("utf8mb4");
+    
+} catch (Exception $e) {
+    error_log("Database connection error: " . $e->getMessage());
+    die("Database connection failed. Please try again later.");
 }
-
-// Set charset to utf8mb4
-$conn->set_charset("utf8mb4");
-
-// Optionally set timezone if needed
-date_default_timezone_set('Asia/Manila');  // Adjust timezone as needed
 ?> 

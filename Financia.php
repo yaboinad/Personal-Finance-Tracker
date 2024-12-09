@@ -71,7 +71,7 @@
             <td class="e-pay_box">
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuEpay">
-                    <a href="Financia-E-Pay.html">E-Pay</a>
+                    <a href="Financia-E-Pay.php">E-Pay</a>
                 </div>
             </td>
 
@@ -100,7 +100,7 @@
             <tr>
                 <td class="td_link">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                        <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
+                        <a class="nav_link" href="Financia_Dashboard_Overview.php">Overview</a>
                     <?php else: ?>
                         <span class="nav_link disabled">Overview</span>
                     <?php endif; ?>
@@ -114,14 +114,14 @@
                 </td>
                 <td class="td_link">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                        <a class="nav_link" href="Financia_History.html">History</a>
+                        <a class="nav_link" href="Financia_History.php">History</a>
                     <?php else: ?>
                         <span class="nav_link disabled">History</span>
                     <?php endif; ?>
                 </td>
                 <td class="td_link">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                        <a class="nav_link" href="#">Transactions</a>
+                        <a class="nav_link" href="Financia_Transactions.html">Transactions</a>
                     <?php else: ?>
                         <span class="nav_link disabled">Transactions</span>
                     <?php endif; ?>

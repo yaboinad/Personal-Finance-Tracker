@@ -9,22 +9,18 @@ if (!isset($_SESSION['username_email'])) {
 
 $username_email = $_SESSION['username_email'];
 
-// Mark user as deleted instead of actually deleting
-$sql = "UPDATE users SET deleted = 1 WHERE username_email = ?";
+// Prepare SQL statement to delete bank accounts
+$sql = "UPDATE users SET bdo_account = NULL, gcash_account = NULL WHERE username_email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $username_email);
 
 $response = array();
 if ($stmt->execute()) {
-    // Clear all session data
-    $_SESSION = array();
-    session_destroy();
-    
     $response['success'] = true;
-    $response['message'] = 'Account deleted successfully';
+    $response['message'] = 'Accounts deleted successfully';
 } else {
     $response['success'] = false;
-    $response['message'] = 'Error deleting account';
+    $response['message'] = 'Error deleting accounts';
 }
 
 $stmt->close();

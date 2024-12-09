@@ -87,12 +87,12 @@ if (!empty($row['email'])) {
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
             <td style="width: 50vw;"></td>
             <td class="e-pay_box">
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuEpay">
-                    <a href="Financia-E-Pay.html">E-Pay</a>
+                    <a href="Financia-E-Pay.php">E-Pay</a>
                 </div>
             </td>
 
@@ -107,7 +107,7 @@ if (!empty($row['email'])) {
                         <a href="backend/logout.php">Logout</a>
                     <?php else: ?>
                         <a href="Financia_Sign_Up.php">Sign Up</a>
-                        <a href="Financia_Sign_In.php">Sign In</a>
+                        <a href="Financia_Account.php">Account</a>
                         <a href="Financia.php">Home</a>
                     <?php endif; ?>
                 </div>

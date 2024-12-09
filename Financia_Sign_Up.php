@@ -160,7 +160,7 @@ session_start();
                                 <input type="text" 
                                        id="username" 
                                        name="username" 
-                                       placeholder="Enter your email address" 
+                                       placeholder="Enter email or username" 
                                        required>
                                 <i class="fa fa-times-circle clear-icon"></i>
                             </div>
@@ -325,32 +325,38 @@ session_start();
                 sendOtpBtn.disabled = true;
                 
                 // Fetch OTP from PHP
-                fetch('/Personal-Finance-Tracker/backend/send_otp.php')
-                    .then(response => response.json())
-                    .then(data => {
-                        otpMessage.style.display = 'block';
-                        otpMessage.style.textAlign = 'center';
-                        otpMessage.textContent = `OTP Code: ${data.otp}`;
-                        
-                        // Handle button cooldown
-                        let timeLeft = 30;
+                fetch('/Personal-Finance-Tracker/backend/send_otp.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    otpMessage.style.display = 'block';
+                    otpMessage.style.textAlign = 'center';
+                    otpMessage.textContent = `OTP Code: ${data.otp}`;
+                    
+                    // Handle button cooldown
+                    let timeLeft = 30;
+                    sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
+                    
+                    const timer = setInterval(() => {
+                        timeLeft--;
                         sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
-                        
-                        const timer = setInterval(() => {
-                            timeLeft--;
-                            sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
-                            if (timeLeft <= 0) {
-                                clearInterval(timer);
-                                sendOtpBtn.disabled = false;
-                                sendOtpBtn.textContent = 'Send OTP';
-                            }
-                        }, 1000);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Failed to send OTP. Please try again.');
-                        sendOtpBtn.disabled = false;
-                    });
+                        if (timeLeft <= 0) {
+                            clearInterval(timer);
+                            sendOtpBtn.disabled = false;
+                            sendOtpBtn.textContent = 'Send OTP';
+                        }
+                    }, 1000);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to send OTP. Please try again.');
+                    sendOtpBtn.disabled = false;
+                });
             });
         });
         document.addEventListener('DOMContentLoaded', function() {
