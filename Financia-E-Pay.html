@@ -96,7 +96,8 @@
         <form action="">
             <tr>
                 <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
+                    <button class="select_nav"
+                        onclick="window.location.href='Financia_Dashboard_Overview.html'">Overview</button>
                 </td>
                 <td class="td_select">
                     <button class="select_nav" onclick="window.location.href='#'">Summary</button>
@@ -119,7 +120,7 @@
         <div class="balance-card">
             <div class="card-header bdo-header">
                 <img src="Financia_E-Pay_Images/bdo.png" alt="BDO Logo" style="height: 20px; vertical-align: middle;">
-                
+
             </div>
             <div class="card-balance">₱452,120</div>
             <div class="card-footer">Total Balance</div>
@@ -127,19 +128,20 @@
                 <div class="detail-box">
                     <div class="detail-amount">₱50,120</div>
                     <div class="detail-label">Total Deposits (November 2024)</div>
-                    
+
                 </div>
                 <div class="detail-box">
                     <div class="detail-amount">₱24,490</div>
                     <div class="detail-label">Total Withdrawals (November 2024)</div>
-                 
+
                 </div>
             </div>
         </div>
         <div class="balance-card">
             <div class="card-header gcash-header">
-                <img src="Financia_E-Pay_Images/gcash.png" alt="GCash Logo" style="height: 20px; vertical-align: middle;">
-                
+                <img src="Financia_E-Pay_Images/gcash.png" alt="GCash Logo"
+                    style="height: 20px; vertical-align: middle;">
+
             </div>
             <div class="card-balance">₱62,120</div>
             <div class="card-footer">Total Balance</div>
@@ -147,12 +149,12 @@
                 <div class="detail-box">
                     <div class="detail-amount">₱50,120</div>
                     <div class="detail-label">Total Deposits (November 2024)</div>
-                    
+
                 </div>
                 <div class="detail-box">
                     <div class="detail-amount">₱24,490</div>
                     <div class="detail-label">Total Withdrawals (November 2024)</div>
-                    
+
                 </div>
             </div>
         </div>
@@ -163,7 +165,7 @@
     </div>
     <div class="summary-container">
         <div class="filter-bar">
-                <select class="month-select">
+            <select class="month-select">
                 <option>Starting Month & Year</option>
             </select>
             <select class="month-select">
@@ -235,26 +237,33 @@
     <div class="epay-container">
         <div class="epay-card">
             <div class="top-bar">
-                <div style="display: flex; gap: 150px; align-items: center; width: 100%; justify-content: flex-start; padding: 0px 20px;">
+                <div
+                    style="display: flex; gap: 150px; align-items: center; width: 100%; justify-content: flex-start; padding: 0px 20px;">
                     <div style="position: relative; display: inline-block;">
-                        <select id="transaction-type" onchange="handleTransactionTypeChange(this.value)" style="appearance: none; background: #8000ff; color: white; border: none; padding: 8px 15px; border-radius: 20px; width: 150px; outline: none; cursor: pointer; ">
+                        <select id="transaction-type" onchange="handleTransactionTypeChange(this.value)"
+                            style="appearance: none; background: #8000ff; color: white; border: none; padding: 8px 15px; border-radius: 20px; width: 150px; outline: none; cursor: pointer; ">
                             <option value="" disabled selected hidden>Transaction Type</option>
                             <option>Transfer Money</option>
                             <option>Deposit</option>
                             <option>Withdraw</option>
                         </select>
-                        <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 30px; background: rgb(185, 35, 255); border-radius: 0 20px 20px 0; pointer-events: none; display: flex; align-items: center; justify-content: center;">
-                            <span style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid white;"></span>
+                        <div
+                            style="position: absolute; right: 0; top: 0; bottom: 0; width: 30px; background: rgb(185, 35, 255); border-radius: 0 20px 20px 0; pointer-events: none; display: flex; align-items: center; justify-content: center;">
+                            <span
+                                style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid white;"></span>
                         </div>
                     </div>
-                    <button class="confirm-btn" style="border-radius: 20px; width: 150px; background-color: #8000ff;">Confirm Payment</button>
+                    <button class="confirm-btn"
+                        style="border-radius: 20px; width: 150px; background-color: #8000ff;">Confirm Payment</button>
                 </div>
             </div>
 
             <div class="field" style="background: #6A2BC2;">
-                <label style="color: pink; background: #340062; border-radius: 0; width: 120%;">Transaction Name:</label>
+                <label style="color: pink; background: #340062; border-radius: 0; width: 120%;">Transaction
+                    Name:</label>
                 <div style="position: relative; width: 60%; margin: 8px 100px;">
-                    <div class="transaction-input" style="padding: 6px 25px 6px 10px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none; background: white; color: black; display: flex; align-items: center; justify-content: center;">
+                    <div class="transaction-input"
+                        style="padding: 6px 25px 6px 10px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none; background: white; color: black; display: flex; align-items: center; justify-content: center;">
                         <!-- Text will be populated here by JavaScript -->
                     </div>
                 </div>
@@ -263,10 +272,12 @@
             <div class="field" style="background: #6A2BC2;">
                 <label style="color: pink; background: #340062; border-radius: 0; width: 120%;">Payment Options:</label>
                 <div style="display: inline-flex; gap: 15px; width: 110%; justify-content: center;">
-                    <button class="payment-button" id="bdo-button" data-bank="bdo" disabled style="display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 20px; border: none; width: 80px;">
+                    <button class="payment-button" id="bdo-button" data-bank="bdo" disabled
+                        style="display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 20px; border: none; width: 80px;">
                         <img src="Financia_E-Pay_Image/bdo.png" alt="BDO" style="height: auto; width: 100%;">
                     </button>
-                    <button class="payment-button" id="gcash-button" data-bank="gcash" disabled style="display: flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 20px; border: none; width: 80px;">
+                    <button class="payment-button" id="gcash-button" data-bank="gcash" disabled
+                        style="display: flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 20px; border: none; width: 80px;">
                         <img src="Financia_E-Pay_Image/gcash.png" alt="GCash" style="height: auto; width: 100%;">
                     </button>
                 </div>
@@ -274,56 +285,75 @@
 
             <div class="field" style="background: #6A2BC2;">
                 <label style="color: pink; background: #000000; border-radius: 0;">Account Balance:</label>
-                <div class="balance" style="background: #000000;; border-radius: 0; text-align: center; padding: 15px 10px 10px 40px; color: pink;">100,000</div>
+                <div class="balance"
+                    style="background: #000000;; border-radius: 0; text-align: center; padding: 15px 10px 10px 40px; color: pink;">
+                    100,000</div>
             </div>
 
             <div class="field" style="background: #6A2BC2;">
                 <label style="color: pink; background: #340062; border-radius: 0; width: 120%;">Recipient Name:</label>
                 <div style="position: relative; width: 60%; margin: 8px 100px;">
-                    <input type="text" class="recipient-input" style="padding: 6px 25px 6px 10px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
-                    <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; line-height: 1;">✖</span>
+                    <input type="text" class="recipient-input"
+                        style="padding: 6px 25px 6px 10px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
+                    <span
+                        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; line-height: 1;">✖</span>
                 </div>
             </div>
 
             <div class="field" style="background: #6A2BC2;">
-                <label style="color: pink;background: #340062; width: 120%; border-radius: 0;">Recipient Account Number:</label>
+                <label style="color: pink;background: #340062; width: 120%; border-radius: 0;">Recipient Account
+                    Number:</label>
                 <div style="position: relative; width: 60%; margin: 8px 100px;">
-                    <span style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); color: #ffffff; line-height: 1; background: rgba(128, 0, 139, 0.993); padding: 8px; border-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid rgb(0, 0, 0);">+63</span>
-                    <input type="text" class="recipient-input" style="padding: 6px 25px 6px 30px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
+                    <span
+                        style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); color: #ffffff; line-height: 1; background: rgba(128, 0, 139, 0.993); padding: 8px; border-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid rgb(0, 0, 0);">+63</span>
+                    <input type="text" class="recipient-input"
+                        style="padding: 6px 25px 6px 30px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
                 </div>
             </div>
 
             <div class="field" style="background: #6A2BC2;">
                 <label style="color: pink;background: #340062; width: 120%; border-radius: 0;">Recipient Email:</label>
                 <div style="position: relative; width: 60%; margin: 10px 100px;">
-                    <span style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); color: #ffffff; line-height: 1; background: rgba(128, 0, 139, 0.993); padding: 8px 14px; border-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid rgb(0, 0, 0);"><i class="fas fa-envelope"></i></span>
-                    <input type="text" class="recipient-input" style="padding: 6px 25px 6px 30px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
+                    <span
+                        style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); color: #ffffff; line-height: 1; background: rgba(128, 0, 139, 0.993); padding: 8px 14px; border-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid rgb(0, 0, 0);"><i
+                            class="fas fa-envelope"></i></span>
+                    <input type="text" class="recipient-input"
+                        style="padding: 6px 25px 6px 30px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
                 </div>
             </div>
 
             <div class="field" style="background: #6A2BC2;">
                 <label style="color: pink;background: #340062; width: 120%; border-radius: 0;">Amount:</label>
                 <div style="position: relative; width: 60%; margin: 10px 100px;">
-                    <span style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); color: #ffffff; line-height: 1; background: rgba(128, 0, 139, 0.993); padding: 8px 14px; border-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid rgb(0, 0, 0);">₱</span>
-                    <input type="number" class="recipient-input" style="padding: 6px 25px 6px 30px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
-                    <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; line-height: 1;">✖</span>
+                    <span
+                        style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); color: #ffffff; line-height: 1; background: rgba(128, 0, 139, 0.993); padding: 8px 14px; border-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1px solid rgb(0, 0, 0);">₱</span>
+                    <input type="number" class="recipient-input"
+                        style="padding: 6px 25px 6px 30px; width: 100%; box-sizing: border-box; height: 30px; border-radius: 20px; outline: none;">
+                    <span
+                        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; line-height: 1;">✖</span>
                 </div>
             </div>
 
             <div class="field description" style="background: #0D0114; border-bottom: 3px solid rgb(255, 97, 247);">
-                <label style="color: pink ;background: #0D0114; border-radius: 0; padding: 20px 0px 20px 45px; margin: 0; height: auto;">Description (optional)</label>
-                <textarea style="width: 70%; margin-left: 30%; padding: 10px; border-radius: 10px;">This is a comment for my transaction</textarea>
+                <label
+                    style="color: pink ;background: #0D0114; border-radius: 0; padding: 20px 0px 20px 45px; margin: 0; height: auto;">Description
+                    (optional)</label>
+                <textarea
+                    style="width: 70%; margin-left: 30%; padding: 10px; border-radius: 10px;">This is a comment for my transaction</textarea>
             </div>
 
             <div class="field-group">
                 <div style="display: flex; gap: 20px; justify-content: center;">
                     <div style="flex: 1; max-width: 200px;">
-                        <label style="display: block; margin-bottom: 8px; text-align: center;">Date of Payment (optional):</label>
-                        <input type="date" value="2024-11-11" style="width: 100%; padding: 8px; height: 30px; border-radius: 8px; outline: none;">
+                        <label style="display: block; margin-bottom: 8px; text-align: center;">Date of Payment
+                            (optional):</label>
+                        <input type="date" value="2024-11-11"
+                            style="width: 100%; padding: 8px; height: 30px; border-radius: 8px; outline: none;">
                     </div>
                     <div style="flex: 1; max-width: 200px;">
                         <label style="display: block; margin-bottom: 8px; text-align: center;">Pin Code:</label>
-                        <input type="password" value="123456" style="width: 100%; padding: 8px; height: 30px; border-radius: 8px; outline: none;">
+                        <input type="password" value="123456"
+                            style="width: 100%; padding: 8px; height: 30px; border-radius: 8px; outline: none;">
                     </div>
                 </div>
             </div>
@@ -346,17 +376,8 @@
         <tr>
             <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
-        </tr>
-        <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
-        </tr>
-        <tr>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
         </tr>
     </table>
     <br>
@@ -365,154 +386,154 @@
     </table>
 
     <script>
-    function updateTransactionName(selectedValue) {
-        const transactionDisplay = document.querySelector('.transaction-input');
-        if (transactionDisplay) {
-            transactionDisplay.textContent = selectedValue;
-        }
-    }
-
-    function handleTransactionTypeChange(selectedValue) {
-        // Update transaction name
-        updateTransactionName(selectedValue);
-        
-        // Get all recipient related fields
-        const recipientFields = document.querySelectorAll('.recipient-input');
-        const recipientLabels = document.querySelectorAll('.field label:not([for="transaction-type"])');
-        
-        // Determine if fields should be disabled
-        const shouldDisable = selectedValue === 'Deposit' || selectedValue === 'Withdraw';
-        
-        // Update fields
-        recipientFields.forEach(field => {
-            field.disabled = shouldDisable;
-            if (shouldDisable) {
-                field.value = ''; // Clear values when disabled
-                field.style.backgroundColor = '#f0f0f0';
-                field.style.cursor = 'not-allowed';
-            } else {
-                field.style.backgroundColor = 'white';
-                field.style.cursor = 'text';
+        function updateTransactionName(selectedValue) {
+            const transactionDisplay = document.querySelector('.transaction-input');
+            if (transactionDisplay) {
+                transactionDisplay.textContent = selectedValue;
             }
-        });
-        
-        // Update labels
-        recipientLabels.forEach(label => {
-            if (shouldDisable) {
-                label.style.opacity = '0.5';
-            } else {
-                label.style.opacity = '1';
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const bdoButton = document.getElementById('bdo-button');
-        const gcashButton = document.getElementById('gcash-button');
-
-        // Function to enable/disable payment buttons based on saved accounts
-        function updatePaymentButtons() {
-            fetch('backend/get_saved_accounts.php')
-                .then(response => response.json())
-                .then(data => {
-                    // Enable/disable BDO button
-                    if (data.bdoAccount) {
-                        bdoButton.style.opacity = '1';
-                        bdoButton.style.cursor = 'pointer';
-                        bdoButton.disabled = false;
-                    }
-
-                    // Enable/disable GCash button
-                    if (data.gcashAccount) {
-                        gcashButton.style.opacity = '1';
-                        gcashButton.style.cursor = 'pointer';
-                        gcashButton.disabled = false;
-                    }
-                })
-                .catch(error => console.error('Error:', error));
         }
 
-        // Initial check for saved accounts
-        updatePaymentButtons();
+        function handleTransactionTypeChange(selectedValue) {
+            // Update transaction name
+            updateTransactionName(selectedValue);
 
-        // Add click handlers for enabled buttons
-        bdoButton.addEventListener('click', function(e) {
-            if (!this.disabled) {
-                // Handle BDO payment selection
-                this.classList.add('selected');
-                gcashButton.classList.remove('selected');
+            // Get all recipient related fields
+            const recipientFields = document.querySelectorAll('.recipient-input');
+            const recipientLabels = document.querySelectorAll('.field label:not([for="transaction-type"])');
+
+            // Determine if fields should be disabled
+            const shouldDisable = selectedValue === 'Deposit' || selectedValue === 'Withdraw';
+
+            // Update fields
+            recipientFields.forEach(field => {
+                field.disabled = shouldDisable;
+                if (shouldDisable) {
+                    field.value = ''; // Clear values when disabled
+                    field.style.backgroundColor = '#f0f0f0';
+                    field.style.cursor = 'not-allowed';
+                } else {
+                    field.style.backgroundColor = 'white';
+                    field.style.cursor = 'text';
+                }
+            });
+
+            // Update labels
+            recipientLabels.forEach(label => {
+                if (shouldDisable) {
+                    label.style.opacity = '0.5';
+                } else {
+                    label.style.opacity = '1';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const bdoButton = document.getElementById('bdo-button');
+            const gcashButton = document.getElementById('gcash-button');
+
+            // Function to enable/disable payment buttons based on saved accounts
+            function updatePaymentButtons() {
+                fetch('backend/get_saved_accounts.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Enable/disable BDO button
+                        if (data.bdoAccount) {
+                            bdoButton.style.opacity = '1';
+                            bdoButton.style.cursor = 'pointer';
+                            bdoButton.disabled = false;
+                        }
+
+                        // Enable/disable GCash button
+                        if (data.gcashAccount) {
+                            gcashButton.style.opacity = '1';
+                            gcashButton.style.cursor = 'pointer';
+                            gcashButton.disabled = false;
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
             }
+
+            // Initial check for saved accounts
+            updatePaymentButtons();
+
+            // Add click handlers for enabled buttons
+            bdoButton.addEventListener('click', function (e) {
+                if (!this.disabled) {
+                    // Handle BDO payment selection
+                    this.classList.add('selected');
+                    gcashButton.classList.remove('selected');
+                }
+            });
+
+            gcashButton.addEventListener('click', function (e) {
+                if (!this.disabled) {
+                    // Handle GCash payment selection
+                    this.classList.add('selected');
+                    bdoButton.classList.remove('selected');
+                }
+            });
         });
 
-        gcashButton.addEventListener('click', function(e) {
-            if (!this.disabled) {
-                // Handle GCash payment selection
-                this.classList.add('selected');
-                bdoButton.classList.remove('selected');
-            }
-        });
-    });
+        document.querySelector('.confirm-btn').addEventListener('click', function () {
+            const transactionType = document.getElementById('transaction-type').value;
+            const requiresRecipient = transactionType === 'Transfer Money';
 
-    document.querySelector('.confirm-btn').addEventListener('click', function() {
-        const transactionType = document.getElementById('transaction-type').value;
-        const requiresRecipient = transactionType === 'Transfer Money';
-        
-        // Only validate recipient fields if it's a transfer
-        if (requiresRecipient) {
-            if (!transactionData.recipientName || !transactionData.recipientAccount) {
-                alert('Please fill in recipient information');
+            // Only validate recipient fields if it's a transfer
+            if (requiresRecipient) {
+                if (!transactionData.recipientName || !transactionData.recipientAccount) {
+                    alert('Please fill in recipient information');
+                    return;
+                }
+            }
+
+            // Get selected payment option
+            const selectedPayment = document.querySelector('.payment-button.selected');
+            if (!selectedPayment) {
+                alert('Please select a payment option');
                 return;
             }
-        }
-        
-        // Get selected payment option
-        const selectedPayment = document.querySelector('.payment-button.selected');
-        if (!selectedPayment) {
-            alert('Please select a payment option');
-            return;
-        }
 
-        // Get all form values
-        const transactionData = {
-            transactionType: document.getElementById('transaction-type').value,
-            transactionName: document.querySelector('.transaction-input').textContent,
-            paymentOption: selectedPayment.getAttribute('data-bank'),
-            recipientName: document.querySelector('.recipient-input').value,
-            recipientAccount: document.querySelector('input[type="text"].recipient-input').value,
-            recipientEmail: document.querySelectorAll('.recipient-input')[2].value,
-            amount: document.querySelector('input[type="number"]').value,
-            description: document.querySelector('textarea').value,
-            paymentDate: document.querySelector('input[type="date"]').value
-        };
+            // Get all form values
+            const transactionData = {
+                transactionType: document.getElementById('transaction-type').value,
+                transactionName: document.querySelector('.transaction-input').textContent,
+                paymentOption: selectedPayment.getAttribute('data-bank'),
+                recipientName: document.querySelector('.recipient-input').value,
+                recipientAccount: document.querySelector('input[type="text"].recipient-input').value,
+                recipientEmail: document.querySelectorAll('.recipient-input')[2].value,
+                amount: document.querySelector('input[type="number"]').value,
+                description: document.querySelector('textarea').value,
+                paymentDate: document.querySelector('input[type="date"]').value
+            };
 
-        // Validate form data
-        if (!transactionData.transactionType || !transactionData.recipientAccount || !transactionData.amount) {
-            alert('Please fill in all required fields');
-            return;
-        }
-
-        // Send data to backend
-        fetch('backend/save_transaction.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(transactionData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Transaction completed successfully!');
-                location.reload(); // Refresh page to show new transaction
-            } else {
-                alert('Error: ' + data.message);
+            // Validate form data
+            if (!transactionData.transactionType || !transactionData.recipientAccount || !transactionData.amount) {
+                alert('Please fill in all required fields');
+                return;
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while processing your transaction');
+
+            // Send data to backend
+            fetch('backend/save_transaction.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(transactionData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Transaction completed successfully!');
+                        location.reload(); // Refresh page to show new transaction
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while processing your transaction');
+                });
         });
-    });
     </script>
 
 </body>

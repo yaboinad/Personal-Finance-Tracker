@@ -20,9 +20,7 @@
             }
         }
 
-        @font-face
-
-            {
+        @font-face {
             font-family: Roboto1;
             src: url(Financia_Fonts/roboto/Roboto-Light.ttf);
         }
@@ -82,7 +80,7 @@
                 <div class="dropdown-menu" id="dropdownMenuAccount">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                         <a href="Financia_Sign_Up.php">Sign Up</a>
-                        <a href="Financia_Account.php">Account</a>                        
+                        <a href="Financia_Account.php">Account</a>
                         <a href="backend/logout.php">Logout</a>
                     <?php else: ?>
                         <a href="Financia_Sign_In.php">Sign In</a>
@@ -121,14 +119,14 @@
                 </td>
                 <td class="td_link">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                        <a class="nav_link" href="#">Transactions</a>
+                        <a class="nav_link" href="Financia_Transactions.html">Transactions</a>
                     <?php else: ?>
                         <span class="nav_link disabled">Transactions</span>
                     <?php endif; ?>
                 </td>
                 <td class="td_link">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                        <a class="nav_link" href="#">Reports</a>
+                        <a class="nav_link" href="Financia_Reports.html">Reports</a>
                     <?php else: ?>
                         <span class="nav_link disabled">Reports</span>
                     <?php endif; ?>
@@ -230,17 +228,8 @@
         <tr>
             <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
-        </tr>
-        <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
-        </tr>
-        <tr>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
         </tr>
     </table>
     <br>
@@ -284,7 +273,7 @@
                 .then(data => {
                     const loggedInMenu = document.getElementById('loggedInMenu');
                     const loggedOutMenu = document.getElementById('loggedOutMenu');
-                    
+
                     if (data.logged_in) {
                         loggedInMenu.style.display = 'block';
                         loggedOutMenu.style.display = 'none';

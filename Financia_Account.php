@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 include 'backend/db_connect.php';
 
 // Get username or email from session
@@ -22,8 +22,8 @@ if (isset($_SESSION['username_email'])) {
 // Format email for display
 if (!empty($row['email'])) {
     $maxLength = 12;
-    $displayEmail = strlen($row['email']) > $maxLength ? 
-        substr($row['email'], 0, $maxLength) . '...' : 
+    $displayEmail = strlen($row['email']) > $maxLength ?
+        substr($row['email'], 0, $maxLength) . '...' :
         $row['email'];
 }
 ?>
@@ -158,10 +158,10 @@ if (!empty($row['email'])) {
         <?php endif; ?>
     </table>
 
-    
-       <div class="username-header">
-         <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
-         <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon" id="editUsernameBtn">
+
+    <div class="username-header">
+        <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
+        <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon" id="editUsernameBtn">
         <div id="usernameEditContainer" style="display: none;">
             <div class="input-wrapper">
                 <input type="text" id="usernameInput" placeholder="Username">
@@ -171,7 +171,7 @@ if (!empty($row['email'])) {
                 <button id="cancelUsernameBtn">Cancel</button>
             </div>
         </div>
-        </div>
+    </div>
     <div class="account-info">
         <div class="info-row info-grouped">
             <div class="info-group">
@@ -221,7 +221,7 @@ if (!empty($row['email'])) {
                 </div>
                 <button class="connect-btn">Connect</button>
             </div>
-            
+
             <div class="connected-status">
                 <div class="status-label">Connected Bank Account</div>
                 <div class="status-inputs-container">
@@ -234,7 +234,7 @@ if (!empty($row['email'])) {
     <div class="username-footer">
         <input type="button" class="footer-btn" value="Save Info">
         <button class="footer-btn delete-btn">Delete Account</button>
-    </div>  
+    </div>
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
         <hr style="width: 9vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
@@ -251,17 +251,8 @@ if (!empty($row['email'])) {
         <tr>
             <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
-        </tr>
-        <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
-        </tr>
-        <tr>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
         </tr>
     </table>
     <br>
@@ -366,11 +357,11 @@ if (!empty($row['email'])) {
                 selectedBankImage.src = newSrc;
                 this.querySelector('img').src = oldSrc;
                 customSelect.classList.remove('active');
-                
+
                 // Reset account input value
                 accountInput.value = '';
                 accountInput.style.borderColor = '';
-                
+
                 // Show the appropriate account number in placeholder
                 if (newSrc.includes('bdo')) {
                     accountInput.placeholder = accountInput.dataset.bdoAccount || '12-digit Account Number';
@@ -400,8 +391,8 @@ if (!empty($row['email'])) {
                 emailDisplay.style.display = 'none';
                 editEmailBtn.style.display = 'none';
                 emailEditContainer.style.display = 'flex';
-                emailInput.value = emailDisplay.title && emailDisplay.title !== 'Add email' ? 
-                    emailDisplay.title : 
+                emailInput.value = emailDisplay.title && emailDisplay.title !== 'Add email' ?
+                    emailDisplay.title :
                     '';
             });
 
@@ -413,7 +404,7 @@ if (!empty($row['email'])) {
 
             saveEmailBtn.addEventListener('click', function() {
                 const newEmail = emailInput.value.trim();
-                
+
                 // Basic email validation
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(newEmail)) {
@@ -428,35 +419,35 @@ if (!empty($row['email'])) {
                 }
 
                 fetch('backend/update_email.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: newEmail
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email: newEmail
+                        })
                     })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        const maxLength = 12;
-                        const displayEmail = newEmail.length > maxLength ? 
-                            newEmail.substring(0, maxLength) + '...' : 
-                            newEmail;
-                        
-                        emailDisplay.textContent = displayEmail;
-                        emailDisplay.title = newEmail;
-                        emailDisplay.style.display = 'inline';
-                        editEmailBtn.style.display = 'inline';
-                        emailEditContainer.style.display = 'none';
-                    } else {
-                        alert('Failed to update email: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    alert('Error updating email');
-                    console.error('Error:', error);
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const maxLength = 12;
+                            const displayEmail = newEmail.length > maxLength ?
+                                newEmail.substring(0, maxLength) + '...' :
+                                newEmail;
+
+                            emailDisplay.textContent = displayEmail;
+                            emailDisplay.title = newEmail;
+                            emailDisplay.style.display = 'inline';
+                            editEmailBtn.style.display = 'inline';
+                            emailEditContainer.style.display = 'none';
+                        } else {
+                            alert('Failed to update email: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error updating email');
+                        console.error('Error:', error);
+                    });
             });
 
             emailInput.placeholder = 'Enter Gmail address';
@@ -500,35 +491,35 @@ if (!empty($row['email'])) {
                 }
 
                 fetch('backend/update_username.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        username: newUsername
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            username: newUsername
+                        })
                     })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        const maxLength = 12;
-                        const displayUsername = newUsername.length > maxLength ? 
-                            newUsername.substring(0, maxLength) + '...' : 
-                            newUsername;
-                        
-                        usernameDisplay.textContent = displayUsername;
-                        usernameDisplay.title = newUsername;
-                        usernameDisplay.style.display = 'inline';
-                        editUsernameBtn.style.display = 'inline';
-                        usernameEditContainer.style.display = 'none';
-                    } else {
-                        alert('Failed to update username: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    alert('Error updating username');
-                    console.error('Error:', error);
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const maxLength = 12;
+                            const displayUsername = newUsername.length > maxLength ?
+                                newUsername.substring(0, maxLength) + '...' :
+                                newUsername;
+
+                            usernameDisplay.textContent = displayUsername;
+                            usernameDisplay.title = newUsername;
+                            usernameDisplay.style.display = 'inline';
+                            editUsernameBtn.style.display = 'inline';
+                            usernameEditContainer.style.display = 'none';
+                        } else {
+                            alert('Failed to update username: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error updating username');
+                        console.error('Error:', error);
+                    });
             });
         });
 
@@ -547,7 +538,7 @@ if (!empty($row['email'])) {
                 .then(data => {
                     if (data.success && data.accounts) {
                         const accounts = data.accounts;
-                        
+
                         // Update BDO account if exists
                         if (accounts.bdo_account) {
                             accountInput.dataset.bdoAccount = accounts.bdo_account;
@@ -561,7 +552,7 @@ if (!empty($row['email'])) {
                             statusInputs[0].style.backgroundPosition = 'center center';
                             statusInputs[0].style.backgroundColor = '#ffffff';
                         }
-                        
+
                         // Update GCash account if exists
                         if (accounts.gcash_account) {
                             accountInput.dataset.gcashAccount = accounts.gcash_account;
@@ -614,31 +605,31 @@ if (!empty($row['email'])) {
                 if (!deleteMode) return;
 
                 const accountType = index === 0 ? 'bdoAccount' : 'gcashAccount';
-                
+
                 // Send delete request to server
                 fetch('backend/delete_account.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        accountType: accountType
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            accountType: accountType
+                        })
                     })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        input.value = '';
-                        input.style.backgroundImage = 'none';
-                        deleteOverlay.style.display = 'none';
-                        deleteMode = false;
-                        
-                        notification.textContent = `${index === 0 ? 'BDO' : 'GCash'} account deleted successfully!`;
-                        notification.style.backgroundColor = '#4CAF50';
-                        notification.style.display = 'block';
-                        setTimeout(() => notification.style.display = 'none', 3000);
-                    }
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            input.value = '';
+                            input.style.backgroundImage = 'none';
+                            deleteOverlay.style.display = 'none';
+                            deleteMode = false;
+
+                            notification.textContent = `${index === 0 ? 'BDO' : 'GCash'} account deleted successfully!`;
+                            notification.style.backgroundColor = '#4CAF50';
+                            notification.style.display = 'block';
+                            setTimeout(() => notification.style.display = 'none', 3000);
+                        }
+                    });
             });
         });
 
@@ -658,33 +649,33 @@ if (!empty($row['email'])) {
 
             confirmDialog.querySelector('.confirm-yes').addEventListener('click', function() {
                 fetch('backend/delete_user_account.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Clear all form fields and status inputs
-                        const statusInputs = document.querySelectorAll('.status-input');
-                        statusInputs.forEach(input => {
-                            input.value = '';
-                            input.style.backgroundImage = 'none';
-                            input.style.backgroundColor = '#ffffff';
-                        });
-                        
-                        // Show success notification
-                        notification.textContent = 'Account deleted successfully';
-                        notification.style.backgroundColor = '#4CAF50';
-                        notification.style.display = 'block';
-                        
-                        // Reload the current page after a short delay
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 1500); // 1.5 second delay to show the success message
-                    }
-                });
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Clear all form fields and status inputs
+                            const statusInputs = document.querySelectorAll('.status-input');
+                            statusInputs.forEach(input => {
+                                input.value = '';
+                                input.style.backgroundImage = 'none';
+                                input.style.backgroundColor = '#ffffff';
+                            });
+
+                            // Show success notification
+                            notification.textContent = 'Account deleted successfully';
+                            notification.style.backgroundColor = '#4CAF50';
+                            notification.style.display = 'block';
+
+                            // Reload the current page after a short delay
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1500); // 1.5 second delay to show the success message
+                        }
+                    });
                 confirmDialog.remove();
             });
 
@@ -709,14 +700,14 @@ if (!empty($row['email'])) {
                         // Hide edit buttons if user is not logged in
                         if (editUsernameBtn) editUsernameBtn.style.display = 'none';
                         if (editEmailBtn) editEmailBtn.style.display = 'none';
-                        
+
                         // Update displays to show default text or hide content
                         if (usernameDisplay) usernameDisplay.textContent = 'Username';
                         if (emailDisplay) {
                             emailDisplay.textContent = '';
                             emailDisplay.title = ''; // Clear any stored email
                         }
-                        
+
                         // Clear Account Created and City values
                         if (accountCreatedValue) accountCreatedValue.textContent = '';
                         if (cityValue) cityValue.textContent = '';
@@ -786,65 +777,67 @@ if (!empty($row['email'])) {
 
                 // Verify email matches account email
                 fetch('backend/verify_email.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email: email })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (!data.success) {
-                        accountEmail.value = '';
-                        accountEmail.placeholder = 'Email does not match account email';
-                        accountEmail.style.borderColor = '#f44336';
-                        throw new Error('Email verification failed');
-                    }
-
-                    // If email is verified, proceed with saving bank info
-                    return fetch('backend/save_bank_info.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            bdoAccount: accountType === 'bdo' ? accountNumber : '',
-                            gcashAccount: accountType === 'gcash' ? accountNumber : '',
                             email: email
                         })
-                    });
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Update the status display
-                        const statusIndex = accountType === 'bdo' ? 0 : 1;
-                        statusInputs[statusIndex].value = '';
-                        statusInputs[statusIndex].style.backgroundImage = 
-                            `url("Financia_E-Pay_Image/${accountType}.png")`;
-                        statusInputs[statusIndex].style.backgroundSize = '50px';
-                        statusInputs[statusIndex].style.backgroundRepeat = 'no-repeat';
-                        statusInputs[statusIndex].style.backgroundPosition = 'center center';
-                        statusInputs[statusIndex].style.backgroundColor = '#ffffff';
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.success) {
+                            accountEmail.value = '';
+                            accountEmail.placeholder = 'Email does not match account email';
+                            accountEmail.style.borderColor = '#f44336';
+                            throw new Error('Email verification failed');
+                        }
 
-                        // Clear inputs
-                        accountInput.value = '';
-                        accountEmail.value = '';
-                        accountEmail.placeholder = 'Email Address';
-                        accountEmail.style.borderColor = '';
-                        accountInput.style.borderColor = '';
-                        accountInput.placeholder = accountType === 'bdo' ? '12-digit Account Number' : '11-digit Phone Number';
-                    } else {
-                        throw new Error(data.message);
-                    }
-                })
-                .catch(error => {
-                    if (error.message !== 'Email verification failed') {
-                        accountInput.value = '';
-                        accountInput.placeholder = 'Error: ' + error.message;
-                        accountInput.style.borderColor = '#f44336';
-                    }
-                });
+                        // If email is verified, proceed with saving bank info
+                        return fetch('backend/save_bank_info.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                bdoAccount: accountType === 'bdo' ? accountNumber : '',
+                                gcashAccount: accountType === 'gcash' ? accountNumber : '',
+                                email: email
+                            })
+                        });
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Update the status display
+                            const statusIndex = accountType === 'bdo' ? 0 : 1;
+                            statusInputs[statusIndex].value = '';
+                            statusInputs[statusIndex].style.backgroundImage =
+                                `url("Financia_E-Pay_Image/${accountType}.png")`;
+                            statusInputs[statusIndex].style.backgroundSize = '50px';
+                            statusInputs[statusIndex].style.backgroundRepeat = 'no-repeat';
+                            statusInputs[statusIndex].style.backgroundPosition = 'center center';
+                            statusInputs[statusIndex].style.backgroundColor = '#ffffff';
+
+                            // Clear inputs
+                            accountInput.value = '';
+                            accountEmail.value = '';
+                            accountEmail.placeholder = 'Email Address';
+                            accountEmail.style.borderColor = '';
+                            accountInput.style.borderColor = '';
+                            accountInput.placeholder = accountType === 'bdo' ? '12-digit Account Number' : '11-digit Phone Number';
+                        } else {
+                            throw new Error(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        if (error.message !== 'Email verification failed') {
+                            accountInput.value = '';
+                            accountInput.placeholder = 'Error: ' + error.message;
+                            accountInput.style.borderColor = '#f44336';
+                        }
+                    });
             });
         });
 
@@ -865,62 +858,63 @@ if (!empty($row['email'])) {
 
             // Save the account information
             fetch('backend/save_bank_info.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    bdoAccount: accountType === 'bdo' ? accountNumber.value : '',
-                    gcashAccount: accountType === 'gcash' ? accountNumber.value : '',
-                    email: accountEmail.value
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        bdoAccount: accountType === 'bdo' ? accountNumber.value : '',
+                        gcashAccount: accountType === 'gcash' ? accountNumber.value : '',
+                        email: accountEmail.value
+                    })
                 })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Show success notification
-                    notification.textContent = 'Information saved successfully!';
-                    notification.className = 'notification success';
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Show success notification
+                        notification.textContent = 'Information saved successfully!';
+                        notification.className = 'notification success';
+                        notification.style.display = 'block';
+                        setTimeout(() => notification.style.display = 'none', 3000);
+
+                        // Fetch updated account information
+                        return fetch('backend/get_saved_accounts.php');
+                    } else {
+                        throw new Error(data.message);
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.accounts) {
+                        const accounts = data.accounts;
+
+                        // Update account number placeholder based on selected bank
+                        if (accountType === 'bdo' && accounts.bdo_account) {
+                            accountNumber.placeholder = accounts.bdo_account;
+                            accountNumber.dataset.bdoAccount = accounts.bdo_account;
+                        } else if (accountType === 'gcash' && accounts.gcash_account) {
+                            accountNumber.placeholder = accounts.gcash_account;
+                            accountNumber.dataset.gcashAccount = accounts.gcash_account;
+                        }
+
+                        // Update email placeholder
+                        if (accounts.email) {
+                            accountEmail.placeholder = accounts.email;
+                        }
+
+                        // Clear input values
+                        accountNumber.value = '';
+                        accountEmail.value = '';
+                    }
+                })
+                .catch(error => {
+                    notification.textContent = 'Error: ' + error.message;
+                    notification.className = 'notification error';
                     notification.style.display = 'block';
                     setTimeout(() => notification.style.display = 'none', 3000);
-
-                    // Fetch updated account information
-                    return fetch('backend/get_saved_accounts.php');
-                } else {
-                    throw new Error(data.message);
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success && data.accounts) {
-                    const accounts = data.accounts;
-                    
-                    // Update account number placeholder based on selected bank
-                    if (accountType === 'bdo' && accounts.bdo_account) {
-                        accountNumber.placeholder = accounts.bdo_account;
-                        accountNumber.dataset.bdoAccount = accounts.bdo_account;
-                    } else if (accountType === 'gcash' && accounts.gcash_account) {
-                        accountNumber.placeholder = accounts.gcash_account;
-                        accountNumber.dataset.gcashAccount = accounts.gcash_account;
-                    }
-
-                    // Update email placeholder
-                    if (accounts.email) {
-                        accountEmail.placeholder = accounts.email;
-                    }
-
-                    // Clear input values
-                    accountNumber.value = '';
-                    accountEmail.value = '';
-                }
-            })
-            .catch(error => {
-                notification.textContent = 'Error: ' + error.message;
-                notification.className = 'notification error';
-                notification.style.display = 'block';
-                setTimeout(() => notification.style.display = 'none', 3000);
-            });
+                });
         });
     </script>
 </body>
+
 </html>

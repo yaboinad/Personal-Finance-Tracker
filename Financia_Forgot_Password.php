@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="Financia CSS/Financia_Forgot_Password.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-
-@media screen and (max-width: 1920px) and (max-height: 1080px) {
+        @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
                 background: url(Financia_Sign_Up_Images/sign\ in\ background.png) no-repeat scroll;
                 background-color: rgb(199, 163, 245);
@@ -17,6 +16,7 @@
                 width: 90vw;
             }
         }
+
         @font-face {
             font-family: Roboto1;
             src: url(Financia_Fonts/roboto/Roboto-Light.ttf);
@@ -104,13 +104,13 @@
         <div class="form-box">
             <form action="backend/reset_password.php" method="POST">
                 <?php
-                    session_start();
-                    if (isset($_SESSION['reset_errors'])) {
-                        foreach ($_SESSION['reset_errors'] as $error) {
-                            echo "<p style='color: red; text-align: center;'>$error</p>";
-                        }
-                        unset($_SESSION['reset_errors']);
+                session_start();
+                if (isset($_SESSION['reset_errors'])) {
+                    foreach ($_SESSION['reset_errors'] as $error) {
+                        echo "<p style='color: red; text-align: center;'>$error</p>";
                     }
+                    unset($_SESSION['reset_errors']);
+                }
                 ?>
                 <div class="input-row">
                     <div class="input-group">
@@ -127,10 +127,10 @@
                         <div class="input-field">
                             <div class="mobile-container">
                                 <div class="prefix-box">+63</div>
-                                <input type="number" 
-                                    id="mobile" 
-                                    name="mobile" 
-                                    maxlength="11" 
+                                <input type="number"
+                                    id="mobile"
+                                    name="mobile"
+                                    maxlength="11"
                                     class="mobile-input"
                                     required>
                             </div>
@@ -189,17 +189,8 @@
         <tr>
             <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
-        </tr>
-        <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
-        </tr>
-        <tr>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
         </tr>
     </table>
     <br>
@@ -224,7 +215,7 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const mobileInput = document.getElementById('mobile');
-            
+
             mobileInput.addEventListener('input', function() {
                 let value = this.value.replace(/\D/g, '');
                 if (value.length > 0 && !value.startsWith('09')) {

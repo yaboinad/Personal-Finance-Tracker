@@ -134,7 +134,7 @@ session_start();
                 </td>
             </tr>
         <?php endif; ?>
-    </table> 
+    </table>
 
     <div class="login-container">
         <div class="login-box">
@@ -157,11 +157,11 @@ session_start();
                         <td>
                             <div class="input-container">
                                 <i class="fa-regular fa-user icon"></i>
-                                <input type="text" 
-                                       id="username" 
-                                       name="username" 
-                                       placeholder="Enter your email address" 
-                                       required>
+                                <input type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Enter your email address"
+                                    required>
                                 <i class="fa fa-times-circle clear-icon"></i>
                             </div>
                         </td>
@@ -172,74 +172,74 @@ session_start();
                             </div>
                         </td>
                     </tr>
-   
-                <!-- Password and City row -->
-                <tr class="input-group">
-                    <td><label for="password">Password</label></td>
-                    <td><label for="city">City</label></td>
-                </tr>
-                <tr class="input-group">
-                    <td>
-                        <div class="input-container">
-                            <i class="fa fa-lock icon"></i>
-                            <input type="password" id="password" name="password" 
-                                placeholder="Password" 
-                                minlength="6" 
-                                title="Password must be at least 6 characters long"
-                                required>
-                            <i class="fa fa-eye toggle-icon"></i>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-container">
-                            <i class="fa-solid fa-location-dot icon"></i>
-                            <select id="city" name="city" required>
-                                <option value="">Select City</option>
-                                <option value="Manila">Manila</option>
-                                <option value="Quezon City">Quezon City</option>
-                                <option value="Makati">Makati</option>
-                                <option value="Taguig">Taguig</option>
-                                <option value="Pasig">Pasig</option>
-                                <option value="Pasay">Pasay</option>
-                                <option value="Mandaluyong">Mandaluyong</option>
-                                <option value="Marikina">Marikina</option>
-                                <option value="Caloocan">Caloocan</option>
-                                <option value="Valenzuela">Valenzuela</option>
-                                <option value="Parañaque">Parañaque</option>
-                                <option value="Muntinlupa">Muntinlupa</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
 
-                <!-- Confirm Password and Mobile Number row -->
-                <tr class="input-group">
-                    <td><label for="confirm-password">Confirm Password</label></td>
-                    <td><label for="mobile">Mobile Number</label></td>
-                </tr>
-                <tr class="input-group">
-                    <td>
-                        <div class="input-container">
-                            <i class="fa fa-lock icon"></i>
-                            <input type="password" id="confirm-password" name="confirmPassword" 
-                                placeholder="Password" 
-                                minlength="6"
-                                title="Password must be at least 6 characters long"
-                                required>
-                            <i class="fa fa-eye toggle-icon"></i>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="mobile-container">
-                            <div class="prefix-box">+63</div>
-                            <input type="text" id="mobile" name="mobile" 
-                               
-                                maxlength="11" 
-                                class="mobile-input"
-                                required>
-                        </div>
-                    </td>
-                </tr>
+                    <!-- Password and City row -->
+                    <tr class="input-group">
+                        <td><label for="password">Password</label></td>
+                        <td><label for="city">City</label></td>
+                    </tr>
+                    <tr class="input-group">
+                        <td>
+                            <div class="input-container">
+                                <i class="fa fa-lock icon"></i>
+                                <input type="password" id="password" name="password"
+                                    placeholder="Password"
+                                    minlength="6"
+                                    title="Password must be at least 6 characters long"
+                                    required>
+                                <i class="fa fa-eye toggle-icon"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fa-solid fa-location-dot icon"></i>
+                                <select id="city" name="city" required>
+                                    <option value="">Select City</option>
+                                    <option value="Manila">Manila</option>
+                                    <option value="Quezon City">Quezon City</option>
+                                    <option value="Makati">Makati</option>
+                                    <option value="Taguig">Taguig</option>
+                                    <option value="Pasig">Pasig</option>
+                                    <option value="Pasay">Pasay</option>
+                                    <option value="Mandaluyong">Mandaluyong</option>
+                                    <option value="Marikina">Marikina</option>
+                                    <option value="Caloocan">Caloocan</option>
+                                    <option value="Valenzuela">Valenzuela</option>
+                                    <option value="Parañaque">Parañaque</option>
+                                    <option value="Muntinlupa">Muntinlupa</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Confirm Password and Mobile Number row -->
+                    <tr class="input-group">
+                        <td><label for="confirm-password">Confirm Password</label></td>
+                        <td><label for="mobile">Mobile Number</label></td>
+                    </tr>
+                    <tr class="input-group">
+                        <td>
+                            <div class="input-container">
+                                <i class="fa fa-lock icon"></i>
+                                <input type="password" id="confirm-password" name="confirmPassword"
+                                    placeholder="Password"
+                                    minlength="6"
+                                    title="Password must be at least 6 characters long"
+                                    required>
+                                <i class="fa fa-eye toggle-icon"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mobile-container">
+                                <div class="prefix-box">+63</div>
+                                <input type="text" id="mobile" name="mobile"
+
+                                    maxlength="11"
+                                    class="mobile-input"
+                                    required>
+                            </div>
+                        </td>
+                    </tr>
 
                     <!-- OTP Input -->
                     <tr class="input-group">
@@ -251,8 +251,8 @@ session_start();
                         <td colspan="2">
                             <div class="input-container">
                                 <i class="fa-solid fa-key icon"></i>
-                                <input type="text" id="otp" name="otp" placeholder="Enter 6-digit OTP" 
-                                       maxlength="6" pattern="\d{6}" required>
+                                <input type="text" id="otp" name="otp" placeholder="Enter 6-digit OTP"
+                                    maxlength="6" pattern="\d{6}" required>
                                 <button type="button" class="send-otp" id="sendOtpBtn">Send OTP</button>
                             </div>
                             <div id="otpMessage" style="color: green; margin-top: 5px; display: none;"></div>
@@ -291,17 +291,8 @@ session_start();
         <tr>
             <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
-        </tr>
-        <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
-        </tr>
-        <tr>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
         </tr>
     </table>
     <br>
@@ -323,7 +314,7 @@ session_start();
 
                 // Disable the button
                 sendOtpBtn.disabled = true;
-                
+
                 // Fetch OTP from PHP
                 fetch('/Personal-Finance-Tracker/backend/send_otp.php')
                     .then(response => response.json())
@@ -331,11 +322,11 @@ session_start();
                         otpMessage.style.display = 'block';
                         otpMessage.style.textAlign = 'center';
                         otpMessage.textContent = `OTP Code: ${data.otp}`;
-                        
+
                         // Handle button cooldown
                         let timeLeft = 30;
                         sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
-                        
+
                         const timer = setInterval(() => {
                             timeLeft--;
                             sendOtpBtn.textContent = `Resend in ${timeLeft}s`;
@@ -354,69 +345,69 @@ session_start();
             });
         });
         document.addEventListener('DOMContentLoaded', function() {
-        // Handle password visibility toggle
-        const toggleIcons = document.querySelectorAll('.toggle-icon');
-        toggleIcons.forEach(icon => {
-            icon.addEventListener('click', function() {
-                const input = this.previousElementSibling;
-                if (input.type === 'password') {
-                    input.type = 'text';
-                    this.classList.remove('fa-eye');
-                    this.classList.add('fa-eye-slash');
-                } else {
-                    input.type = 'password';
-                    this.classList.remove('fa-eye-slash');
-                    this.classList.add('fa-eye');
-                }
+            // Handle password visibility toggle
+            const toggleIcons = document.querySelectorAll('.toggle-icon');
+            toggleIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        this.classList.remove('fa-eye');
+                        this.classList.add('fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        this.classList.remove('fa-eye-slash');
+                        this.classList.add('fa-eye');
+                    }
+                });
+            });
+
+            // Handle clear icon functionality
+            const clearIcons = document.querySelectorAll('.clear-icon');
+            const inputs = document.querySelectorAll('input[type="text"]:not([id="otp"])');
+
+            // Show/hide clear icon based on input content
+            inputs.forEach(input => {
+                const clearIcon = input.nextElementSibling;
+
+                // Initial state
+                clearIcon.style.display = input.value ? 'block' : 'none';
+
+                // Input event listener
+                input.addEventListener('input', function() {
+                    clearIcon.style.display = this.value ? 'block' : 'none';
+                });
+
+                // Clear icon click handler
+                clearIcon.addEventListener('click', function() {
+                    input.value = '';
+                    this.style.display = 'none';
+                    input.focus();
+                });
             });
         });
 
-        // Handle clear icon functionality
-        const clearIcons = document.querySelectorAll('.clear-icon');
-        const inputs = document.querySelectorAll('input[type="text"]:not([id="otp"])');
+        function formatPhoneNumber(input) {
+            // Remove any non-digit characters
+            let value = input.value.replace(/\D/g, '');
 
-        // Show/hide clear icon based on input content
-        inputs.forEach(input => {
-            const clearIcon = input.nextElementSibling;
-            
-            // Initial state
-            clearIcon.style.display = input.value ? 'block' : 'none';
-            
-            // Input event listener
-            input.addEventListener('input', function() {
-                clearIcon.style.display = this.value ? 'block' : 'none';
-            });
+            // If the number starts with '9', add '0' prefix
+            if (value.startsWith('9')) {
+                value = '0' + value;
+            }
 
-            // Clear icon click handler
-            clearIcon.addEventListener('click', function() {
-                input.value = '';
-                this.style.display = 'none';
-                input.focus();
-            });
-        });
-    });
+            // Ensure the number starts with '09'
+            if (value.length > 0 && !value.startsWith('09')) {
+                value = value.substring(0, 0);
+            }
 
-    function formatPhoneNumber(input) {
-        // Remove any non-digit characters
-        let value = input.value.replace(/\D/g, '');
-        
-        // If the number starts with '9', add '0' prefix
-        if (value.startsWith('9')) {
-            value = '0' + value;
+            // Limit to 11 digits (including '09')
+            if (value.length > 11) {
+                value = value.substring(0, 11);
+            }
+
+            input.value = value;
         }
-        
-        // Ensure the number starts with '09'
-        if (value.length > 0 && !value.startsWith('09')) {
-            value = value.substring(0, 0);
-        }
-        
-        // Limit to 11 digits (including '09')
-        if (value.length > 11) {
-            value = value.substring(0, 11);
-        }
-        
-        input.value = value;
-    }
     </script>
 </body>
 

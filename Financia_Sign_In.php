@@ -55,9 +55,6 @@ session_start();
             font-family: Coolvetica2;
             src: url(Financia_Fonts/coolvetica/coolvetica\ rg.otf);
         }
-
-
-
     </style>
 </head>
 
@@ -176,7 +173,9 @@ session_start();
                 </td>
             </tr>
             <tr>
-                <td><br><hr style="border: 2px solid black; width: 100%; margin: 0 0 0 0;"></td>
+                <td><br>
+                    <hr style="border: 2px solid black; width: 100%; margin: 0 0 0 0;">
+                </td>
             </tr>
             <tr>
                 <td style="text-align: center; white-space: nowrap;">
@@ -209,24 +208,15 @@ session_start();
         <tr>
             <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Market Insights</a></td>
-        </tr>
-        <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">User Support</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Budget Planner</a></td>
-        </tr>
-        <tr>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Security Information</a></td>
-            <td class="footer_link_box"><a class="footer_links" href="">Savings Tracker</a></td>
         </tr>
     </table>
     <br>
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
     <script>
-        document.addEventListener('DOMContentLoaded',function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const accountBtn = document.getElementById('accountBtn');
             const dropdownMenu = document.getElementById('dropdownMenu');
 
@@ -252,7 +242,7 @@ session_start();
             togglePassword.addEventListener('click', function() {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
-                
+
                 // Toggle icon
                 this.classList.toggle('fa-eye');
                 this.classList.toggle('fa-eye-slash');
