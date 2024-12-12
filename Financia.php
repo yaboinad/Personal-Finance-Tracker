@@ -175,7 +175,7 @@
             </tr>
             <tr>
                 <form action="Financia-Premium.html" style="cursor: pointer;">
-                    <td class="table4_3box"><input class="table4_3" type="button" id="premium_button"
+                    <td class="table4_3box"><input type="submit" id="premium_button"
                             value="Upgrade to Premium"></td>
                 </form>
             </tr>
