@@ -2,11 +2,12 @@
 session_start();
 include 'backend/db_connect.php';
 
-// Get username or email from session
+// Get username and email from session
 $username_email = $_SESSION['username_email'] ?? 'Username';
+$email = $_SESSION['email'] ?? '';
 
 // Determine what text to display in the username header
-$display_text = strpos($username_email, '@') !== false ? 'Username' : $username_email;
+$display_text = $username_email;
 
 // If you still need other user data from database:
 if (isset($_SESSION['username_email'])) {
@@ -87,12 +88,12 @@ if (!empty($row['email'])) {
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
             <td style="width: 50vw;"></td>
             <td class="e-pay_box">
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuEpay">
-                    <a href="Financia-E-Pay.html">E-Pay</a>
+                    <a href="Financia-E-Pay.php">E-Pay</a>
                 </div>
             </td>
 
@@ -102,12 +103,13 @@ if (!empty($row['email'])) {
                 <img class="account" id="accountBtn" src="Financia_Home_Page_Images/Account profile.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuAccount">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+                        <a href="Financia.php">Home</a>
                         <a href="Financia_Sign_Up.php">Sign Up</a>
                         <a href="Financia_Account.php" class="active">Account</a>
                         <a href="backend/logout.php">Logout</a>
                     <?php else: ?>
                         <a href="Financia_Sign_Up.php">Sign Up</a>
-                        <a href="Financia_Sign_In.php">Sign In</a>
+                        <a href="Financia_Account.php">Account</a>
                         <a href="Financia.php">Home</a>
                     <?php endif; ?>
                 </div>
@@ -158,10 +160,10 @@ if (!empty($row['email'])) {
         <?php endif; ?>
     </table>
 
-
-    <div class="username-header">
-        <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
-        <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon" id="editUsernameBtn">
+    
+       <div class="username-header">
+         <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
+         <img src="edit (1).png" alt="edit" class="edit-icon" id="editUsernameBtn">
         <div id="usernameEditContainer" style="display: none;">
             <div class="input-wrapper">
                 <input type="text" id="usernameInput" placeholder="Username">
@@ -180,7 +182,7 @@ if (!empty($row['email'])) {
                     <span id="emailDisplay" title="<?php echo htmlspecialchars($row['email'] ?? ''); ?>">
                         <?php echo !empty($displayEmail) ? htmlspecialchars($displayEmail) : 'Add email'; ?>
                     </span>
-                    <img src="Financia_Home_Page_Images/edit-icon.png" alt="edit" class="edit-icon" id="editEmailBtn">
+                    <img src="edit (1).png" alt="edit" class="edit-icon" id="editEmailBtn">
                 </div>
                 <div id="emailEditContainer">
                     <div class="input-wrapper">
@@ -685,37 +687,34 @@ if (!empty($row['email'])) {
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if user is logged in
+            // Check if user is logged in and update display
             fetch('backend/check_login.php')
                 .then(response => response.json())
                 .then(data => {
-                    const editUsernameBtn = document.getElementById('editUsernameBtn');
-                    const editEmailBtn = document.getElementById('editEmailBtn');
-                    const usernameDisplay = document.getElementById('usernameDisplay');
-                    const emailDisplay = document.getElementById('emailDisplay');
-                    const accountCreatedValue = document.querySelector('.info-group:nth-child(2) .info-value');
-                    const cityValue = document.querySelector('.info-group:nth-child(3) .info-value');
-
-                    if (!data.logged_in) {
-                        // Hide edit buttons if user is not logged in
-                        if (editUsernameBtn) editUsernameBtn.style.display = 'none';
-                        if (editEmailBtn) editEmailBtn.style.display = 'none';
-
-                        // Update displays to show default text or hide content
-                        if (usernameDisplay) usernameDisplay.textContent = 'Username';
-                        if (emailDisplay) {
-                            emailDisplay.textContent = '';
-                            emailDisplay.title = ''; // Clear any stored email
+                    if (data.loggedIn) {
+                        // Update username display
+                        const usernameDisplay = document.getElementById('usernameDisplay');
+                        if (usernameDisplay) {
+                            usernameDisplay.textContent = data.username;
                         }
 
-                        // Clear Account Created and City values
-                        if (accountCreatedValue) accountCreatedValue.textContent = '';
-                        if (cityValue) cityValue.textContent = '';
+                        // Get and update email display
+                        fetch('backend/get_user_email.php')
+                            .then(response => response.json())
+                            .then(emailData => {
+                                const emailDisplay = document.getElementById('emailDisplay');
+                                if (emailDisplay && emailData.email) {
+                                    const maxLength = 12;
+                                    const displayEmail = emailData.email.length > maxLength ? 
+                                        emailData.email.substring(0, maxLength) + '...' : 
+                                        emailData.email;
+                                    emailDisplay.textContent = displayEmail;
+                                    emailDisplay.title = emailData.email;
+                                }
+                            });
                     }
                 })
-                .catch(error => {
-                    console.error('Error checking login status:', error);
-                });
+                .catch(error => console.error('Error:', error));
         });
 
         document.addEventListener('DOMContentLoaded', function() {
