@@ -91,24 +91,63 @@
     }
 
     .table2 {
-        background-color: black;
-        height: 3vw;
-        margin: 0 -0.44vw 0 -0.44vw;
-        width: 99.16vw;
+        width: 100%;
+        margin: 20px 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .table2 th, .table2 td {
+        padding: 12px;
+        border-bottom: 1px solid rgba(138, 36, 234, 0.3);
+        color: #fff;
+        text-align: left;
+    }
+
+    .table2 th {
+        background-color: #6A2BC2;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .table2 tbody tr:hover {
+        background-color: rgba(138, 36, 234, 0.2);
+    }
+
+    .table2 .action-icons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .table2 .icon {
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .table2 .icon:hover {
+        color: grey;
     }
 
     .td_select {
         text-align: center;
-        width: 23vw;
+        width: 20%;
     }
 
     .select_nav {
         border: none;
-        background-color: black;
-        color: rgb(146, 141, 241);
+        background-color: #6A2BC2;
+        color: #fff;
         font: normal 600 1.3vw/3vw Roboto1;
         text-align: center;
-        width: 10vw;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .select_nav:hover {
+        background-color: #4A1A8A;
     }
 
     .table3 {
@@ -595,6 +634,13 @@
             transform: scale(1);
             opacity: 1;
         }
+    }
+
+    .recipient-input:disabled {
+        cursor: not-allowed;
+        background: rgb(0, 0, 0);
+        color: #8316ff;
+        border: 2px solid #8316ff;
     }
 
 }

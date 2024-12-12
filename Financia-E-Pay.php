@@ -102,32 +102,29 @@ if (!isset($_SESSION['username_email'])) {
     </table>
 
     <table class="table2">
-        <form action="">
-            <tr>
-                <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.php'">Overview</button>
-                </td>
-                <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Summary.html'">Summary</button>
-                </td>
-                <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='Financia_History.php'">History</button>
-                </td>
-                <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='Financia_Transactions.html'">Transactions</button>
-                </td>
-                <td class="td_select">
-                    <button class="select_nav" onclick="window.location.href='#'">Reports</button>
-                </td>
-
-            </tr>
-        </form>
+        <tr>
+            <td class="td_select">
+                <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Overview.php'">Overview</button>
+            </td>
+            <td class="td_select">
+                <button class="select_nav" onclick="window.location.href='Financia_Dashboard_Summary.html'">Summary</button>
+            </td>
+            <td class="td_select">
+                <button class="select_nav" onclick="window.location.href='Financia_History.php'">History</button>
+            </td>
+            <td class="td_select">
+                <button class="select_nav" onclick="window.location.href='Financia_Transactions.html'">Transactions</button>
+            </td>
+            <td class="td_select">
+                <button class="select_nav" onclick="window.location.href='Financia_Reports.php'">Reports</button>
+            </td>
+        </tr>
     </table>
 
     <div class="balance-cards">
         <div class="balance-card">
             <div class="card-header bdo-header">
-                <img src="Financia_E-Pay_Images/bdo.png" alt="BDO Logo" style="height: 20px; vertical-align: middle;">
+                <img src="bdo.png" alt="BDO Logo" style="height: 20px; vertical-align: middle;">
             </div>
             <div class="card-balance" id="bdo-balance">₱ 0.00</div>
             <div class="card-footer">Total Balance</div>
@@ -144,7 +141,7 @@ if (!isset($_SESSION['username_email'])) {
         </div>
         <div class="balance-card">
             <div class="card-header gcash-header">
-                <img src="Financia_E-Pay_Images/gcash.png" alt="GCash Logo" style="height: 20px; vertical-align: middle;">
+                <img src="gcash.png" alt="GCash Logo" style="height: 20px; vertical-align: middle;">
             </div>
             <div class="card-balance" id="gcash-balance">₱ 0.00</div>
             <div class="card-footer">Total Balance</div>
@@ -340,26 +337,31 @@ if (!isset($_SESSION['username_email'])) {
     }
 
     function handleTransactionTypeChange(selectedValue) {
-        // Update transaction name only
+        // Update transaction name
         const transactionDisplay = document.querySelector('.transaction-input');
         if (transactionDisplay) {
             transactionDisplay.textContent = selectedValue;
         }
         
-        // Get all recipient related fields
-        const recipientFields = document.querySelectorAll('.field');
+        // Enable payment buttons
+        const bdoButton = document.getElementById('bdo-button');
+        const gcashButton = document.getElementById('gcash-button');
+        if (bdoButton) bdoButton.disabled = false;
+        if (gcashButton) gcashButton.disabled = false;
         
-        recipientFields.forEach(field => {
-            const label = field.querySelector('label');
-            if (label) {
-                const labelText = label.textContent.trim();
-                if (labelText.includes('Recipient')) {
-                    const input = field.querySelector('.recipient-input');
-                    if (input) {
-                        // Only update required status without changing visibility
-                        input.required = selectedValue === 'Transfer Money';
-                    }
-                }
+        // Get only the recipient-related input fields (name, account number, email)
+        const recipientInputs = document.querySelectorAll('.recipient-input:not([type="number"])');
+        
+        recipientInputs.forEach(input => {
+            // Disable/Enable inputs based on transaction type
+            input.disabled = selectedValue !== 'Transfer Money';
+            
+            // Clear input and update styling when disabled
+            if (selectedValue !== 'Transfer Money') {
+                input.value = '';
+                input.style.cursor = 'not-allowed';
+            } else {
+                input.style.cursor = 'text';
             }
         });
     }
@@ -619,6 +621,10 @@ if (!isset($_SESSION['username_email'])) {
 
     // Call loadTransactions when page loads and after successful transaction
     document.addEventListener('DOMContentLoaded', loadTransactions);
+
+    document.querySelector('.table2').addEventListener('click', function() {
+        console.log('Table2 clicked!');
+    });
     </script>
 
 </body>
