@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Financia CSS/Financia_Goals_Css.css">
+    <link rel="stylesheet" href="Financia CSS/Financia_Learn_More.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Financia - Goals</title>
+    <title>Financia - Learn More</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
-                background-image: url(Financia_Dashboard_Overview_Images/Dashboard\ Overview\ Background.png);
+                /*background-image: url(Financia_Dashboard_Overview_Images/Dashboard\ Overview\ Background.png);*/
                 background-color: rgb(199, 163, 245);
                 background-repeat: no-repeat;
                 background-position-y: top;
@@ -105,55 +105,65 @@
         </form>
     </table>
 
-    <!-- Goals Section-->
-    <div class="container">
-        <div class="header">
-            <button class="create-btn">Create a Goal</button>
-            <button class="save-btn">Save All</button>
+    <div class="info-section">
+        <div class="left-box">
+            <h2>Get to Know Your <br> Ultimate Finance Companion</h2>
         </div>
-        <table class="goal-table">
-            <thead>
-                <tr>
-                    <th>Goal Name</th>
-                    <th>Target Amount</th>
-                    <th>Transaction Type</th>
-                    <th>Deadline</th>
-                    <th>Bank Type</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" value="Investment Fund"></td>
-                    <td>
-                        <div class="amount-group">
-                            ₱<input type="number" value="50000">
-                        </div>
-                    </td>
-                    <td>
-                        <select>
-                            <option>Asset</option>
-                            <option>Income</option>
-                            <option>Deposit</option>
-                        </select>
-                    </td>
-                    <td><input type="date" value="2024-06-12"></td>
-                    <td>
-                        <button class="bank-btn">GCash</button>
-                    </td>
-                    <td>
-                        <button class="delete-btn">🗑</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="right-box">
+            <p>
+                Welcome to Financia, the ultimate personal finance tracker designed to help you take control
+                of your finances, achieve your goals, and gain valuable insights into your financial journey.
+            </p>
+        </div>
+    </div>
+
+    <div class="header-date"><span>Customizable Date Range</span></div>
+    <div class="image-container-range">
+        <img src="Financia_Learn_More_Images/Summary-Learn-More.png" alt="summary" class="image-summary">
+        <img src="Financia_Learn_More_Images/Transactions_Learn_More.png" alt="transactions" class="image-summary">
+    </div>
+    <div class="text-below">Easily filter and view your transactions or goals for a specific date range. Stay focused on
+        the details that matter most to you.</div>
+
+    <div class="header-premium"><span>Premium Access Overview</span>
+        <img src="Financia_Learn_More_Images/Overview_Learn_More.png" alt="overview" class="image-overview">
+        <img src="Financia_Learn_More_Images/NetSavings_Learn_More.png" alt="overview" class="image-net-savings">
+    </div>
+    <!--<div class="header-overview"><span>Balance Overview</span></div>-->
+
+    <div class="monthly-summary-title">
+        <h1>Monthly Summary</h1>
+        <div class="image-container-range">
+            <img src="Financia_Learn_More_Images/Summary2_Learn_More.png" alt="summary2" class="image-summary">
+            <img src="Financia_Learn_More_Images/GoalSum_Learn_More.png" alt="goal_summary" class="image-summary">
+        </div>
+    </div>
+    <div class="text-below-summary">
+        Transactions and Earnings: Get a clear monthly
+        overview of your income and expenses.<br>
+        Goal Tracking: Keep tabs on upcoming, past, achieved,
+        and unachieved goals in an organized manner.
+    </div>
+
+    <div class="activity-log-title">
+        <h1>Activity Log</h1>
+        <div class="image-container-range">
+            <img src="Financia_Learn_More_Images/ActivityLog_Learn_More.png" alt="summary2" class="image-summary">
+        </div>
+    </div>
+    <div class="text-below-activity">
+        Track every step of your financial journey:<br>
+        <ul>
+            <li>Detailed records of logins, logouts, and transactions.</li>
+            <li>Each entry includes the exact date and time for a comprehensive activity history.</li>
+        </ul>
     </div>
 
     <div>
-        <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
-        <hr style="width: 9vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
-        <hr style="width: 3vw; border: 0.1vw solid black; margin: -0.2vw 0 0 52vw;">
-        <hr style="width: 39.2vw; border: 0.1vw solid black; margin: -0.2vw 0 0 58vw;">
+        <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 39vw;">
+        <hr style="width: 10vw; border: 0.1vw solid black; margin: -0.2vw 0 0 40vw;">
+        <hr style="width: 3vw; border: 0.1vw solid black; margin: -0.2vw 0 0 53.5vw;">
+        <hr style="width: 38.2vw; border: 0.1vw solid black; margin: -0.2vw 0 0 60vw;">
     </div>
     <div class="div6">
         <img class="social_media_logo" src="Financia_Home_Page_Images/facebook.png" alt="">
@@ -174,35 +184,25 @@
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
 
     <script>
-        // E-Pay Dropdown
-        const epayBtn = document.getElementById('epayBtn');
-        const dropdownMenuEpay = document.getElementById('dropdownMenuEpay');
+        function checkLoginStatus() {
+            fetch('check_login.php')
+                .then(response => response.json())
+                .then(data => {
+                    const loggedInMenu = document.getElementById('loggedInMenu');
+                    const loggedOutMenu = document.getElementById('loggedOutMenu');
 
-        // Account Dropdown
-        const accountBtn = document.getElementById('accountBtn');
-        const dropdownMenuAccount = document.getElementById('dropdownMenuAccount');
+                    if (data.logged_in) {
+                        loggedInMenu.style.display = 'block';
+                        loggedOutMenu.style.display = 'none';
+                    } else {
+                        loggedInMenu.style.display = 'none';
+                        loggedOutMenu.style.display = 'block';
+                    }
+                });
+        }
 
-        // Toggle visibility of E-Pay dropdown
-        epayBtn.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent click from bubbling up
-            dropdownMenuEpay.style.display =
-                dropdownMenuEpay.style.display === 'block' ? 'none' : 'block';
-            dropdownMenuAccount.style.display = 'none'; // Close other dropdown
-        });
-
-        // Toggle visibility of Account dropdown
-        accountBtn.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent click from bubbling up
-            dropdownMenuAccount.style.display =
-                dropdownMenuAccount.style.display === 'block' ? 'none' : 'block';
-            dropdownMenuEpay.style.display = 'none'; // Close other dropdown
-        });
-
-        // Close dropdowns when clicking outside
-        window.addEventListener('click', () => {
-            dropdownMenuEpay.style.display = 'none';
-            dropdownMenuAccount.style.display = 'none';
-        });
+        // Call this when page loads
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
     </script>
 </body>
 

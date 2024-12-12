@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Financia CSS/Financia_Goals_Css.css">
+    <link rel="stylesheet" href="Financia CSS/Financia_Premium_Css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Financia - Goals</title>
+    <title>Financia - Subscription</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
@@ -64,7 +64,6 @@
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuEpay">
                     <a href="Financia-E-Pay.html">E-Pay</a>
-                    <a href="Financia_Goals.html">Goals</a>
                 </div>
             </td>
 
@@ -105,48 +104,28 @@
         </form>
     </table>
 
-    <!-- Goals Section-->
-    <div class="container">
-        <div class="header">
-            <button class="create-btn">Create a Goal</button>
-            <button class="save-btn">Save All</button>
+    <!-- Premium Pricing Table-->
+    <div class="pricing-container">
+        <div class="pricing-card free-trial">
+            <h2>Free Trial</h2>
+            <p class="price">₱0 /month</p>
+            <ul>
+                <li>Access Overview and Reports with in-depth insights.</li>
+                <li>Explore a detailed table/database showing all your income, expenses, goals, and more.</li>
+                <li>Enjoy 7 days of unlimited access for free!</li>
+            </ul>
+            <button>Start Free Trial</button>
         </div>
-        <table class="goal-table">
-            <thead>
-                <tr>
-                    <th>Goal Name</th>
-                    <th>Target Amount</th>
-                    <th>Transaction Type</th>
-                    <th>Deadline</th>
-                    <th>Bank Type</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" value="Investment Fund"></td>
-                    <td>
-                        <div class="amount-group">
-                            ₱<input type="number" value="50000">
-                        </div>
-                    </td>
-                    <td>
-                        <select>
-                            <option>Asset</option>
-                            <option>Income</option>
-                            <option>Deposit</option>
-                        </select>
-                    </td>
-                    <td><input type="date" value="2024-06-12"></td>
-                    <td>
-                        <button class="bank-btn">GCash</button>
-                    </td>
-                    <td>
-                        <button class="delete-btn">🗑</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="pricing-card premium">
+            <h2>Monthly Access</h2>
+            <p class="price">₱200 /month</p>
+            <ul>
+                <li>Access Overview and Reports with in-depth insights.</li>
+                <li>Explore a detailed table/database showing all your income, expenses, goals, and more.</li>
+                <li>Enjoy unlimited reports, smart budgeting, and goal tracking for 30 days.</li>
+            </ul>
+            <button>Upgrade to Premium</button>
+        </div>
     </div>
 
     <div>

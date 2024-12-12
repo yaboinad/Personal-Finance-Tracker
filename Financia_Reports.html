@@ -324,6 +324,37 @@
     <hr style="border: 0.1vw solid black; width: 99.2vw; margin: 0 -1vw 0 -1vw;">
     <p class="copyright">&copy; 2024 Financia. All Rights Reserved.</p>
 
+    <script>
+        // E-Pay Dropdown
+        const epayBtn = document.getElementById('epayBtn');
+        const dropdownMenuEpay = document.getElementById('dropdownMenuEpay');
+
+        // Account Dropdown
+        const accountBtn = document.getElementById('accountBtn');
+        const dropdownMenuAccount = document.getElementById('dropdownMenuAccount');
+
+        // Toggle visibility of E-Pay dropdown
+        epayBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from bubbling up
+            dropdownMenuEpay.style.display =
+                dropdownMenuEpay.style.display === 'block' ? 'none' : 'block';
+            dropdownMenuAccount.style.display = 'none'; // Close other dropdown
+        });
+
+        // Toggle visibility of Account dropdown
+        accountBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from bubbling up
+            dropdownMenuAccount.style.display =
+                dropdownMenuAccount.style.display === 'block' ? 'none' : 'block';
+            dropdownMenuEpay.style.display = 'none'; // Close other dropdown
+        });
+
+        // Close dropdowns when clicking outside
+        window.addEventListener('click', () => {
+            dropdownMenuEpay.style.display = 'none';
+            dropdownMenuAccount.style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
