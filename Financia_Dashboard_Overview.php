@@ -62,12 +62,12 @@ require_once 'backend/check_session.php';
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
             <td style="width: 50vw;"></td>
             <td class="e-pay_box">
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuEpay">
-                    <a href="Financia-E-Pay.html">E-Pay</a>
+                    <a href="Financia-E-Pay.php">E-Pay</a>
                 </div>
             </td>
 
@@ -90,13 +90,13 @@ require_once 'backend/check_session.php';
         <form action="">
             <tr>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
+                    <a class="nav_link" href="Financia_Dashboard_Overview.php">Overview</a>
                 </td>
                 <td class="td_link">
                     <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_History.html">History</a>
+                    <a class="nav_link" href="Financia_History.php">History</a>
                 </td>
                 <td class="td_link">
                     <a class="nav_link" href="Financia_Transactions.html">Transactions</a>

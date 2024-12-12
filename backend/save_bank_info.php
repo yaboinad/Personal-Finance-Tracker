@@ -33,18 +33,10 @@ $stmt->bind_param("sssss",
     $username_email
 );
 
-$response = array();
 if ($stmt->execute()) {
-    // Log the successful save
-    error_log("Bank accounts saved for user: " . $username_email);
-    error_log("BDO: " . $data['bdoAccount'] . ", GCash: " . $data['gcashAccount']);
-    
-    $response['success'] = true;
-    $response['message'] = 'Bank accounts saved successfully';
+    $response = ['success' => true, 'message' => 'Bank accounts saved successfully'];
 } else {
-    error_log("Error saving bank accounts: " . $conn->error);
-    $response['success'] = false;
-    $response['message'] = 'Error saving bank accounts';
+    $response = ['success' => false, 'message' => 'Error saving bank accounts'];
 }
 
 $stmt->close();
