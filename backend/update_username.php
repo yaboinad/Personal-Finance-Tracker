@@ -2,40 +2,50 @@
 session_start();
 include 'db_connect.php';
 
-$data = json_decode(file_get_contents('php://input'), true);
-$new_username = $data['username'] ?? '';
-$current_email = $_SESSION['username_email'] ?? '';
+header('Content-Type: application/json');
 
-if (empty($new_username)) {
+if (!isset($_SESSION['username_email'])) {
+    echo json_encode(['success' => false, 'message' => 'User not logged in']);
+    exit;
+}
+
+$data = json_decode(file_get_contents('php://input'), true);
+$newUsername = trim($data['username'] ?? '');
+$currentUsername = $_SESSION['username_email'];
+
+if (empty($newUsername)) {
     echo json_encode(['success' => false, 'message' => 'Username cannot be empty']);
     exit;
 }
 
 try {
-    // Check if username already exists
-    $check_sql = "SELECT username FROM users WHERE username = ?";
-    $check_stmt = $conn->prepare($check_sql);
-    $check_stmt->bind_param("s", $new_username);
-    $check_stmt->execute();
-    $result = $check_stmt->get_result();
+    // Check if the new username already exists for another user
+    $stmt = $conn->prepare("SELECT id FROM users WHERE username_email = ? AND username_email != ?");
+    $stmt->bind_param("ss", $newUsername, $currentUsername);
+    $stmt->execute();
+    $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
         echo json_encode(['success' => false, 'message' => 'Username already taken']);
         exit;
     }
-
-    // Update username in database
-    $sql = "UPDATE users SET username = ? WHERE username_email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $new_username, $current_email);
+    
+    // Update both username and username_email fields
+    $stmt = $conn->prepare("UPDATE users SET username = ?, username_email = ? WHERE username_email = ?");
+    $stmt->bind_param("sss", $newUsername, $newUsername, $currentUsername);
     
     if ($stmt->execute()) {
+        // Update the session variable with the new username
+        $_SESSION['username_email'] = $newUsername;
         echo json_encode(['success' => true]);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Database update failed']);
+        echo json_encode(['success' => false, 'message' => 'Failed to update username']);
     }
-    $stmt->close();
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Server error']);
+    error_log("Error updating username: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'Database error']);
 }
+
+$stmt->close();
+$conn->close();
 ?> 
