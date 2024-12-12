@@ -145,7 +145,7 @@
                 </td>
             </tr>
             <tr>
-                <form action="Financia-Learn-More.html">
+                <form action="Financia-Learn-More.html" style="cursor: pointer;">
                     <td class="table3_3"><input type="submit" id="Learn_more" value="Learn More"></td>
                 </form>
             </tr>
@@ -174,7 +174,7 @@
                     for deeper insights <br> and custom options</td>
             </tr>
             <tr>
-                <form action="Financia-Premium.html">
+                <form action="Financia-Premium.html" style="cursor: pointer;">
                     <td class="table4_3box"><input class="table4_3" type="button" id="premium_button"
                             value="Upgrade to Premium"></td>
                 </form>
