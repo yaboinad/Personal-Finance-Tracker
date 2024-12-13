@@ -160,10 +160,10 @@ if (!empty($row['email'])) {
         <?php endif; ?>
     </table>
 
-    
-       <div class="username-header">
-         <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
-         <img src="edit (1).png" alt="edit" class="edit-icon" id="editUsernameBtn">
+
+    <div class="username-header">
+        <span id="usernameDisplay"><?php echo htmlspecialchars($display_text); ?></span>
+        <img src="edit (1).png" alt="edit" class="edit-icon" id="editUsernameBtn">
         <div id="usernameEditContainer" style="display: none;">
             <div class="input-wrapper">
                 <input type="text" id="usernameInput" placeholder="Username">
@@ -251,7 +251,7 @@ if (!empty($row['email'])) {
     </div>
     <table class="table5">
         <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="Financia-AboutUs-html">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>
@@ -705,8 +705,8 @@ if (!empty($row['email'])) {
                                 const emailDisplay = document.getElementById('emailDisplay');
                                 if (emailDisplay && emailData.email) {
                                     const maxLength = 12;
-                                    const displayEmail = emailData.email.length > maxLength ? 
-                                        emailData.email.substring(0, maxLength) + '...' : 
+                                    const displayEmail = emailData.email.length > maxLength ?
+                                        emailData.email.substring(0, maxLength) + '...' :
                                         emailData.email;
                                     emailDisplay.textContent = displayEmail;
                                     emailDisplay.title = emailData.email;

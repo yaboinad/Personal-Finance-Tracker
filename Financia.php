@@ -151,7 +151,7 @@
                 </td>
             </tr>
             <tr>
-                <form action="">
+                <form action="Financia-Learn-More.html" style="cursor: pointer;">
                     <td class="table3_3"><input type="submit" id="Learn_more" value="Learn More"></td>
                 </form>
             </tr>
@@ -180,8 +180,8 @@
                     for deeper insights <br> and custom options</td>
             </tr>
             <tr>
-                <form action="">
-                    <td class="table4_3box"><input class="table4_3" type="button" id="premium_button"
+                <form action="Financia-Premium.html" style="cursor: pointer;">
+                    <td class="table4_3box"><input type="submit" id="premium_button"
                             value="Upgrade to Premium"></td>
                 </form>
             </tr>
@@ -232,7 +232,7 @@
     </div>
     <table class="table5">
         <tr>
-            <td class="footer_link_box"><a class="footer_links" href="">About Us</a></td>
+            <td class="footer_link_box"><a class="footer_links" href="Financia-AboutUs-html">About Us</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Terms & Conditions</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Privacy Policy</a></td>
             <td class="footer_link_box"><a class="footer_links" href="">Contact Us</a></td>

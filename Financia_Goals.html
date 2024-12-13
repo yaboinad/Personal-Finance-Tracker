@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Financia CSS/Financia_Transactions_Css.css">
+    <link rel="stylesheet" href="Financia CSS/Financia_Goals_Css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Financia - Transactions</title>
+    <title>Financia - Goals</title>
     <style>
         @media screen and (max-width: 1920px) and (max-height: 1080px) {
             body {
@@ -58,12 +58,13 @@
 <body>
     <table class="table1">
         <tr>
-            <td class="Financia_box"><a class="Financia" href="Financia.php">Financia</a></td>
+            <td class="Financia_box"><a class="Financia" href="Financia.html">Financia</a></td>
             <td style="width: 50vw;"></td>
             <td class="e-pay_box">
                 <img class="e-pay_button" id="epayBtn" src="Financia_Home_Page_Images/plus.png" alt="">
                 <div class="dropdown-menu" id="dropdownMenuEpay">
                     <a href="Financia-E-Pay.html">E-Pay</a>
+                    <a href="Financia_Goals.html">Goals</a>
                 </div>
             </td>
 
@@ -86,13 +87,13 @@
         <form action="">
             <tr>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_Dashboard_Overview.php">Overview</a>
+                    <a class="nav_link" href="Financia_Dashboard_Overview.html">Overview</a>
                 </td>
                 <td class="td_link">
                     <a class="nav_link" href="Financia_Dashboard_Summary.html">Summary</a>
                 </td>
                 <td class="td_link">
-                    <a class="nav_link" href="Financia_History.php">History</a>
+                    <a class="nav_link" href="Financia_History.html">History</a>
                 </td>
                 <td class="td_link">
                     <a class="nav_link" href="Financia_Transactions.html">Transactions</a>
@@ -104,37 +105,49 @@
         </form>
     </table>
 
-    <div class="transactions-title">
-        <h1>Transactions</h1>
-    </div>
-    <div class="transactions-header">
-        <div class="filter-bar">
-            <select id="dateFilter">
-                <option>Filter by Date</option>
-            </select>
-            <select id="typeSort">
-                <option>Sort by Type</option>
-            </select>
+    <!-- Goals Section-->
+    <div class="container">
+        <div class="header">
+            <button class="create-btn">Create a Goal</button>
+            <button class="save-btn">Save All</button>
         </div>
+        <table class="goal-table">
+            <thead>
+                <tr>
+                    <th>Goal Name</th>
+                    <th>Target Amount</th>
+                    <th>Transaction Type</th>
+                    <th>Deadline</th>
+                    <th>Bank Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" value="Investment Fund"></td>
+                    <td>
+                        <div class="amount-group">
+                            ₱<input type="number" value="50000">
+                        </div>
+                    </td>
+                    <td>
+                        <select>
+                            <option>Asset</option>
+                            <option>Income</option>
+                            <option>Deposit</option>
+                        </select>
+                    </td>
+                    <td><input type="date" value="2024-06-12"></td>
+                    <td>
+                        <button class="bank-btn">GCash</button>
+                    </td>
+                    <td>
+                        <button class="delete-btn">🗑</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="transactions-table">
-        <thead>
-            <tr>
-                <th>Edit</th>
-                <th>Transaction Description</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Amount</th>
-                <th>Details</th>
-                <th>Transaction Type</th>
-                <th>Payment Method</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody id="transactionTableBody">
-            <!-- Transactions will be populated here -->
-        </tbody>
-    </table>
 
     <div>
         <hr style="margin: 12vw 0 0 -1vw; border: 0.1vw solid black; width: 38vw;">
@@ -190,50 +203,7 @@
             dropdownMenuEpay.style.display = 'none';
             dropdownMenuAccount.style.display = 'none';
         });
-
-        function fetchTransactions() {
-            fetch('backend/get_transactions.php') // Adjust the URL to your backend endpoint
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.getElementById('transactionTableBody');
-                    tableBody.innerHTML = ''; // Clear existing rows
-
-                    if (data.success) {
-                        data.transactions.forEach(transaction => {
-                            const row = document.createElement('tr');
-                            row.innerHTML = `
-                                <td><i class="fas fa-edit icon" title="Edit"></i></td>
-                                <td>${transaction.description || '-'}</td>
-                                <td>${new Date(transaction.created_at).toLocaleDateString('en-PH')}</td>
-                                <td>${new Date(transaction.created_at).toLocaleTimeString('en-PH')}</td>
-                                <td>₱ ${parseFloat(transaction.amount).toLocaleString('en-PH', {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2
-                                })}</td>
-                                <td>${transaction.details || '-'}</td>
-                                <td>${transaction.transaction_type}</td>
-                                <td>${transaction.payment_method === 'bdo' ? 'Bank Transfer' : 'E-Wallet'}</td>
-                                <td><i class="fas fa-trash icon" title="Delete" onclick="deleteTransaction(${transaction.id})"></i></td>
-                            `;
-                            tableBody.appendChild(row);
-                        });
-                    } else {
-                        tableBody.innerHTML = `
-                            <tr>
-                                <td colspan="9" style="text-align: center;">No transactions found</td>
-                            </tr>
-                        `;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching transactions:', error);
-                });
-        }
-
-        // Call fetchTransactions when the page loads
-        document.addEventListener('DOMContentLoaded', fetchTransactions);
     </script>
-
 </body>
 
 </html>

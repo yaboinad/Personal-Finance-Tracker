@@ -1,0 +1,215 @@
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    table {
+        border-collapse: collapse;
+    }
+
+    .table1 {
+        background: rgb(0, 0, 0);
+        border-bottom: 0.2vw solid rgb(138, 36, 234);
+        height: 4.2vw;
+        margin: -0.44vw -0.44vw 0 -0.44vw;
+        width: 100vw;
+    }
+
+    .Financia_box {
+        text-align: center;
+        width: 21.5vw;
+    }
+
+    .Financia {
+        font: normal normal 800 2.5vw Roboto3;
+        letter-spacing: 0.2vw;
+        text-decoration: none;
+        color: rgb(138, 36, 234);
+    }
+
+    .e-pay_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .e-pay_button {
+        height: 3vw;
+    }
+
+    .notification_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .notification_button {
+        height: 2.5vw;
+    }
+
+    .account_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    #accountBtn {
+        cursor: pointer;
+    }
+
+    #epayBtn {
+        cursor: pointer;
+    }
+
+    /* Dropdown Menu Styling */
+    .dropdown-menu {
+        position: absolute;
+        top: 60px;
+        /* Adjust based on the size of the account icon */
+        right: 0;
+        background-color: #450774;
+        border-radius: 8px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        min-width: 150px;
+    }
+
+    .dropdown-menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        transition: background 0.3s;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #6a1b9a;
+    }
+
+    .account {
+        height: 2.5vw;
+    }
+
+    .settings_box {
+        text-align: center;
+        width: 5vw;
+    }
+
+    .settings_button {
+        height: 2.5vw;
+    }
+
+    .table2 {
+        background-color: black;
+        height: 3vw;
+        margin: 0 -0.44vw 0 -0.44vw;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .td_link {
+        text-align: center;
+        width: auto;
+    }
+
+    .nav_link {
+        padding: 0.7vw 1.5vw;
+        margin: 0 5vw;
+        color: rgb(146, 141, 241);
+        font: normal 600 1.3vw Roboto1;
+        text-align: center;
+        text-decoration: none;
+        /*padding: 0.5vw 1vw;*/
+        transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .nav_link:hover {
+        color: rgb(236, 234, 243);
+        text-shadow: 0 0 0.5vw rgb(138, 36, 234);
+    }
+
+    .nav_link.disabled {
+        color: #999;
+        cursor: not-allowed;
+        text-decoration: none;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    .td_select {
+        text-align: center;
+        width: 23vw;
+    }
+
+    .select_nav {
+        border: none;
+        background-color: black;
+        color: rgb(146, 141, 241);
+        font: normal 600 1.3vw/3vw Roboto1;
+        text-align: center;
+        width: 10vw;
+    }
+
+    .content {
+        font-family: Roboto1, sans-serif;
+        color: white;
+        background-color: #333;
+        padding: 20px;
+        margin: 50px auto;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h1 {
+        font-family: Roboto3, sans-serif;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .content p {
+        font-family: Roboto1, sans-serif;
+        color: #ddd;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .content a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+
+    .content a:hover {
+        text-decoration: underline;
+    }
+
+    .social_media_logo {
+        color: aliceblue;
+        height: 4vw;
+        padding: 0 1vw;
+    }
+
+    .div6 {
+        margin: -2vw;
+        text-align: center;
+    }
+
+    .table5 {
+        margin: 3vw 0 0 17vw;
+    }
+
+    .footer_link_box {
+        text-align: center;
+        padding: 2vw 5vw;
+    }
+
+    .footer_links {
+        color: black;
+        font: normal 200 1.4vw Coolvetica2;
+        letter-spacing: 0.15vw;
+        text-decoration: none;
+    }
+
+    .copyright {
+        font: normal 500 1.3vw Verdana;
+        text-align: center;
+    }
+}
